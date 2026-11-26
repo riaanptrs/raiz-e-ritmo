@@ -72,7 +72,7 @@ Os segundos internos ajudam a comparar e ordenar eventos. A interface mostra hor
 
 O service worker guarda o aplicativo, os dados e os guias incluídos no build. Só a ativação do worker deste aplicativo permite mostrar “Acesso offline preparado”. Uma nova versão instalada aguarda a ação **Atualizar aplicativo**; o cache de outros projetos no mesmo domínio é preservado.
 
-Cache e preferências podem ser removidos pelo navegador ou pelo usuário. A primeira visita precisa de conexão. Links de fontes externas continuam exigindo internet. Instalação na tela inicial depende do navegador e não equivale a uma versão publicada em lojas de aplicativos.
+Cache e preferências podem ser removidos pelo navegador ou pelo usuário. A primeira visita precisa de conexão. As referências bibliográficas são apresentadas no aplicativo e ficam disponíveis offline. Instalação na tela inicial depende do navegador e não equivale a uma versão publicada em lojas de aplicativos.
 
 Os testes de cache executam o worker real gerado em um ambiente controlado de rede/cache. Os testes não substituem a revisão em dispositivos móveis reais.
 

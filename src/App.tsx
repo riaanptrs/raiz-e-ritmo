@@ -19,19 +19,6 @@ const ZONES = [
   ['Pacific/Auckland', 'Auckland'], ['Asia/Tokyo', 'Tóquio'], ['UTC', 'UTC'],
 ] as const;
 const HEMISPHERES: Record<Hemisphere, string> = { south: 'Hemisfério Sul', north: 'Hemisfério Norte', equatorial: 'Região equatorial' };
-const SOURCES = {
-  repo: 'https://github.com/riaanptrs/raiz-e-ritmo',
-  docs: 'https://github.com/riaanptrs/raiz-e-ritmo/blob/f53d80cae78e82288463b2d512f9024e01134cbd/docs',
-  seasons: 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027',
-  iau: 'https://www.iau.org/IAU/Astronomy-FAQs/Constellations.aspx',
-  evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
-  usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
-  jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
-  engine: 'https://github.com/cosinekitty/astronomy',
-  stella: 'https://stellanatura.com/use.html',
-  bda: 'https://www.biodynamic.org.uk/wp-content/uploads/2023/09/Guidelines-5-Sowing-and-Planting-Calendar.pdf',
-  mabd: 'https://www.bio-dynamie.org/actualites/foire-aux-questions/',
-};
 
 function isTimeZone(value: string) {
   if (!/^(?:[A-Za-z_]+(?:\/[A-Za-z0-9_+\-]+)+|UTC|GMT)$/.test(value)) return false;
@@ -88,10 +75,6 @@ function BotanicalDrawing() {
     <path d="m141 225-25 13m25-13 23 13m-23-13-2 15M83 224h130" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     <path d="M70 63v12m-6-6h12M287 135v8m-4-4h8" stroke="#e7ca82" strokeWidth="1.5" />
   </svg>;
-}
-
-function SourceLink({ href, children }: { href: string; children: ReactNode }) {
-  return <a href={href} target="_blank" rel="noreferrer">{children}<span className="sr-only"> (abre em outra aba)</span></a>;
 }
 
 function IntervalList({ intervals, timeZone }: { intervals: CalendarInterval[]; timeZone: string }) {
@@ -153,8 +136,6 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
     <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Dias de raiz, folha, flor e fruto</strong><p>Essas quatro categorias ainda estão indisponíveis no calendário. O guia da horta já traz orientações para semear, transplantar e colher.</p><a href="#garden-title">Ir para o guia da horta</a></div></div>
   </aside>;
 }
-
-const DEMETER_STANDARD = 'https://demeter.net/wp-content/uploads/2025/11/2026_Int_Dem_bio_Standard_eng.pdf';
 
 function preparationRange(value: number, minRate: number, maxRate: number, unit: string) {
   const format = new Intl.NumberFormat('pt-BR', { maximumSignificantDigits: 4 });
@@ -274,7 +255,7 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
       <article>
         <h4>Colher</h4>
         <p>O Stella Natura distingue a colheita para consumo imediato da colheita para guardar ou para semente. Para consumir ervas e hortaliças frescas, a publicação prioriza o frescor e a conveniência.</p>
-        <p>Para guardar a produção ou colher sementes, consulte a edição do calendário que você segue. O Raiz &amp; Ritmo ainda não identifica dias de raiz, folha, flor e fruto.</p>
+        <p>Para guardar a produção ou colher sementes, o Stella Natura usa critérios próprios de acordo com a parte da planta a ser colhida. Esses critérios dependem das categorias raiz, folha, flor e fruto, que ainda estão indisponíveis neste calendário. Para o uso diário, observe o que já está pronto e colha a quantidade que pretende consumir fresca.</p>
       </article>
     </div>
     <details className="preparation-guide">
@@ -282,7 +263,8 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
       <p>Escolha uma erva e uma hortaliça que você já cultiva. Em cada uma, registre quando surgem as primeiras folhas e quando começa a floração, se ocorrer. Anote as diferenças de sol e umidade entre os locais em vez de esperar que as duas plantas sigam o mesmo ritmo.</p>
       <p className="source-note">Exercício do Raiz &amp; Ritmo inspirado em Charles Kovacs, <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF consultado.</p>
     </details>
-    <p className="note">As janelas do Stella Natura são uma orientação tradicional para semeadura. Para transplante e colheita, use os sinais da planta e as condições do local.</p>
+    <p className="note">No detalhe de cada data coberta de 2027, as janelas do Stella Natura indicam quando essa tradição sugere evitar a semeadura. Para acompanhar transplantes e colheitas, anote o estágio da planta e as condições do local.</p>
+    <p className="source-note">Transplante e colheita: Sherry Wildfeuer, <cite>Stella Natura</cite>, orientações da edição de 2024.</p>
     <PreparationGuide />
     <button className="text-button garden-source-button" onClick={onMethod}>Ver fontes do guia da horta</button>
   </section>;
@@ -292,9 +274,9 @@ function Learning({ onMethod }: { onMethod: () => void }) {
   return <section className="reading-view" aria-labelledby="learn-title">
     <div className="section-intro"><span className="eyebrow">APRENDER COM O JARDIM</span><h1 id="learn-title">Observe o céu.<br />Conheça o seu chão.</h1><p>Um calendário se torna mais útil quando você entende o que ele mostra, de onde vem a orientação e o que precisa observar no seu próprio cultivo.</p></div>
     <div className="learning-grid">
-      <article className="learning-card"><span className="card-icon"><Icon kind="globe" size={28} /></span><h2>Por que acompanhar?</h2><p>A agricultura biodinâmica propõe cuidar da propriedade como um conjunto de solo, plantas e outros seres vivos. Algumas tradições biodinâmicas consultam ritmos celestes ao escolher datas de semeadura e transplante. O calendário registra essas interpretações.</p><SourceLink href={SOURCES.stella}>A perspectiva do Stella Natura</SourceLink></article>
-      <article className="learning-card"><span className="card-icon"><Icon kind="leaf" size={28} /></span><h2>Como usar no cotidiano?</h2><p>Comece observando umidade do solo, clima e estágio da planta. Registre o que fez, as condições e o resultado. Use as indicações tradicionais como uma escolha a investigar, sem deixar o calendário substituir a atenção ao jardim.</p><SourceLink href={SOURCES.stella}>Calendário, clima e observação</SourceLink></article>
-      <article className="learning-card"><span className="card-icon"><Icon kind="calendar" size={28} /></span><h2>Quando consultar?</h2><p>Ao planejar uma tarefa, confira o horário local e os intervalos dentro do dia. Uma transição pode acontecer no meio da manhã ou à noite. O mesmo evento pode cair em datas diferentes conforme o fuso.</p><SourceLink href={SOURCES.jpl}>Como os eventos são definidos</SourceLink></article>
+      <article className="learning-card"><span className="card-icon"><Icon kind="globe" size={28} /></span><h2>Por que acompanhar?</h2><p>A agricultura biodinâmica propõe cuidar da propriedade como um conjunto de solo, plantas e outros seres vivos. Algumas tradições biodinâmicas consultam ritmos celestes ao escolher datas de semeadura e transplante. O calendário registra essas interpretações.</p></article>
+      <article className="learning-card"><span className="card-icon"><Icon kind="leaf" size={28} /></span><h2>Como usar no cotidiano?</h2><p>Comece observando umidade do solo, clima e estágio da planta. Registre o que fez, as condições e o resultado. Use as indicações tradicionais como uma escolha a investigar, sem deixar o calendário substituir a atenção ao jardim.</p></article>
+      <article className="learning-card"><span className="card-icon"><Icon kind="calendar" size={28} /></span><h2>Quando consultar?</h2><p>Ao planejar uma tarefa, confira o horário local e os intervalos dentro do dia. Uma transição pode acontecer no meio da manhã ou à noite. O mesmo evento pode cair em datas diferentes conforme o fuso.</p></article>
     </div>
     <article className="reading-card">
       <h2>Como a tradição usa os calendários</h2>
@@ -323,15 +305,15 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <p>Ao relatar o curso de 1924, Steiner descreveu como um grupo de agricultores reuniria informações sobre o solo, o clima e o entorno de cada propriedade antes de testar as práticas propostas.</p>
       <p>Na horta, comece com dois trechos semelhantes. Se quiser observar duas datas de semeadura, use sementes do mesmo lote, na mesma profundidade, e mantenha o manejo tão parecido quanto possível. Anote chuva e temperatura e conte quantas mudas emergiram após o mesmo número de dias em cada trecho. Uma diferença ajuda a formular a próxima pergunta e pode ter várias causas.</p>
       <p className="source-note">Rudolf Steiner, relato de 20 de junho de 1924 em <cite>Spiritual Foundations for the Renewal of Agriculture</cite>, tradução de Catherine Creeger e Malcolm Gardner, 1993, pp. 9 e 11 do PDF consultado. O exemplo da horta é uma adaptação do Raiz &amp; Ritmo.</p>
-      <p>Um estudo da UNESP com cenouras em dois períodos encontrou diferenças em alguns contrastes. O estudo não encontrou diferença associada ao ritmo ascendente e descendente nos aspectos avaliados. <SourceLink href={SOURCES.evidence}>Consultar o estudo</SourceLink></p>
+      <p>Um estudo da UNESP com cenouras em dois períodos encontrou diferenças em alguns contrastes. O estudo não encontrou diferença associada ao ritmo ascendente e descendente nos aspectos avaliados. Referência: Jovchelevich, UNESP, 2007, acervo digital 11449/93462.</p>
     </article>
     <article className="reading-card rhythm-guide"><div><span className="eyebrow">CADA RITMO TEM SUA PRÓPRIA PERGUNTA</span><h2>A Lua tem mais de um ciclo</h2><p>“Crescente” não significa “ascendente”. E um nó ascendente não é o início da Lua ascendente.</p></div><dl>
       <div><dt>Fase lunar</dt><dd>Relação angular entre Sol e Lua vista da Terra: nova, quartos e cheia.</dd></div>
       <div><dt>Declinação</dt><dd>Movimento da Lua para norte ou sul do equador celeste, usado nesta versão para a convenção de ascensão e descensão.</dd></div>
       <div><dt>Nó lunar</dt><dd>Cruzamento do plano da eclíptica. O nome do nó não muda quando você troca de hemisfério.</dd></div>
       <div><dt>Perigeu e apogeu</dt><dd>Momentos de menor e maior distância entre a Terra e a Lua.</dd></div>
-    </dl><p className="source-note"><SourceLink href={SOURCES.engine}>Referência dos cálculos astronômicos</SourceLink></p><p className="note">Os símbolos de fase são esquemáticos. A orientação aparente da Lua depende do observador; o símbolo identifica a fase, sem representar sua posição no céu local. Trocar de hemisfério não troca crescente por minguante.</p></article>
-    <article className="hemisphere-guide reading-card"><div><span className="eyebrow">UM CÉU, DUAS PERSPECTIVAS</span><h2>O que muda entre Norte e Sul?</h2><p>O instante de uma fase, de um nó ou do perigeu é o mesmo. O fuso muda o relógio. O hemisfério muda a interpretação tradicional de ascendente e descendente.</p><SourceLink href={SOURCES.bda}>Orientação da Associação Biodinâmica britânica</SourceLink></div><div className="hemisphere-comparison"><p className="comparison-caption">Quando a Lua se move para o norte:</p><div><span>NORTE</span><strong>Ascendente</strong></div><div><span>SUL</span><strong>Descendente</strong></div><p>Na região equatorial, usamos apenas “para o norte” ou “para o sul”. Nos trópicos, essa convenção não prevê diretamente a altura da Lua no horizonte.</p></div></article>
+    </dl><p className="note">Os símbolos de fase são esquemáticos. A orientação aparente da Lua depende do observador; o símbolo identifica a fase, sem representar sua posição no céu local. Trocar de hemisfério não troca crescente por minguante.</p></article>
+    <article className="hemisphere-guide reading-card"><div><span className="eyebrow">UM CÉU, DUAS PERSPECTIVAS</span><h2>O que muda entre Norte e Sul?</h2><p>O instante de uma fase, de um nó ou do perigeu é o mesmo. O fuso muda o relógio. O hemisfério muda a interpretação tradicional de ascendente e descendente.</p></div><div className="hemisphere-comparison"><p className="comparison-caption">Quando a Lua se move para o norte:</p><div><span>NORTE</span><strong>Ascendente</strong></div><div><span>SUL</span><strong>Descendente</strong></div><p>Na região equatorial, usamos apenas “para o norte” ou “para o sul”. Nos trópicos, essa convenção não prevê diretamente a altura da Lua no horizonte.</p></div></article>
     <article className="reading-card"><h2>E as estações?</h2><p>Equinócios e solstícios têm instantes compartilhados, mas recebem nomes sazonais diferentes no Norte e no Sul. Eles não bastam para definir a época de plantio em cada região: o calendário não contém previsão do tempo nem uma recomendação climática local.</p><h3>Por que ainda não aparecem dias de raiz, folha, flor e fruto?</h3><p>As associações tradicionais dependem do sistema de divisão do céu e de outros ajustes. Os limites astronômicos da IAU não substituem automaticamente os de um calendário biodinâmico. Enquanto o conjunto de regras não estiver validado, deixamos essa classificação indisponível.</p><button className="text-button" onClick={onMethod}>Conhecer as fontes e os limites do método</button></article>
   </section>;
 }
@@ -343,23 +325,23 @@ function Method() {
     <article className="reading-card">
       <h2>Fontes do guia da horta</h2>
       <p>As palestras de Rudolf Steiner fundamentam a leitura biodinâmica. As referências a cada edição e às páginas consultadas aparecem junto às orientações no guia.</p>
-      <p>O guia de semeadura e as atividades de observação recorrem a <cite>Botany</cite>, de Charles Kovacs. Para a distinção entre colheita fresca e colheita para guardar, e para o contexto do transplante na tradição de Maria Thun, o guia usa o <SourceLink href={SOURCES.stella}>Stella Natura, manual da edição de 2024</SourceLink>.</p>
-      <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026. <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026, Apêndice 8</SourceLink></p>
+      <p>O guia de semeadura e as atividades de observação recorrem a <cite>Botany</cite>, de Charles Kovacs. Para a distinção entre colheita fresca e colheita para guardar, e para o contexto do transplante na tradição de Maria Thun, o guia usa o <cite>Stella Natura</cite>, manual da edição de 2024, de Sherry Wildfeuer.</p>
+      <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026 da Demeter, Apêndice 8, p. 122, que indica as faixas por hectare e por volume de composto.</p>
     </article>
     <article className="reading-card"><h2>O que esta versão calcula</h2><div className="table-scroll"><table><thead><tr><th>Informação</th><th>Definição e limites</th></tr></thead><tbody>
-      <tr><th>Dezembro de 2026</th><td>Fases principais e solstício, em UTC com precisão de minuto, das tabelas de Fred Espenak. <SourceLink href="https://www.astropixels.com/ephemeris/phasescat/phases2001.html">Fases</SourceLink> · <SourceLink href="https://www.astropixels.com/ephemeris/soleq2001.html">Estações</SourceLink>.</td></tr>
-      <tr><th>Fases principais de 2027</th><td>49 instantes da referência USNO, preservados com precisão de minuto. <SourceLink href={SOURCES.usno}>Tabela original</SourceLink>.</td></tr>
+      <tr><th>Dezembro de 2026</th><td>Fases principais e solstício, em UTC com precisão de minuto, publicados por Fred Espenak nas tabelas de fases lunares e estações do AstroPixels.</td></tr>
+      <tr><th>Fases principais de 2027</th><td>49 instantes da referência USNO, preservados com precisão de minuto.</td></tr>
       <tr><th>Nós lunares</th><td>Cruzamentos do plano da eclíptica. Os termos ascendente e descendente indicam o sentido do cruzamento, em qualquer hemisfério.</td></tr>
       <tr><th>Perigeu e apogeu</th><td>26 extremos da distância geocêntrica lunar de 2027, derivados de posições JPL DE441. Há cobertura adjacente ao ano: o apogeu de 1º de janeiro de 2028 pode aparecer em 31 de dezembro de 2027 no horário local.</td></tr>
       <tr><th>Declinação lunar</th><td>Variação para norte ou sul e seus pontos de inversão. A interpretação por hemisfério é separada da observação geométrica.</td></tr>
-      <tr><th>Constelação</th><td>Região IAU na direção da Lua, incluindo regiões que não pertencem às doze categorias tradicionais. <SourceLink href={SOURCES.iau}>Limites oficiais da IAU</SourceLink>.</td></tr>
-      <tr><th>Estações astronômicas</th><td>Equinócios e solstícios; o nome da estação acompanha o hemisfério escolhido. <SourceLink href={SOURCES.seasons}>Tabela USNO</SourceLink>.</td></tr>
-    </tbody></table></div><p className="source-note">Os instantes de fases publicados preservam os minutos da referência USNO. O <SourceLink href={SOURCES.engine}>Astronomy Engine</SourceLink> fornece os demais cálculos, com a exceção dos ápsides desta edição, derivados do <SourceLink href={SOURCES.jpl}>JPL Horizons</SourceLink>.</p></article>
+      <tr><th>Constelação</th><td>Região IAU na direção da Lua, incluindo regiões que não pertencem às doze categorias tradicionais.</td></tr>
+      <tr><th>Estações astronômicas</th><td>Equinócios e solstícios; o nome da estação acompanha o hemisfério escolhido. Conferidos contra a tabela de estações do USNO.</td></tr>
+    </tbody></table></div><p className="source-note">Os instantes de fases publicados preservam os minutos da referência USNO. O Astronomy Engine fornece os demais cálculos. Os ápsides desta edição são derivados do sistema Horizons do JPL.</p></article>
     <article className="reading-card"><h2>Verificação desta edição</h2><p>Nas comparações com USNO e JPL, as diferenças máximas foram de <strong>73 segundos nas fases calculadas</strong>, <strong>29 segundos nos nós lunares</strong>, <strong>11 segundos nas inversões de declinação</strong> e <strong>42 segundos nos equinócios e solstícios</strong>. As fases mostradas no calendário continuam a usar os horários publicados pelo USNO.</p><p>A checagem identificou uma diferença de até <strong>16 minutos e 14 segundos</strong> em um dos ápsides lunares calculados pela biblioteca. Por isso, esta edição usa eventos de perigeu e apogeu derivados diretamente dos dados JPL. O refinamento com amostras mais próximas mudou esses horários em menos de um segundo; essa comparação usa o mesmo modelo e não demonstra uma precisão física de um segundo.</p><p className="note">São verificações numéricas de datas e posições. Não validam efeitos de uma prática agrícola nem a equivalência com um calendário editorial completo. Os procedimentos, tolerâncias e resultados ficam documentados no repositório.</p></article>
-    <article className="reading-card partial-method"><span className="small-tag">PERFIL TRADICIONAL PARCIAL</span><h2>Duas regras do Stella Natura</h2><p>As janelas exibidas aplicam dois intervalos descritos pela editora Sherry Wildfeuer:</p><ul><li><strong>Nós lunares:</strong> duas horas antes e duas horas depois do cruzamento.</li><li><strong>Perigeu:</strong> doze horas antes e doze horas depois do instante de menor distância.</li></ul><p>A implementação não reproduz o calendário completo. Ajustes por outros planetas, eclipses, transições entre setores e associações agrícolas não entram nessas janelas. Ausência de uma janela não significa indicação favorável.</p><p>Esses intervalos são orientações tradicionais para evitar semeadura, não resultados demonstrados pelo cálculo astronômico.</p><SourceLink href={SOURCES.stella}>Ler as regras publicadas pelo Stella Natura</SourceLink></article>
-    <article className="reading-card"><h2>Por que não copiar a lógica de qualquer calendário?</h2><p>É necessário definir limites de setores, coordenadas, época de referência, horários de transição, margens e exceções. Diferentes publicações fazem escolhas distintas. O MABD explica que os limites usados por sua tradição não são idênticos aos dos astrônomos.</p><p>O Raiz &amp; Ritmo não apresenta uma classificação IAU como reprodução de Maria Thun, ABD ou Assesoar. A classificação completa de raiz, folha, flor e fruto permanece indisponível.</p><SourceLink href={SOURCES.mabd}>Explicações do MABD</SourceLink></article>
-    <article className="reading-card"><h2>Hemisfério e fuso são configurações independentes</h2><p>Mudar o hemisfério preserva os instantes dos eventos. Mudar o fuso recalcula o dia e a hora exibidos, incluindo mudanças de horário de verão previstas na base de fusos do dispositivo. Intervalos podem atravessar a meia-noite.</p><p>Ascendente e descendente, na leitura tradicional implementada, invertem-se entre Norte e Sul. A direção física norte/sul continua a mesma. Na região equatorial, mostramos a direção sem aplicar essa inversão. Uma previsão da altura no horizonte exigiria latitude e cálculo topocêntrico, que não fazem parte desta versão.</p><SourceLink href={SOURCES.bda}>Fonte da convenção entre hemisférios</SourceLink></article>
-    <div className="source-directory"><h2>Consultar, reproduzir, melhorar</h2><p>O código, os dados e a documentação do método estão disponíveis para inspeção.</p><a className="button primary-button" href={SOURCES.repo} target="_blank" rel="noreferrer">Abrir o projeto no GitHub</a><p><SourceLink href={SOURCES.docs + "/DATA_METHOD.md"}>Documentação do método</SourceLink> · <SourceLink href={SOURCES.docs + "/VALIDATION_2027.md"}>Relatório de validação de 2027</SourceLink></p><p className="note">As preferências ficam neste navegador. O aplicativo não exige conta.</p></div>
+    <article className="reading-card partial-method"><span className="small-tag">PERFIL TRADICIONAL PARCIAL</span><h2>Duas regras do Stella Natura</h2><p>As janelas exibidas aplicam dois intervalos descritos pela editora Sherry Wildfeuer:</p><ul><li><strong>Nós lunares:</strong> duas horas antes e duas horas depois do cruzamento.</li><li><strong>Perigeu:</strong> doze horas antes e doze horas depois do instante de menor distância.</li></ul><p>A implementação não reproduz o calendário completo. Ajustes por outros planetas, eclipses, transições entre setores e associações agrícolas não entram nessas janelas. Ausência de uma janela não significa indicação favorável.</p><p>Esses intervalos são orientações tradicionais para evitar semeadura, não resultados demonstrados pelo cálculo astronômico.</p></article>
+    <article className="reading-card"><h2>Por que não copiar a lógica de qualquer calendário?</h2><p>É necessário definir limites de setores, coordenadas, época de referência, horários de transição, margens e exceções. Diferentes publicações fazem escolhas distintas. O MABD explica que os limites usados por sua tradição não são idênticos aos dos astrônomos.</p><p>O Raiz &amp; Ritmo não apresenta uma classificação IAU como reprodução de Maria Thun, ABD ou Assesoar. A classificação completa de raiz, folha, flor e fruto permanece indisponível.</p></article>
+    <article className="reading-card"><h2>Hemisfério e fuso são configurações independentes</h2><p>Mudar o hemisfério preserva os instantes dos eventos. Mudar o fuso recalcula o dia e a hora exibidos, incluindo mudanças de horário de verão previstas na base de fusos do dispositivo. Intervalos podem atravessar a meia-noite.</p><p>Ascendente e descendente, na leitura tradicional implementada, invertem-se entre Norte e Sul. A direção física norte/sul continua a mesma. Na região equatorial, mostramos a direção sem aplicar essa inversão. Uma previsão da altura no horizonte exigiria latitude e cálculo topocêntrico, que não fazem parte desta versão. Referência: Associação Biodinâmica britânica, <cite>Sowing and Planting Calendar</cite>, guia 5.</p></article>
+    <p className="note">As preferências ficam neste navegador. O aplicativo não exige conta.</p>
   </section>;
 }
 
@@ -372,7 +354,7 @@ function Help({ offlineReady }: { offlineReady: boolean }) {
     </article>
     <article className="reading-card">
       <h2>Preparar o acesso offline</h2>
-      <p>Abra o calendário com internet na primeira visita e aguarde o aviso <strong>Acesso offline preparado</strong>. O calendário e os guias ficam disponíveis neste navegador. Os links de fontes externas precisam de conexão.</p>
+      <p>Abra o calendário com internet na primeira visita e aguarde o aviso <strong>Acesso offline preparado</strong>. O calendário e os guias ficam disponíveis neste navegador. As referências bibliográficas também ficam disponíveis offline.</p>
       <p role="status">{offlineReady ? 'Acesso offline preparado neste navegador.' : 'O acesso offline ainda não está preparado neste navegador.'}</p>
       <p>Ao voltar à internet, aguarde o aviso de nova versão. Se ele aparecer, selecione <strong>Atualizar aplicativo</strong> para carregar os novos arquivos.</p>
     </article>
@@ -521,6 +503,6 @@ export default function App() {
         </section><DayDetail plan={plan} onMethod={() => navigate('method')} /></div>
       </> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : view === 'method' ? <Method /> : <Help offlineReady={offlineReady} />}
     </main>
-    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><a href={SOURCES.repo} target="_blank" rel="noreferrer">Projeto no GitHub</a><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Dezembro de 2026 a dezembro de 2027'}</span></div></footer>
+    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Dezembro de 2026 a dezembro de 2027'}</span></div></footer>
   </>;
 }
