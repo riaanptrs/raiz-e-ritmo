@@ -72,3 +72,5 @@
 @media (max-width: 600px) {
   .preparation-inputs { grid-template-columns: 1fr; }
 }
+
+.panel-section p.december-note { margin-bottom: 16px; }

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { KeyboardEvent, ReactNode } from 'react';
 import type { AstroEvent, CalendarInterval, DayPlan, Hemisphere } from './lib/types';
 import {
-  COVERAGE_YEAR, formatDate, formatInstant, formatMonth, formatTime, getDayPlan,
+  COVERAGE_LABEL, COVERAGE_START, COVERAGE_END, formatDate, formatInstant, formatMonth, formatTime, getDayPlan,
   getInitialDate, localDateKey, monthCells, seasonAt, shiftDateMonth,
 } from './lib/calendar';
 
@@ -113,6 +113,7 @@ function EventItem({ event, timeZone }: { event: AstroEvent; timeZone: string })
 }
 
 function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) {
+  const limited = plan.dateKey.startsWith('2026-12-');
   const seasonChange = plan.hemisphere === 'equatorial' ? undefined : plan.events.find(event => event.kind === 'season');
   return <aside className="day-panel" aria-labelledby="day-title">
     <div className="day-heading">
@@ -120,9 +121,10 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
       <h2 id="day-title" tabIndex={-1}>{formatDate(plan.dateKey)}</h2>
       <span className="day-context"><Icon kind="globe" size={16} /> {HEMISPHERES[plan.hemisphere]} · {plan.timeZone}</span>
     </div>
-    {!plan.supported ? <div className="panel-section"><h3>Fora da cobertura</h3><p>Esta versão contém dados de {COVERAGE_YEAR}. Escolha uma data desse ano para consultar o calendário.</p></div> : <>
+    {!plan.supported ? <div className="panel-section"><h3>Fora da cobertura</h3><p>Consulte uma data entre {COVERAGE_LABEL}.</p></div> : <>
       <section className="panel-section">
         <h3>O céu neste dia</h3>
+        {limited && <p className="december-note">Em dezembro de 2026, consulte as fases principais e o solstício. Os demais dados lunares e as janelas tradicionais estão disponíveis para 2027.</p>}
         {plan.events.length > 0 ? <ul className="event-list">{plan.events.map(event => <EventItem key={event.id} event={event} timeZone={plan.timeZone} />)}</ul> : <p>Nenhum evento astronômico pontual registrado neste dia.</p>}
         {plan.nextPhase && <div className="next-phase"><MoonIcon type={plan.nextPhase.type} /><p><span>Próxima fase principal</span><strong>{plan.nextPhase.label}</strong><span>{formatInstant(plan.nextPhase.instantUtc, plan.timeZone)}</span></p></div>}
         {seasonChange ? <div className="season-change">
@@ -130,6 +132,7 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
           <p>A partir das {formatTime(seasonChange.instantUtc, plan.timeZone)}: {seasonAt(seasonChange.instantUtc, plan.hemisphere)}</p>
         </div> : plan.seasonLabel && <p className="season-line"><Icon kind="sun" size={17} /> {plan.seasonLabel}</p>}
       </section>
+      {!limited && <>
       <section className="panel-section">
         <h3>Percurso da Lua</h3>
         {plan.motion.length ? <IntervalList intervals={plan.motion} timeZone={plan.timeZone} /> : <p>Dados de direção lunar indisponíveis neste dia.</p>}
@@ -147,6 +150,7 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
         <p className="note">Regras de nós lunares e perigeu descritas no Stella Natura. Outros fatores do calendário não estão incluídos; benefício ou prejuízo agrícola não foi demonstrado por este cálculo.</p>
         <button className="text-button" onClick={onMethod}>Entender estas regras</button>
       </section>
+      </>}
     </>}
     <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Classificação biodinâmica indisponível</strong><p>Dias de raiz, folha, flor e fruto aguardam um método completo e validado.</p></div></div>
   </aside>;
@@ -312,6 +316,7 @@ function Method() {
     <div className="section-intro"><span className="eyebrow">FONTES E MÉTODO</span><h1 id="method-title">Clareza em cada cálculo.</h1><p>Astronomia, interpretação tradicional e evidência agrícola respondem a perguntas diferentes. Aqui você encontra o que está incluído e o que ainda precisa ser resolvido.</p></div>
     <div className="method-principles"><article><span className="small-tag">ASTRONOMIA</span><h2>O que acontece no céu</h2><p>Eventos e posições calculáveis, com horários convertidos para o fuso escolhido.</p></article><article><span className="small-tag">TRADIÇÃO</span><h2>Como é interpretado</h2><p>Regras atribuídas à publicação que as descreve. Não existe uma regra única para todos os calendários.</p></article><article><span className="small-tag">EVIDÊNCIA</span><h2>O que isso demonstra</h2><p>Acertar a geometria não demonstra uma melhora de produtividade, sabor ou saúde das plantas.</p></article></div>
     <article className="reading-card"><h2>O que esta versão calcula</h2><div className="table-scroll"><table><thead><tr><th>Informação</th><th>Definição e limites</th></tr></thead><tbody>
+      <tr><th>Dezembro de 2026</th><td>Fases principais e solstício, em UTC com precisão de minuto, das tabelas de Fred Espenak. <SourceLink href="https://www.astropixels.com/ephemeris/phasescat/phases2001.html">Fases</SourceLink> · <SourceLink href="https://www.astropixels.com/ephemeris/soleq2001.html">Estações</SourceLink>.</td></tr>
       <tr><th>Fases principais de 2027</th><td>49 instantes da referência USNO, preservados com precisão de minuto. <SourceLink href={SOURCES.usno}>Tabela original</SourceLink>.</td></tr>
       <tr><th>Nós lunares</th><td>Cruzamentos do plano da eclíptica. Os termos ascendente e descendente indicam o sentido do cruzamento, em qualquer hemisfério.</td></tr>
       <tr><th>Perigeu e apogeu</th><td>26 extremos da distância geocêntrica lunar de 2027, derivados de posições JPL DE441. Há cobertura adjacente ao ano: o apogeu de 1º de janeiro de 2028 pode aparecer em 31 de dezembro de 2027 no horário local.</td></tr>
@@ -329,7 +334,7 @@ function Method() {
 
 function Help({ offlineReady }: { offlineReady: boolean }) {
   return <section className="reading-view" aria-labelledby="help-title">
-    <div className="section-intro"><h1 id="help-title">Instalação e uso offline</h1><p>Tenha o calendário de 2027 e os guias à mão mesmo quando a conexão falhar.</p></div>
+    <div className="section-intro"><h1 id="help-title">Instalação e uso offline</h1><p>Tenha o calendário e os guias à mão mesmo quando a conexão falhar.</p></div>
     <article className="reading-card">
       <h2>Adicionar ao seu dispositivo</h2>
       <p>No Android ou computador, procure <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong> no menu do navegador, quando disponível. No iPhone ou iPad, abra no Safari, toque em <strong>Compartilhar</strong> e escolha <strong>Adicionar à Tela de Início</strong>.</p>
@@ -451,7 +456,7 @@ export default function App() {
     {(!online || updateAvailable || offlineFailed) && <div className="connection-banner" role="status"><div>{!online ? offlineReady ? 'Você está sem conexão. Consulte os dados e guias já disponíveis neste dispositivo.' : 'Você está sem conexão. O acesso offline ainda não foi preparado neste dispositivo.' : offlineFailed ? 'Não foi possível preparar o acesso offline neste navegador.' : 'Uma nova versão está pronta.'}{updateAvailable && <button onClick={() => window.dispatchEvent(new Event('rr:apply-update'))}>Atualizar aplicativo</button>}</div></div>}
     <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
-        <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>EDIÇÃO {COVERAGE_YEAR}</span></div></div><BotanicalDrawing /></section>
+        <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>DEZ 2026 A DEZ 2027</span></div></div><BotanicalDrawing /></section>
         <GardenGuide />
         <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
@@ -463,7 +468,7 @@ export default function App() {
         </section>
         <div className="calendar-layout"><section className="calendar-panel" aria-labelledby="calendar-title"><div className="calendar-toolbar"><div><h2 id="calendar-title" aria-live="polite">{formatMonth(dateKey)}</h2></div><div className="month-navigation"><button aria-label="Mês anterior" onClick={() => setDateKey(previous => shiftDateMonth(previous, -1))}><Icon kind="chevron-left" /></button><button aria-label="Próximo mês" onClick={() => setDateKey(previous => shiftDateMonth(previous, 1))}><Icon kind="chevron-right" /></button></div></div>
           <p className="calendar-zone">{HEMISPHERES[settings.hemisphere]} · {settings.timeZone}</p>
-          {!plan.supported && <div className="coverage-banner"><div><strong>Você está fora do calendário de {COVERAGE_YEAR}.</strong><p>A consulta desta versão cobre janeiro a dezembro de {COVERAGE_YEAR}.</p></div><button className="button secondary-button" onClick={() => setDateKey(`${COVERAGE_YEAR}-01-01`)}>Voltar a {COVERAGE_YEAR}</button></div>}
+          {!plan.supported && <div className="coverage-banner"><div><strong>Data fora da cobertura.</strong><p>O calendário cobre {COVERAGE_LABEL}.</p></div><button className="button secondary-button" onClick={() => setDateKey(dateKey < COVERAGE_START ? COVERAGE_START : COVERAGE_END)}>Voltar ao calendário</button></div>}
           <div className="weekdays" aria-hidden="true">{['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'].map(day => <span key={day}>{day}</span>)}</div>
           <div className="calendar-grid" role="group" aria-label={`Dias de ${formatMonth(dateKey)}`}>{cells.map((day, index) => {
             if (!day) return <span key={`blank-${index}`} className="calendar-blank" aria-hidden="true" />;
@@ -485,6 +490,6 @@ export default function App() {
         </section><DayDetail plan={plan} onMethod={() => navigate('method')} /></div>
       </> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : view === 'method' ? <Method /> : <Help offlineReady={offlineReady} />}
     </main>
-    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><a href={SOURCES.repo} target="_blank" rel="noreferrer">Projeto no GitHub</a><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Calendário 2027 · versão inicial'}</span></div></footer>
+    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><a href={SOURCES.repo} target="_blank" rel="noreferrer">Projeto no GitHub</a><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Dezembro de 2026 a dezembro de 2027'}</span></div></footer>
   </>;
 }
