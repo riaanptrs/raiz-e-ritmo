@@ -2,32 +2,86 @@
 
 **Calendário e guia de agricultura biodinâmica em português.**
 
-A free Portuguese website and installable web app for understanding astronomical rhythms, learning about biodynamic gardening, and planning garden work with appropriate local conditions.
+Aplicativo web gratuito para observar os ritmos astronômicos, compreender interpretações da tradição biodinâmica e registrar perguntas para o próprio cultivo. Interface em PT-BR, sem conta, backend ou API paga.
 
-## Current status
+## Estado da implementação
 
-This is the **project brief and data foundation**, not a working application. There is no development server, production build, or deployed app yet. The proposed implementation is Vite, React and TypeScript, targeting GitHub Pages. The repository is [riaanptrs/raiz-e-ritmo](https://github.com/riaanptrs/raiz-e-ritmo); the future Pages base path is `/raiz-e-ritmo/`.
+A primeira versão funcional está pronta para revisão. Usa **React, TypeScript e Vite**, com calendário de **2027**, explicações e estrutura de PWA. O destino previsto é GitHub Pages no caminho `/raiz-e-ritmo/`. Esta implementação **não publica o site automaticamente**.
 
-The first implementation will use the 49 verified principal Moon-phase events for 2027 in [the astronomy dataset](data/astronomy/moon-phases-2027.json). Agricultural root, leaf, flower and fruit intervals remain unavailable until a complete, documented source is validated and suitable redistribution terms are established.
+O calendário separa astronomia, interpretação tradicional e evidência agrícola. Não promete efeitos sobre produtividade ou sabor. **A classificação completa de raiz, folha, flor e fruto permanece indisponível**: limites e ajustes de calendários editoriais ainda não foram reproduzidos por um método completo e verificável.
 
-## Start with Codex
+### O que funciona
 
-1. Open this repository in a Codex environment with repository access.
-2. Ask Codex to read [AGENTS.md](AGENTS.md), [the product brief](docs/PRODUCT_BRIEF.md), and [the data method](docs/DATA_METHOD.md).
-3. Give Codex [Task 01](docs/CODEX_TASK_01.md). Its deliverable is a working, tested implementation on a reviewable branch or pull request.
-4. Review the implementation and its validation evidence before scheduling the public launch.
+- Calendário mensal, detalhes por dia e navegação por teclado; datas fora de 2027 têm uma indicação clara.
+- 49 fases principais publicadas pelo USNO, preservadas com sua precisão original de minuto.
+- Nós lunares, direção e extremos de declinação, regiões IAU, equinócios e solstícios calculados e conferidos contra referências externas.
+- 26 perigeus/apogeus de 2027 derivados de JPL DE441, mais o apogeu de 1º de janeiro de 2028 necessário à consulta de 31 de dezembro em fusos ocidentais.
+- Hemisfério Sul, Norte ou região equatorial, escolhido **separadamente** do fuso IANA. Padrão: Sul e `America/Sao_Paulo`.
+- Duas regras tradicionais atribuídas ao Stella Natura: janelas de ±2 horas em torno dos nós lunares e ±12 horas em torno do perigeu. Elas não representam o calendário completo; ausência de janela não significa dia favorável.
+- Preferências locais, conteúdo de aprendizagem, fontes, limites, manifest e cache do aplicativo para uso offline após a instalação bem-sucedida do service worker.
 
-Codex must add real installation, development, build and test instructions when those commands exist. It must not assume access to earlier chat messages or private research attachments.
+## Executar
 
-## Project documents
+Requer Node.js **22.12 ou superior**. Verificado nesta implementação com Node.js 24.22.3. As versões exatas estão no `package-lock.json`.
 
-- [Product brief](docs/PRODUCT_BRIEF.md): audience, first release and user experience.
-- [Data method](docs/DATA_METHOD.md): provenance, interpretation and time conversion.
-- [Roadmap](docs/ROADMAP.md): staged delivery and remaining data requirements.
-- [Task 01](docs/CODEX_TASK_01.md): the first implementation assignment.
+```sh
+npm ci
+npm run dev
+```
 
-Public interface: **Português do Brasil**. Initial display time zone: **America/Sao_Paulo**, with an explicit user-selectable IANA time zone.
+Abra o endereço informado pelo Vite, acrescentando `/raiz-e-ritmo/` quando necessário. O modo de desenvolvimento não registra o service worker.
 
-## Content and distribution
+```sh
+npm run build
+npm run preview
+```
 
-Original educational writing must distinguish astronomical facts, attributed traditional guidance and experimental evidence. Private books, publisher calendar artwork and complete commercial schedules are not part of this repository. A public launch also requires an explicit license decision for the project’s original code and content.
+O build gera `dist/`, inclusive `sw.js` com cache identificado pelo conteúdo. A prévia de produção permite verificar o cache em `localhost`; uma publicação requer HTTPS. Use o caminho `/raiz-e-ritmo/` também nessa prévia.
+
+## Verificar e reproduzir
+
+```sh
+npm run verify
+```
+
+Esse comando verifica que os dados gerados estão atualizados, produz o relatório astronômico, executa os testes e compila a versão de produção. Comandos individuais:
+
+| Comando | Finalidade |
+| --- | --- |
+| `npm run generate` | Regenerar o calendário a partir das fontes e regras versionadas. |
+| `npm run check:data` | Detectar diferença entre o gerador e o calendário commitado, sem sobrescrevê-lo. |
+| `npm run validate:astronomy` | Conferir os eventos efetivamente entregues ao navegador e gravar o relatório. |
+| `npm test` | Verificar astronomia, fusos, hemisférios, cobertura, janelas e cache offline. |
+| `npm run build` | Verificar tipos e gerar a aplicação estática e seu service worker. |
+
+O relatório em [data/validation/astronomy-2027.json](data/validation/astronomy-2027.json) preserva também um diagnóstico que **falhou**: três apogeus aproximados da biblioteca excederam o limite original de 15 minutos, com diferença máxima de 16 min 14 s. Por isso, os eventos de distância entregues ao aplicativo vêm do JPL. O limite não foi ampliado para aprovar a biblioteca.
+
+Os dados de ápsides podem ser reproduzidos offline com Python, NumPy e SciPy a partir das respostas JPL incluídas nos testes. As instruções e versões usadas estão em [tests/fixtures/JPL_README.md](tests/fixtures/JPL_README.md). Python não é necessário para executar, compilar ou usar o aplicativo.
+
+## Hemisférios e precisão
+
+Fases, nós e ápsides são eventos geocêntricos compartilhados. O fuso muda o relógio e pode mudar a data. O hemisfério muda a leitura tradicional de ascendente/descendente e os nomes das estações; não muda a direção física norte/sul nem o nome de um nó lunar.
+
+Na região equatorial, o aplicativo evita a classificação automática de ascendente/descendente. Altura da Lua no horizonte, estações chuvosas/secas e épocas de plantio exigem informações locais que esta versão não calcula. Os símbolos de fases são esquemáticos, não uma previsão de orientação da Lua no céu.
+
+Os segundos internos ajudam a comparar e ordenar eventos. A interface mostra horas e minutos. Concordância numérica, resolução do arquivo e precisão física são conceitos distintos; veja o relatório de validação.
+
+## Offline e atualizações
+
+O service worker guarda o aplicativo, os dados e os guias incluídos no build. Só a ativação do worker deste aplicativo permite mostrar “Acesso offline preparado”. Uma nova versão instalada aguarda a ação **Atualizar aplicativo**; o cache de outros projetos no mesmo domínio é preservado.
+
+Cache e preferências podem ser removidos pelo navegador ou pelo usuário. A primeira visita precisa de conexão. Links de fontes externas continuam exigindo internet. Instalação na tela inicial depende do navegador e não equivale a uma versão publicada em lojas de aplicativos.
+
+Os testes de cache executam o worker real gerado em um ambiente controlado de rede/cache. Os testes não substituem a revisão em dispositivos móveis reais.
+
+## Publicação prevista
+
+O build usa base `/raiz-e-ritmo/`; manifest e worker mantêm esse escopo. Para uma publicação futura no GitHub Pages, o artefato é o conteúdo de `dist/`. Não há workflow de deploy automático nesta alteração. Se o caminho público mudar, ajuste `vite.config.ts`, gere novo build e confira o escopo antes de publicar.
+
+## Documentação
+
+- [Método e fontes](docs/DATA_METHOD.md): cálculos, convenções e limitações.
+- [Validação de 2027](docs/VALIDATION_2027.md): referências, resultados e discrepância corrigida.
+- [Produto](docs/PRODUCT_BRIEF.md), [roadmap](docs/ROADMAP.md) e [Task 01](docs/CODEX_TASK_01.md).
+
+Código e textos originais aguardam uma decisão explícita de licença para distribuição. Dependências conservam suas próprias licenças. Livros privados, artes de editoras e calendários comerciais completos não fazem parte deste repositório.

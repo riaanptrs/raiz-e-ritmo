@@ -1,0 +1,33 @@
+{
+  "name": "raiz-e-ritmo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build && node scripts/build-service-worker.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run",
+    "generate": "node --import tsx scripts/generate-calendar.ts",
+    "check:data": "node --import tsx scripts/generate-calendar.ts --check",
+    "validate:astronomy": "node --import tsx scripts/validate-astronomy.ts",
+    "verify": "npm run check:data && npm run validate:astronomy && npm test && npm run build"
+  },
+  "dependencies": {
+    "@js-temporal/polyfill": "0.5.1",
+    "astronomy-engine": "2.1.19",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.11",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.2"
+  }
+}

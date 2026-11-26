@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "year": 2027,
+  "purpose": "Adjacent UTC apsides needed when a supported local calendar date crosses the UTC year boundary.",
+  "selection": "Apsis instants in the 24 hours before or after the core UTC year; keep separate from core-year events.",
+  "source": {
+    "name": "NASA/JPL Horizons observer table",
+    "ephemeris": "DE441",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+    "retrieved_utc": "2026-11-26T08:10:10.810299+00:00",
+    "query": {
+      "format": "json",
+      "COMMAND": "'301'",
+      "OBJ_DATA": "'NO'",
+      "MAKE_EPHEM": "'YES'",
+      "EPHEM_TYPE": "'OBSERVER'",
+      "CENTER": "'500@399'",
+      "START_TIME": "'2026-12-25'",
+      "STOP_TIME": "'2028-01-05'",
+      "STEP_SIZE": "'1 h'",
+      "QUANTITIES": "'2,20,29,31'",
+      "CSV_FORMAT": "'YES'",
+      "ANG_FORMAT": "'DEG'",
+      "EXTRA_PREC": "'YES'",
+      "TIME_TYPE": "'UT'"
+    },
+    "input_sha256": "addbb065e05b575a7109ffa4f26c84e9d2a7a9921225eb30ca130f179ff74aa4",
+    "input_bytes": 1080646,
+    "api_signature": {
+      "source": "NASA/JPL Horizons API",
+      "version": "1.2"
+    },
+    "observer": "Earth geocentre (500@399)",
+    "target": "Moon centre (301)",
+    "sample_interval_seconds": 3600,
+    "coverage_start_utc": "2026-12-25T00:00:00Z",
+    "coverage_end_utc": "2028-01-05T00:00:00Z",
+    "sample_count": 9025,
+    "frames": {
+      "declination_deg": "Airless apparent equator/equinox of date, EOP-corrected IAU76/80; light-time, deflection, aberration, precession and nutation included.",
+      "distance_au": "Apparent light-time-corrected geocentric range in AU.",
+      "radial_velocity_km_s": "Apparent geocentric range-rate; positive receding, negative approaching.",
+      "ecliptic_coordinates": "Apparent observer-centred IAU76/80 ecliptic of date; light-time, deflection and aberration included.",
+      "iau_constellation": "IAU 1930 region containing the ASTROMETRIC target-centre position, as supplied by Horizons quantity 29."
+    },
+    "precision": {
+      "time_tags": "UTC hourly samples printed to the minute.",
+      "declination_decimal_degrees": 9,
+      "distance_decimal_AU": 14,
+      "radial_velocity_decimal_km_s": 7,
+      "ecliptic_decimal_degrees": 7,
+      "event_output": "Numerical spline root rounded to nearest second; not independent one-second physical accuracy."
+    },
+    "time_caveat": "Horizons UT output after 1962 is UTC; future intervals use the last known leap-second offset at retrieval."
+  },
+  "method": "Roots of interpolated JPL deldot range-rate; negative-to-positive is perigee, positive-to-negative apogee.",
+  "limits": [
+    "Interpolating an hourly table does not create authoritative second-resolution event measurements.",
+    "Apparent coordinates and Horizons astrometric constellation labels have different corrections; tiny ingress offsets can be frame effects.",
+    "A constellation excursion shorter than an hour can be missed if both sample endpoints have the same label.",
+    "Geocentric events do not provide local rise/set, culmination altitude, eclipse visibility or occultation circumstances.",
+    "No hemisphere-dependent agricultural interpretation or publisher-specific sector boundary is tested by these fixtures.",
+    "Agreement verifies astronomical computation only, not planting, harvest, flavour or yield claims."
+  ],
+  "events": [
+    {
+      "type": "apogee",
+      "instant_utc": "2028-01-01T03:59:18Z",
+      "bracket_start_utc": "2028-01-01T03:00:00Z",
+      "bracket_end_utc": "2028-01-01T04:00:00Z",
+      "value": 0.0027116828,
+      "unit": "AU"
+    }
+  ]
+}
