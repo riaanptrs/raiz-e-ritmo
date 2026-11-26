@@ -27,6 +27,7 @@ const SOURCES = {
   evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
   planting: 'https://extension.umn.edu/planting-and-growing-guides/planting-vegetable-garden',
   harvest: 'https://extension.umn.edu/planting-and-growing-guides/harvesting-and-storing-home-garden-vegetables',
+  herbs: 'https://extension.umn.edu/vegetables/growing-herbs',
   usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
   jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
   engine: 'https://github.com/cosinekitty/astronomy',
@@ -232,7 +233,7 @@ function PreparationGuide() {
     <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
     <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
     <SourceLink href={DEMETER_STANDARD + '#page=122'}>Orientações de produção e materiais · Demeter 2026, Apêndice 8</SourceLink>
-    <p className="note">Estas indicações descrevem a prática tradicional. As fases da Lua e as janelas de semeadura deste calendário não geram alertas de aplicação. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
+    <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. O planejamento de aplicação segue a etapa da cultura. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
     <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
   </details>;
 }
@@ -241,6 +242,16 @@ function GardenGuide() {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
     <h2 id="garden-title" tabIndex={-1}>O que fazer hoje na horta?</h2>
     <p>Na agricultura biodinâmica de Rudolf Steiner, a propriedade é vista como um organismo. Para uma horta pequena, isso começa com uma pergunta prática: como o solo, a água, as plantas e a vida no entorno se relacionam neste lugar?</p>
+    <details className="preparation-guide">
+      <summary>Como usar o calendário com as orientações de Steiner?</summary>
+      <ol>
+        <li><strong>Comece pela tarefa.</strong> Veja se é época da cultura, se o solo está em condições e se a muda ou a planta está no estágio certo.</li>
+        <li><strong>Use a data para observar.</strong> Na primeira palestra, Steiner levantou a questão da semeadura em relação à chuva seguida de Lua cheia. Se quiser observar essa hipótese, consulte a fase no calendário e anote a chuva que caiu no seu local. A passagem trata de certas plantas e deixa em aberto a escolha de um dia para cada cultura.</li>
+        <li><strong>Registre o resultado.</strong> Anote a cultura, a data, a umidade do solo e quantas mudas emergiram. Ao comparar duas semeaduras, use sementes do mesmo lote e observe cada canteiro após o mesmo número de dias.</li>
+      </ol>
+      <p>O curso de 1924 orienta esta leitura. As janelas de nós e perigeu exibidas em 2027 vêm do Stella Natura. A indicação de três dias antes da Lua cheia, apresentada em Aprender, vem de Charles Kovacs.</p>
+      <AgricultureCourseCitation location="Palestra 1, p. 26, e discussão da palestra 4, p. 80 do PDF consultado." />
+    </details>
     <details className="preparation-guide">
       <summary>Como aplicar essa visão numa horta pequena?</summary>
       <ul>
@@ -254,23 +265,30 @@ function GardenGuide() {
     <h3>Semear, transplantar ou colher</h3>
     <div className="garden-actions">
       <article>
-        <h3>Semear</h3>
+        <h4>Semear</h4>
         <p>Steiner propôs observar a chuva junto com a Lua cheia ao pensar na germinação. Se você segue a prática do preparado 500, ele orientou aplicá-lo ao solo antes de semear.</p>
         <p>Para decidir se o canteiro está pronto, confira a época da cultura na sua região e a umidade do solo. Semeie na profundidade indicada para a cultura.</p>
         <AgricultureCourseCitation location="Palestra 1 e discussão da palestra 4, pp. 26 e 82 do PDF consultado." />
         <SourceLink href={SOURCES.planting}>Complemento de horticultura: semeadura</SourceLink>
       </article>
       <article>
-        <h3>Transplantar</h3>
-        <p>Se a muda cresceu em local protegido, acostume-a ao sol e ao vento aos poucos antes de levá-la ao canteiro. Dê preferência a um fim de tarde ou dia nublado e regue após o transplante.</p>
+        <h4>Transplantar</h4>
+        <p><strong>Quando:</strong> quando a muda estiver vigorosa e acostumada às condições externas. Prefira um fim de tarde ou um dia nublado.</p>
+        <p><strong>Por quê e como:</strong> a adaptação gradual reduz o choque do transplante. Exponha as mudas ao sol e ao vento aos poucos antes de plantar e regue depois.</p>
         <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Complemento de horticultura: transplante</SourceLink>
       </article>
       <article>
-        <h3>Colher</h3>
+        <h4>Colher</h4>
         <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
         <SourceLink href={SOURCES.harvest}>Complemento de horticultura: colheita</SourceLink>
       </article>
     </div>
+    <details className="preparation-guide">
+      <summary>Ervas em vasos e hortaliças em canteiros</summary>
+      <p><strong>Manjericão ou hortelã:</strong> use um vaso com furos para a água sair. Colha folhas ou ramos conforme precisar, à medida que a planta cresce. Mantenha a hortelã em um recipiente próprio se quiser conter sua expansão.</p>
+      <p><strong>Alface ou tomate:</strong> observe a parte que será colhida. Na alface, procure folhas tenras. No tomate de variedade vermelha, observe quando a cor fica uniformemente rosada ou vermelha.</p>
+      <SourceLink href={SOURCES.herbs}>Complemento de horticultura: cultivo de ervas</SourceLink>
+    </details>
     <p className="note">As janelas do Stella Natura são uma orientação tradicional para semeadura. Para transplante e colheita, use os sinais da planta e as condições do local.</p>
     <PreparationGuide />
   </section>;
