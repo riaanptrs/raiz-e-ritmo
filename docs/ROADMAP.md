@@ -16,6 +16,6 @@ Select a complete source or openly specified method. Resolve numerical boundarie
 
 ## Milestone 4 — Regional guidance
 
-Add reviewed crop/task guidance, separate vermicompost instructions and preparation protocols. Consider a weather integration only with documented coverage, freshness and failure behaviour. Evaluate reminders after useful, verified task guidance exists.
+The practical guide introduces preparation timing by stage of work (500 before sowing, 501 on growing plants, 502–507 during composting), with citations to the consulted edition. Before adding crop-specific preparation instructions, identify a protocol with its edition, eligible crops, conditions, timing and safety guidance, then review those details against the source. Treat any proposed astronomical trigger as a separate rule requiring documentation and validation. Add reviewed regional crop guidance and separate vermicompost instructions. Consider a weather integration only with documented coverage, freshness and failure behaviour. Evaluate reminders after useful, verified task guidance exists.
 
 GitHub Pages is the initial deployment target. A native app-store release, accounts and cloud synchronization can be evaluated later from actual user needs.

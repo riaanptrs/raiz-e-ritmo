@@ -12,6 +12,7 @@ O calendário separa astronomia, interpretação tradicional e evidência agríc
 
 ### O que funciona
 
+- Orientações práticas para semear, transplantar e colher a partir do solo e do estágio da planta, acessíveis o ano inteiro. Um guia de preparados biodinâmicos explica em que etapa entram o 500, o 501 e os preparados de composto, com referências à edição consultada. A calculadora converte as faixas Demeter por área tratada ou volume de composto e explica como medir pequenas doses e calibrar a água de aplicação.
 - Calendário mensal, detalhes por dia e navegação por teclado; datas fora da cobertura têm uma indicação clara.
 - Dezembro de 2026 tem cobertura parcial: fases principais e solstício, com horários publicados por Fred Espenak no AstroPixels. Os demais dados lunares e as janelas tradicionais estão disponíveis para 2027.
 - 49 fases principais publicadas pelo USNO, preservadas com sua precisão original de minuto.

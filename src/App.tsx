@@ -25,6 +25,8 @@ const SOURCES = {
   seasons: 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027',
   iau: 'https://www.iau.org/IAU/Astronomy-FAQs/Constellations.aspx',
   evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
+  planting: 'https://extension.umn.edu/planting-and-growing-guides/planting-vegetable-garden',
+  harvest: 'https://extension.umn.edu/planting-and-growing-guides/harvesting-and-storing-home-garden-vegetables',
   usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
   jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
   engine: 'https://github.com/cosinekitty/astronomy',
@@ -154,6 +156,113 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
   </aside>;
 }
 
+const DEMETER_STANDARD = 'https://demeter.net/wp-content/uploads/2025/11/2026_Int_Dem_bio_Standard_eng.pdf';
+
+function preparationRange(value: number, minRate: number, maxRate: number, unit: string) {
+  const format = new Intl.NumberFormat('pt-BR', { maximumSignificantDigits: 4 });
+  return `${format.format(value * minRate)} a ${format.format(value * maxRate)} ${unit}`;
+}
+
+function AgricultureCourseCitation({ location }: { location: string }) {
+  return <p className="source-note">Rudolf Steiner, <cite>Agriculture Course: The Birth of the Biodynamic Method</cite>, tradução de George Adams, Rudolf Steiner Press, 2012. {location}</p>;
+}
+
+function PreparationQuantities() {
+  const [area, setArea] = useState('10');
+  const [areaUnit, setAreaUnit] = useState('m²');
+  const [compost, setCompost] = useState('100');
+  const hectares = Number(area) / (areaUnit === 'm²' ? 10_000 : 1);
+  const cubicMeters = Number(compost) / 1_000;
+
+  return <section className="preparation-quantities" aria-labelledby="prep-quantities">
+    <h3 id="prep-quantities">Quanto usar na sua área?</h3>
+    <p>As faixas de referência do Apêndice 8 da Demeter são de 50 a 300 g/ha para o 500, de 2,5 a 5 g/ha para o 501 e de 1 a 2 mL de cada preparado de composto por 10 m³. São referências de aplicação da tradição, sem indicação de eficácia para um canteiro específico.</p>
+    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026 · Apêndice 8, p. 122</SourceLink>
+    <details>
+      <summary>Por que a calculadora usa gramas?</summary>
+      <p>No curso de 1924, Steiner usou um balde de ordenha suíço como referência e deixou a padronização das medidas em aberto. A calculadora usa as faixas métricas da Demeter para converter a quantidade conforme a área ou o volume de composto.</p>
+      <AgricultureCourseCitation location="Discussão da palestra 4, p. 78 do PDF consultado." />
+    </details>
+    <div className="preparation-inputs">
+      <label>Área a tratar<input type="number" step="any" min="0" inputMode="decimal" value={area} onChange={event => setArea(event.target.value)} /></label>
+      <label>Unidade de área<select value={areaUnit} onChange={event => setAreaUnit(event.target.value)}><option>m²</option><option>ha</option></select></label>
+      <label>Volume de composto (L)<input type="number" step="any" min="0" inputMode="decimal" value={compost} onChange={event => setCompost(event.target.value)} /></label>
+    </div>
+    <ul className="preparation-results" aria-live="polite">
+      <li><strong>500:</strong> {hectares > 0 && Number.isFinite(hectares) ? preparationRange(hectares, 50, 300, 'g') : 'Informe uma área positiva.'}</li>
+      <li><strong>501:</strong> {hectares > 0 && Number.isFinite(hectares) ? preparationRange(hectares, 2.5, 5, 'g') : 'Informe uma área positiva.'}</li>
+      <li><strong>502–507:</strong> {cubicMeters > 0 && Number.isFinite(cubicMeters) ? preparationRange(cubicMeters / 10, 1, 2, 'mL de cada preparado') : 'Informe um volume positivo.'}</li>
+    </ul>
+    <p>O resultado indica a quantidade do preparado, antes de adicionar água. Meça apenas os canteiros ou talhões que serão tratados. Para o composto, use o volume da pilha, em vez da área da horta.</p>
+    <p>Se a dose for menor do que sua balança ou dosador consegue medir, use um produto pré-dosado para a área, consulte o fornecedor sobre uma dose fracionada ou organize um lote compartilhado. Em 10 m², por exemplo, o 501 fica entre 2,5 e 5 mg. Uma colher de cozinha não permite medir essa quantidade.</p>
+  </section>;
+}
+
+function PreparationGuide() {
+  return <details className="preparation-guide">
+    <summary>Quando entram os preparados biodinâmicos?</summary>
+    <p>Na tradição biodinâmica, o momento depende do trabalho em andamento. Use este guia para entender onde cada preparado se encaixa.</p>
+    <dl>
+      <div>
+        <dt>Antes de semear · 500, esterco de chifre</dt>
+        <dd>Se você segue essa prática, planeje a aplicação no solo na etapa de preparo do canteiro. Steiner propôs essa ordem para que, segundo sua explicação, o preparado pudesse atuar no solo antes da chegada da semente. Ele também relata uma aplicação tardia naquele ano e deixa a avaliação do resultado em aberto.</dd>
+        <dd className="source-note">Steiner, discussão da palestra 4 em Agriculture Course (George Adams, 2012), p. 82 do PDF consultado. Ver também What Is Biodynamics?, pp. 92–93 do PDF consultado.</dd>
+      </div>
+      <div>
+        <dt>Com a cultura em crescimento · 501, sílica de chifre</dt>
+        <dd>Steiner descreve o uso sobre as plantas, como complemento ao trabalho no solo. Planeje essa etapa em função da cultura já estabelecida. A passagem consultada não fixa um dia ou horário de aplicação para cada hortaliça.</dd>
+        <dd className="source-note">Steiner, palestra de agricultura de 12 de junho de 1924, p. 86 do PDF.</dd>
+      </div>
+      <div>
+        <dt>Durante a compostagem · preparados 502 a 507</dt>
+        <dd>Se estiver preparando uma pilha de composto, é nessa etapa que entra o conjunto de preparados descrito na obra. A aplicação é na pilha, durante o preparo do composto que será usado mais adiante.</dd>
+        <dd className="source-note">Hugh J. Courtney, introdução, pp. 7–8, e Steiner, perguntas da palestra de 13 de junho de 1924, p. 111 do PDF.</dd>
+      </div>
+    </dl>
+    <PreparationQuantities />
+    <h3>Como preparar para usar</h3>
+    <ol>
+      <li><strong>Escolha o produto para a tarefa.</strong> Use um preparado pronto de procedência conhecida e confira o rótulo para dose, diluição, modo de mistura e uso na cultura. O 500 vai ao solo, o 501 às plantas e o conjunto 502 a 507 à pilha de composto.</li>
+      <li><strong>Calibre a água com o equipamento limpo.</strong> Para uma aplicação líquida, teste primeiro com água pura em uma área medida. Se usar 2 L em 100 m², com a mesma cobertura precisará de 0,2 L para 10 m² ou 200 L para 1 ha. Ajuste a técnica para distribuir uniformemente, sem escorrer.</li>
+      <li><strong>Misture apenas o que vai usar.</strong> Siga o rótulo sobre o volume mínimo de mistura, a agitação e o prazo de uso. Em área pequena, prefira um lote pré-dosado ou compartilhado quando o equipamento não comportar o volume calculado.</li>
+    </ol>
+    <h3>Como adaptar a produção</h3>
+    <p><strong>507, valeriana.</strong> A base vegetal é o suco das flores de <i>Valeriana officinalis</i>, obtido por prensagem. Steiner descreve diluir o extrato em água morna antes de aplicá-lo à pilha. A passagem não fixa uma diluição para pequenas pilhas. Se você precisa de uma dose reproduzível, use um extrato com rótulo e dosador.</p>
+    <p className="source-note">Steiner, palestra de 13 de junho de 1924, p. 107 do PDF consultado.</p>
+    <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
+    <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
+    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Orientações de produção e materiais · Demeter 2026, Apêndice 8</SourceLink>
+    <p className="note">Estas indicações descrevem a prática tradicional. As fases da Lua e as janelas de semeadura deste calendário não geram alertas de aplicação. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
+    <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
+  </details>;
+}
+
+function GardenGuide() {
+  return <section className="garden-guide reading-card" aria-labelledby="garden-title">
+    <h2 id="garden-title">O que fazer hoje na horta?</h2>
+    <p>Escolha pela condição do solo e pelo estágio da planta. Estas orientações valem mesmo fora das datas do calendário.</p>
+    <div className="garden-actions">
+      <article>
+        <h3>Semear</h3>
+        <p>Confira a época de semeadura indicada para sua região na embalagem. Semeie na profundidade indicada e mantenha o substrato úmido, sem encharcar.</p>
+        <SourceLink href={SOURCES.planting}>Guia de semeadura</SourceLink>
+      </article>
+      <article>
+        <h3>Transplantar</h3>
+        <p>Se a muda cresceu em local protegido, acostume-a ao sol e ao vento aos poucos antes de levá-la ao canteiro. Dê preferência a um fim de tarde ou dia nublado e regue após o transplante.</p>
+        <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Guia de transplante</SourceLink>
+      </article>
+      <article>
+        <h3>Colher</h3>
+        <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
+        <SourceLink href={SOURCES.harvest}>Guia de colheita por cultura</SourceLink>
+      </article>
+    </div>
+    <p className="note">As janelas tradicionais aparecem nos detalhes das datas cobertas. Elas se referem à semeadura e não definem dias de transplante ou colheita.</p>
+    <PreparationGuide />
+  </section>;
+}
+
 function Learning({ onMethod }: { onMethod: () => void }) {
   return <section className="reading-view" aria-labelledby="learn-title">
     <div className="section-intro"><span className="eyebrow">APRENDER COM O JARDIM</span><h1 id="learn-title">Observe o céu.<br />Conheça o seu chão.</h1><p>Um calendário se torna mais útil quando você entende o que ele mostra, de onde vem a orientação e o que precisa observar no seu próprio cultivo.</p></div>
@@ -162,13 +271,33 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <article className="learning-card"><span className="card-icon"><Icon kind="leaf" size={28} /></span><h2>Como usar no cotidiano?</h2><p>Comece observando umidade do solo, clima e estágio da planta. Registre o que fez, as condições e o resultado. Use as indicações tradicionais como uma escolha a investigar, sem deixar o calendário substituir a atenção ao jardim.</p><SourceLink href={SOURCES.stella}>Calendário, clima e observação</SourceLink></article>
       <article className="learning-card"><span className="card-icon"><Icon kind="calendar" size={28} /></span><h2>Quando consultar?</h2><p>Ao planejar uma tarefa, confira o horário local e os intervalos dentro do dia. Uma transição pode acontecer no meio da manhã ou à noite. O mesmo evento pode cair em datas diferentes conforme o fuso.</p><SourceLink href={SOURCES.jpl}>Como os eventos são definidos</SourceLink></article>
     </div>
+    <article className="reading-card">
+      <h2>Como a tradição usa os calendários</h2>
+      <p>Hugh J. Courtney descreve métodos diferentes de dividir o céu e registra que alguns praticantes não conseguiram repetir os resultados que esperavam. As orientações mudam conforme o calendário consultado. Para escolher a tarefa de hoje, comece pelas condições que você pode observar na horta.</p>
+      <p className="source-note">Hugh J. Courtney, introdução a <cite>What Is Biodynamics?</cite>, de Rudolf Steiner, SteinerBooks, 2005, páginas 11–12 do PDF consultado.</p>
+      <h3>Por que observar a chuva junto com a Lua?</h3>
+      <p>Na primeira palestra do curso de 1924, Steiner propôs que a chuva antes da Lua cheia poderia influenciar a germinação de certas plantas. Essa hipótese faz parte da explicação biodinâmica para observar os dois ritmos. Na horta, confira se o solo está úmido, sem estar encharcado, e se a época é adequada para a cultura antes de semear.</p>
+      <AgricultureCourseCitation location="Palestra 1, p. 26 do PDF consultado." />
+      <details>
+        <summary>Como Kovacs ensinava a escolher uma data?</summary>
+        <p>Na aula sobre sementes, Kovacs apresenta três dias antes da Lua cheia como momento para semear. A passagem descreve essa orientação sem apresentar uma comparação medida que permita prever a germinação na sua horta. Se quiser observá-la, use o exercício de comparação de semeaduras abaixo e registre também o clima.</p>
+        <p className="source-note">Charles Kovacs, <cite>Botany</cite>, cap. 17, Floris Books, edição digital de 2020, p. 43 do PDF consultado.</p>
+      </details>
+    </article>
     <article className="reading-card observation-guide">
       <h2>Da leitura à observação</h2>
       <ol>
         <li><strong>Escolha um dia.</strong> Confira o fuso e identifique o que aparece. Uma fase tem hora marcada. Uma janela tradicional pode começar na véspera e terminar no dia seguinte.</li>
         <li><strong>Confira as condições.</strong> Antes de semear, veja se o solo está úmido sem estar encharcado e considere a chuva e a temperatura. Antes de transplantar, observe o estágio e o vigor da muda.</li>
-        <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa. Se comparar duas semeaduras, mantenha condições semelhantes e registre também as diferenças. Uma diferença na germinação pode ter várias causas.</li>
+        <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa.</li>
       </ol>
+      <h3>Da semente às primeiras folhas</h3>
+      <p>Quando uma muda de feijão emergir, procure os cotilédones, também chamados de folhas da semente. Observe depois as primeiras folhas verdadeiras, que aparecem no caule e têm outra forma. Faça um desenho ou tire uma foto em cada etapa e anote quantos dias se passaram desde a semeadura. Para comparar dois canteiros, conte a emergência pelo mesmo critério nos dois.</p>
+      <p className="source-note">Atividade adaptada de Charles Kovacs, <cite>Botany</cite>, cap. 17, “Seeds and Cotyledons”, Floris Books, edição digital de 2020, pp. 42–43 do PDF consultado.</p>
+      <h3>Como comparar duas semeaduras</h3>
+      <p>Ao relatar o curso de 1924, Steiner descreveu como um grupo de agricultores reuniria informações sobre o solo, o clima e o entorno de cada propriedade antes de testar as práticas propostas.</p>
+      <p>Na horta, comece com dois trechos semelhantes. Se quiser observar duas datas de semeadura, use sementes do mesmo lote, na mesma profundidade, e mantenha o manejo tão parecido quanto possível. Anote chuva e temperatura e conte quantas mudas emergiram após o mesmo número de dias em cada trecho. Uma diferença ajuda a formular a próxima pergunta e pode ter várias causas.</p>
+      <p className="source-note">Rudolf Steiner, relato de 20 de junho de 1924 em <cite>Spiritual Foundations for the Renewal of Agriculture</cite>, tradução de Catherine Creeger e Malcolm Gardner, 1993, pp. 9 e 11 do PDF consultado. O exemplo da horta é uma adaptação do Raiz &amp; Ritmo.</p>
       <p>Um estudo da UNESP com cenouras em dois períodos encontrou diferenças em alguns contrastes. O estudo não encontrou diferença associada ao ritmo ascendente e descendente nos aspectos avaliados. <SourceLink href={SOURCES.evidence}>Consultar o estudo</SourceLink></p>
     </article>
     <article className="reading-card rhythm-guide"><div><span className="eyebrow">CADA RITMO TEM SUA PRÓPRIA PERGUNTA</span><h2>A Lua tem mais de um ciclo</h2><p>“Crescente” não significa “ascendente”. E um nó ascendente não é o início da Lua ascendente.</p></div><dl>
@@ -328,6 +457,7 @@ export default function App() {
     <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
         <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>DEZ 2026 A DEZ 2027</span></div></div><BotanicalDrawing /></section>
+        <GardenGuide />
         <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
           else { setSettings(previous => ({ ...previous, timeZone: e.target.value })); setShowCustomZone(false); setZoneError(''); }
