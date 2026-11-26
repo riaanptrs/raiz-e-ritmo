@@ -176,6 +176,40 @@ function PreparationQuantities() {
   </section>;
 }
 
+function IntercroppingGuide() {
+  return <section aria-labelledby="intercropping-title">
+    <h2 id="intercropping-title">Consórcios: como cultivar plantas juntas</h2>
+    <p>Na sétima palestra, Steiner chama a atenção para as relações entre as áreas cultivadas, a vegetação do entorno, as aves e os insetos. Na horta, observe essas relações antes de decidir onde plantar. Na agrofloresta, a Embrapa descreve como distribuir as espécies no espaço e ajustar a sombra conforme crescem.</p>
+    <AgricultureCourseCitation location="Palestra 7, pp. 129–131 do PDF consultado." />
+    <p className="source-note">Armando e colaboradores, <cite>Agrofloresta para agricultura familiar</cite>, Embrapa, Circular Técnica 16, 2002, seções sobre podas de formação e sucessão ecológica.</p>
+    <div className="garden-actions">
+      <article>
+        <h3>Alface americana com coentro ou salsa</h3>
+        <p>Em um canteiro, experimente uma erva de cada vez ao lado da alface e deixe espaço para colher as duas. Em vasos pequenos, você pode começar com um recipiente para cada espécie e aproximá-los para observar como a luz incide em cada um.</p>
+        <p>Um ensaio brasileiro testou coentro e salsa separadamente com alface americana. O estudo não detectou diferença significativa na produtividade da alface no conjunto dos tratamentos. O resultado se refere à alface nas condições do ensaio.</p>
+        <p className="source-note">Forlani e Riva Neto, 2022, <cite>Produção orgânica de alface americana em consórcio com almeirão, coentro, rúcula e salsa</cite>. DOI 10.36560/151220221639.</p>
+      </article>
+      <article>
+        <h3>Alface e rúcula</h3>
+        <p>Experimente semear a rúcula na mesma semana em que transplantar a alface. Num ensaio em Jaboticabal, os melhores momentos dependeram da variedade de alface e da época. Semear a rúcula 14 dias depois reduziu sua massa seca nos consórcios tardios.</p>
+        <p className="source-note">Costa e colaboradores, 2007, <cite>Viabilidade agronômica do consórcio de alface e rúcula, em duas épocas de cultivo</cite>. DOI 10.1590/S0102-05362007000100008.</p>
+      </article>
+      <article>
+        <h3>Tomate e alface</h3>
+        <p>Observe onde a sombra do tomateiro cai à medida que ele cresce e acompanhe o desenvolvimento da alface. No ensaio de Jaboticabal, o tomate manteve a produtividade comercial, mas a alface produziu menos no consórcio. Os melhores resultados de uso da área vieram quando a alface foi transplantada até 14 dias depois do tomate.</p>
+        <p className="source-note">Rezende, Canato e Cecílio Filho, 2005, <cite>Influência das épocas de cultivo e do estabelecimento do consórcio na produção de tomate e alface consorciados</cite>. DOI 10.1590/S1413-70542005000100009.</p>
+      </article>
+    </div>
+    <h3>Como testar no seu espaço</h3>
+    <ol>
+      <li><strong>Desenhe antes de plantar.</strong> Observe o sol de manhã e à tarde. Reserve espaço para as plantas crescerem e para você regar e colher. Num sistema com árvores, reveja o desenho conforme as copas crescem.</li>
+      <li><strong>Compare com um cultivo sozinho.</strong> Se houver espaço, plante algumas mudas da mesma alface sem a erva vizinha e compare com o trecho em consórcio. Use a mesma variedade, época e manejo, e anote diferenças de luz ou água.</li>
+      <li><strong>Registre as duas colheitas.</strong> Compare a quantidade colhida por espécie, o espaço ocupado e o trabalho necessário. Uma combinação pode aproveitar melhor a área mesmo quando uma das culturas rende menos por planta.</li>
+    </ol>
+    <p>Vasos vizinhos permitem observar sombra e organização do espaço. Os estudos citados avaliaram plantas em consórcio no solo. Para manjericão e cebolinha, experimente a disposição dos vasos e registre o que observa.</p>
+  </section>;
+}
+
 function CompostGuide() {
   return <section aria-labelledby="compost-title">
     <h2 id="compost-title">Compostagem biodinâmica com sobras da cozinha</h2>
@@ -301,6 +335,7 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
     </section>
     <p className="note">No detalhe de cada data coberta de 2027, as janelas do Stella Natura indicam quando essa tradição sugere evitar a semeadura. Para acompanhar transplantes e colheitas, anote o estágio da planta e as condições do local.</p>
     <p className="source-note">Transplante e colheita: Sherry Wildfeuer, <cite>Stella Natura</cite>, orientações da edição de 2024.</p>
+    <IntercroppingGuide />
     <CompostGuide />
     <h2>Preparados biodinâmicos</h2>
     <PreparationGuide />
@@ -362,6 +397,7 @@ function Method() {
     <div className="method-principles"><article><span className="small-tag">ASTRONOMIA</span><h2>O que acontece no céu</h2><p>Eventos e posições calculáveis, com horários convertidos para o fuso escolhido.</p></article><article><span className="small-tag">TRADIÇÃO</span><h2>Como é interpretado</h2><p>Regras atribuídas à publicação que as descreve. Não existe uma regra única para todos os calendários.</p></article><article><span className="small-tag">EVIDÊNCIA</span><h2>O que isso demonstra</h2><p>Acertar a geometria não demonstra uma melhora de produtividade, sabor ou saúde das plantas.</p></article></div>
     <article className="reading-card">
       <h2>Fontes do guia da horta</h2>
+      <p>A seção de consórcios tem referências bibliográficas junto aos exemplos. Ela distingue a perspectiva de Steiner, o planejamento agroflorestal da Embrapa e os resultados dos ensaios brasileiros.</p>
       <p>As palestras de Rudolf Steiner fundamentam a leitura biodinâmica. As referências a cada edição e às páginas consultadas aparecem junto às orientações no guia.</p>
       <p>O guia de semeadura e as atividades de observação recorrem a <cite>Botany</cite>, de Charles Kovacs. Para a distinção entre colheita fresca e colheita para guardar, e para o contexto do transplante na tradição de Maria Thun, o guia usa o <cite>Stella Natura</cite>, manual da edição de 2024, de Sherry Wildfeuer.</p>
       <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026 da Demeter, Apêndice 8, p. 122, que indica as faixas por hectare e por volume de composto.</p>
