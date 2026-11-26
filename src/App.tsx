@@ -152,6 +152,39 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
   </aside>;
 }
 
+const DEMETER_STANDARD = 'https://demeter.net/wp-content/uploads/2025/11/2026_Int_Dem_bio_Standard_eng.pdf';
+
+function preparationRange(value: number, minRate: number, maxRate: number, unit: string) {
+  const format = new Intl.NumberFormat('pt-BR', { maximumSignificantDigits: 4 });
+  return `${format.format(value * minRate)} a ${format.format(value * maxRate)} ${unit}`;
+}
+
+function PreparationQuantities() {
+  const [area, setArea] = useState('10');
+  const [areaUnit, setAreaUnit] = useState('m²');
+  const [compost, setCompost] = useState('100');
+  const hectares = Number(area) / (areaUnit === 'm²' ? 10_000 : 1);
+  const cubicMeters = Number(compost) / 1_000;
+
+  return <section className="preparation-quantities" aria-labelledby="prep-quantities">
+    <h3 id="prep-quantities">Quanto usar na sua área?</h3>
+    <p>As faixas de referência do Apêndice 8 da Demeter são de 50 a 300 g/ha para o 500, de 2,5 a 5 g/ha para o 501 e de 1 a 2 mL de cada preparado de composto por 10 m³. São referências de aplicação da tradição, sem indicação de eficácia para um canteiro específico.</p>
+    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026 · Apêndice 8, p. 122</SourceLink>
+    <div className="preparation-inputs">
+      <label>Área a tratar<input type="number" step="any" min="0" inputMode="decimal" value={area} onChange={event => setArea(event.target.value)} /></label>
+      <label>Unidade de área<select value={areaUnit} onChange={event => setAreaUnit(event.target.value)}><option>m²</option><option>ha</option></select></label>
+      <label>Volume de composto (L)<input type="number" step="any" min="0" inputMode="decimal" value={compost} onChange={event => setCompost(event.target.value)} /></label>
+    </div>
+    <ul className="preparation-results" aria-live="polite">
+      <li><strong>500:</strong> {hectares > 0 && Number.isFinite(hectares) ? preparationRange(hectares, 50, 300, 'g') : 'Informe uma área positiva.'}</li>
+      <li><strong>501:</strong> {hectares > 0 && Number.isFinite(hectares) ? preparationRange(hectares, 2.5, 5, 'g') : 'Informe uma área positiva.'}</li>
+      <li><strong>502–507:</strong> {cubicMeters > 0 && Number.isFinite(cubicMeters) ? preparationRange(cubicMeters / 10, 1, 2, 'mL de cada preparado') : 'Informe um volume positivo.'}</li>
+    </ul>
+    <p>O resultado indica a quantidade do preparado, antes de adicionar água. Meça apenas os canteiros ou talhões que serão tratados. Para o composto, use o volume da pilha, em vez da área da horta.</p>
+    <p>Se a dose for menor do que sua balança ou dosador consegue medir, use um produto pré-dosado para a área, consulte o fornecedor sobre uma dose fracionada ou organize um lote compartilhado. Em 10 m², por exemplo, o 501 fica entre 2,5 e 5 mg. Uma colher de cozinha não permite medir essa quantidade.</p>
+  </section>;
+}
+
 function PreparationGuide() {
   return <details className="preparation-guide">
     <summary>Quando entram os preparados biodinâmicos?</summary>
@@ -173,6 +206,19 @@ function PreparationGuide() {
         <dd className="source-note">Hugh J. Courtney, introdução, pp. 7–8, e Steiner, perguntas da palestra de 13 de junho de 1924, p. 111 do PDF.</dd>
       </div>
     </dl>
+    <PreparationQuantities />
+    <h3>Como preparar para usar</h3>
+    <ol>
+      <li><strong>Escolha o produto para a tarefa.</strong> Use um preparado pronto de procedência conhecida e confira o rótulo para dose, diluição, modo de mistura e uso na cultura. O 500 vai ao solo, o 501 às plantas e o conjunto 502 a 507 à pilha de composto.</li>
+      <li><strong>Calibre a água com o equipamento limpo.</strong> Para uma aplicação líquida, teste primeiro com água pura em uma área medida. Se usar 2 L em 100 m², com a mesma cobertura precisará de 0,2 L para 10 m² ou 200 L para 1 ha. Ajuste a técnica para distribuir uniformemente, sem escorrer.</li>
+      <li><strong>Misture apenas o que vai usar.</strong> Siga o rótulo sobre o volume mínimo de mistura, a agitação e o prazo de uso. Em área pequena, prefira um lote pré-dosado ou compartilhado quando o equipamento não comportar o volume calculado.</li>
+    </ol>
+    <h3>Como adaptar a produção</h3>
+    <p><strong>507, valeriana.</strong> A base vegetal é o suco das flores de <i>Valeriana officinalis</i>, obtido por prensagem. Steiner descreve diluir o extrato em água morna antes de aplicá-lo à pilha. A passagem não fixa uma diluição para pequenas pilhas. Se você precisa de uma dose reproduzível, use um extrato com rótulo e dosador.</p>
+    <p className="source-note">Steiner, palestra de 13 de junho de 1924, p. 107 do PDF consultado.</p>
+    <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
+    <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
+    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Orientações de produção e materiais · Demeter 2026, Apêndice 8</SourceLink>
     <p className="note">Estas indicações descrevem a prática tradicional. As fases da Lua e as janelas de semeadura deste calendário não geram alertas de aplicação. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
     <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
   </details>;

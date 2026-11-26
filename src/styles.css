@@ -64,3 +64,11 @@
 .preparation-guide dt { font-weight: 650; }
 .preparation-guide dd { margin: 5px 0 0; color: #40543e; line-height: 1.65; }
 .preparation-guide dd.source-note { margin-top: 5px !important; }
+
+.preparation-inputs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 16px; }
+.preparation-inputs label { display: grid; align-content: start; gap: 6px; min-width: 0; }
+.preparation-inputs input, .preparation-inputs select { width: 100%; min-height: 44px; padding: 8px; border: 1px solid #859784; border-radius: 6px; background: white; color: inherit; font: inherit; }
+.preparation-guide ol { padding-inline-start: 1.5rem; line-height: 1.65; }
+@media (max-width: 600px) {
+  .preparation-inputs { grid-template-columns: 1fr; }
+}
