@@ -25,9 +25,6 @@ const SOURCES = {
   seasons: 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027',
   iau: 'https://www.iau.org/IAU/Astronomy-FAQs/Constellations.aspx',
   evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
-  planting: 'https://extension.umn.edu/planting-and-growing-guides/planting-vegetable-garden',
-  harvest: 'https://extension.umn.edu/planting-and-growing-guides/harvesting-and-storing-home-garden-vegetables',
-  herbs: 'https://extension.umn.edu/vegetables/growing-herbs',
   usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
   jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
   engine: 'https://github.com/cosinekitty/astronomy',
@@ -265,23 +262,25 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
       <article>
         <h4>Semear</h4>
         <p>Steiner propôs observar a chuva junto com a Lua cheia ao pensar na germinação. Se você segue a prática do preparado 500, ele orientou aplicá-lo ao solo antes de semear.</p>
-        <p>Para decidir se o canteiro está pronto, confira a época da cultura na sua região e a umidade do solo. Semeie na profundidade indicada para a cultura.</p>
+        <p>Na aula sobre sementes, Charles Kovacs orienta retirar a vegetação que compete com a muda, deixar a terra solta e considerar a época própria de cada planta. Em vasos e canteiros pequenos, vale observar também a umidade antes de semear.</p>
         <AgricultureCourseCitation location="Palestra 1 e discussão da palestra 4, pp. 26 e 82 do PDF consultado." />
+        <p className="source-note">Charles Kovacs, <cite>Botany</cite>, cap. 17, Floris Books, edição digital de 2020, pp. 42–43 do PDF consultado.</p>
       </article>
       <article>
         <h4>Transplantar</h4>
-        <p><strong>Quando:</strong> quando a muda estiver vigorosa e acostumada às condições externas. Prefira um fim de tarde ou um dia nublado.</p>
-        <p><strong>Por quê e como:</strong> a adaptação gradual reduz o choque do transplante. Exponha as mudas ao sol e ao vento aos poucos antes de plantar e regue depois.</p>
+        <p>O Stella Natura descreve o arco descendente da Lua como período de transplante na tradição de Maria Thun. A janela editorial depende do método da publicação e não é calculada aqui.</p>
+        <p>Para observar essa prática, anote a data em que passou a muda do vaso para o canteiro e acompanhe como ela se estabelece. Registre também o clima e a umidade do solo.</p>
       </article>
       <article>
         <h4>Colher</h4>
-        <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
+        <p>O Stella Natura distingue a colheita para consumo imediato da colheita para guardar ou para semente. Para consumir ervas e hortaliças frescas, a publicação prioriza o frescor e a conveniência.</p>
+        <p>Para guardar a produção ou colher sementes, consulte a edição do calendário que você segue. O Raiz &amp; Ritmo ainda não identifica dias de raiz, folha, flor e fruto.</p>
       </article>
     </div>
     <details className="preparation-guide">
-      <summary>Ervas em vasos e hortaliças em canteiros</summary>
-      <p><strong>Manjericão ou hortelã:</strong> use um vaso com furos para a água sair. Colha folhas ou ramos conforme precisar, à medida que a planta cresce. Mantenha a hortelã em um recipiente próprio se quiser conter sua expansão.</p>
-      <p><strong>Alface ou tomate:</strong> observe a parte que será colhida. Na alface, procure folhas tenras. No tomate de variedade vermelha, observe quando a cor fica uniformemente rosada ou vermelha.</p>
+      <summary>Como observar ervas em vasos e hortaliças em canteiros?</summary>
+      <p>Escolha uma erva e uma hortaliça que você já cultiva. Em cada uma, registre quando surgem as primeiras folhas e quando começa a floração, se ocorrer. Anote as diferenças de sol e umidade entre os locais em vez de esperar que as duas plantas sigam o mesmo ritmo.</p>
+      <p className="source-note">Exercício do Raiz &amp; Ritmo inspirado em Charles Kovacs, <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF consultado.</p>
     </details>
     <p className="note">As janelas do Stella Natura são uma orientação tradicional para semeadura. Para transplante e colheita, use os sinais da planta e as condições do local.</p>
     <PreparationGuide />
@@ -344,13 +343,7 @@ function Method() {
     <article className="reading-card">
       <h2>Fontes do guia da horta</h2>
       <p>As palestras de Rudolf Steiner fundamentam a leitura biodinâmica. As referências a cada edição e às páginas consultadas aparecem junto às orientações no guia.</p>
-      <p>As práticas de manejo, como acostumar mudas ao sol e ao vento antes de transplantar, têm como complemento os materiais de extensão da Universidade de Minnesota:</p>
-      <ul>
-        <li><SourceLink href={SOURCES.planting}>Semeadura e plantio</SourceLink></li>
-        <li><SourceLink href="https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/planting-the-vegetable-garden#hardening-1975660">Aclimatação de mudas antes do transplante</SourceLink></li>
-        <li><SourceLink href={SOURCES.harvest}>Ponto de colheita das hortaliças</SourceLink></li>
-        <li><SourceLink href={SOURCES.herbs}>Cultivo e colheita de ervas</SourceLink></li>
-      </ul>
+      <p>O guia de semeadura e as atividades de observação recorrem a <cite>Botany</cite>, de Charles Kovacs. Para a distinção entre colheita fresca e colheita para guardar, e para o contexto do transplante na tradição de Maria Thun, o guia usa o <SourceLink href={SOURCES.stella}>Stella Natura, manual da edição de 2024</SourceLink>.</p>
       <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026. <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026, Apêndice 8</SourceLink></p>
     </article>
     <article className="reading-card"><h2>O que esta versão calcula</h2><div className="table-scroll"><table><thead><tr><th>Informação</th><th>Definição e limites</th></tr></thead><tbody>

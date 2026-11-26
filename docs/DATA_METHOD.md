@@ -10,7 +10,7 @@ Os resultados numéricos, as divergências encontradas e as instruções de repr
 
 O *Agriculture Course* de 1924 é a base da leitura biodinâmica do guia. A edição de George Adams (Rudolf Steiner Press, 2012, páginas do PDF consultado) fundamenta a discussão de chuva, Lua cheia e semeadura (p. 26), da propriedade como organismo e seu entorno (pp. 29 e 129–131), da escala de observação (p. 80) e da aplicação do 500 antes de semear (p. 82). Essas passagens não fornecem um calendário anual com tarefas para cada espécie.
 
-O módulo astronômico informa datas locais de eventos. As duas janelas tradicionais vêm do Stella Natura. A indicação de três dias antes da Lua cheia é de Charles Kovacs e aparece como leitura de uma fonte posterior. As taxas métricas dos preparados vêm do Apêndice 8 da Demeter de 2026. As práticas para vasos, transplante e ponto de colheita são complementos de horticultura e aparecem com suas próprias fontes.
+O módulo astronômico informa datas locais de eventos. As duas janelas tradicionais vêm do Stella Natura. A indicação de três dias antes da Lua cheia é de Charles Kovacs e aparece como leitura de uma fonte posterior. As taxas métricas dos preparados vêm do Apêndice 8 da Demeter de 2026. As atividades para vasos e canteiros são adaptações de observação inspiradas em Kovacs. O guia atribui ao Stella Natura a distinção entre colheita fresca e para guardar e o contexto de transplante de Maria Thun, sem calcular a janela editorial.
 
 ## Dezembro de 2026
 
