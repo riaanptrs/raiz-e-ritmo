@@ -4,7 +4,7 @@
 
 Implemented on the review branch: PT-BR month/day navigation, 2027 USNO phases, JPL-derived apsides, checked nodes and declination, IAU sky regions, astronomical seasons, explanatory guides, independent hemisphere/time-zone controls and PWA caching. The only agricultural timing rules included are the explicitly partial Stella Natura lunar-node and perigee windows. See [validation evidence](VALIDATION_2027.md).
 
-Review and merge the implementation before configuring a public launch. GitHub Pages is not automatically enabled or deployed by this change. Establish the project’s original-code/content licensing before public launch; verify installation and offline behaviour on intended phones.
+Review and merge the implementation before configuring a public launch. GitHub Pages is not automatically enabled or deployed by this change. The site is free to use. The project grants no reuse license for its original code, writing or illustrations. Verify installation and offline behaviour on intended phones.
 
 ## Milestone 2 — Personal garden notebook
 

@@ -78,7 +78,7 @@ Os testes de cache executam o worker real gerado em um ambiente controlado de re
 
 O workflow **Publish GitHub Pages** só executa por acionamento manual e publica exclusivamente a partir de `main`. A revisão, a integração e a publicação são etapas separadas.
 
-1. Revise a alteração, confirme a licença do código e do conteúdo e integre a versão aprovada em `main`.
+1. Revise a alteração, confirme que o projeto pode publicar os materiais e integre a versão aprovada em `main`.
 2. No GitHub, abra **Settings → Pages → Build and deployment** e selecione **GitHub Actions** como fonte. Se necessário, configure o ambiente `github-pages` para exigir aprovação antes do deploy.
 3. Em **Actions → Publish GitHub Pages → Run workflow**, selecione `main`. O workflow instala as dependências do lockfile, verifica e compila o projeto, e publica o conteúdo de `dist/`.
 4. Abra a URL exibida na execução. Confira o caminho `/raiz-e-ritmo/`, o escopo do service worker e a instalação nos dispositivos pretendidos.
@@ -91,4 +91,4 @@ Se o caminho público mudar, ajuste `vite.config.ts` e confira manifest, assets 
 - [Validação de 2027](docs/VALIDATION_2027.md): referências, resultados e discrepância corrigida.
 - [Produto](docs/PRODUCT_BRIEF.md), [roadmap](docs/ROADMAP.md) e [Task 01](docs/CODEX_TASK_01.md).
 
-Código e textos originais aguardam uma decisão explícita de licença para distribuição. Dependências conservam suas próprias licenças. O build inclui os avisos das dependências distribuídas com o aplicativo em `dist/third-party-licenses.txt`. Livros privados, artes de editoras e calendários comerciais completos não fazem parte deste repositório.
+O site é gratuito para consulta. O projeto não concede uma licença de reutilização para seu código, textos ou ilustrações originais. Dependências conservam suas próprias licenças. O build inclui os avisos das dependências distribuídas com o aplicativo em `dist/third-party-licenses.txt`. Livros privados, artes de editoras e calendários comerciais completos não fazem parte deste repositório.
