@@ -32,12 +32,31 @@ describe('local calendar dates and daylight saving', () => {
     expect(getDayPlan('2028-01-01', 'UTC', 'north').supported).toBe(false);
     expect(getDayPlan('2028-01-01', 'UTC', 'north').events).toEqual([]);
   });
+  it('shows December phases on the correct local date and continues into January', () => {
+    const christmasEve = getDayPlan('2026-12-24', 'UTC', 'south');
+    expect(christmasEve.events).toEqual([expect.objectContaining({
+      type: 'full_moon', instantUtc: '2026-12-24T01:28:00Z',
+    })]);
+    const brazil = getDayPlan('2026-12-23', 'America/Sao_Paulo', 'south');
+    expect(brazil.events).toEqual(christmasEve.events);
+    expect(brazil.cautions).toEqual([]);
+    expect(getDayPlan('2026-12-31', 'Pacific/Kiritimati', 'south').events)
+      .toContainEqual(expect.objectContaining({ type: 'last_quarter' }));
+    expect(getDayPlan('2026-12-31', 'UTC', 'south').nextPhase)
+      .toMatchObject({ type: 'new_moon', instantUtc: '2027-01-07T20:24:00Z' });
+    expect(getDayPlan('2026-11-30', 'UTC', 'south').supported).toBe(false);
+  });
+  it('uses the published December solstice minute for both hemisphere season labels', () => {
+    expect(seasonAt('2026-12-21T20:49:59Z', 'south')).toContain('Primavera');
+    expect(seasonAt('2026-12-21T20:50:00Z', 'south')).toContain('Verão');
+    expect(seasonAt('2026-12-21T20:50:00Z', 'north')).toContain('Inverno');
+  });
   it('rejects invalid dates and IANA zones', () => {
     expect(() => getDayPlan('2027-02-30', 'UTC', 'south')).toThrow();
     expect(() => getDayPlan('2027-01-01', 'Not/A_Zone', 'south')).toThrow();
   });
-  it('starts outside coverage at January 2027 and navigates months correctly', () => {
-    expect(getInitialDate('America/Sao_Paulo', new Date('2026-11-26T12:00:00Z'))).toBe('2027-01-01');
+  it('starts outside coverage at December 2026 and navigates months correctly', () => {
+    expect(getInitialDate('America/Sao_Paulo', new Date('2026-11-26T12:00:00Z'))).toBe('2026-12-01');
     expect(getInitialDate('America/Sao_Paulo', new Date('2027-06-19T00:44:00Z'))).toBe('2027-06-18');
     expect(shiftDateMonth('2027-01-31', 1)).toBe('2027-02-28');
     expect(shiftDateMonth('2027-12-15', 1)).toBe('2028-01-15');

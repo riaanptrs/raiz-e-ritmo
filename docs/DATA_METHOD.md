@@ -6,6 +6,10 @@ O Raiz & Ritmo apresenta astronomia de 2027, explicações em português e duas 
 
 Os resultados numéricos, as divergências encontradas e as instruções de reprodução estão em [Validação de 2027](VALIDATION_2027.md).
 
+## Dezembro de 2026
+
+Dezembro tem cobertura parcial. As cinco fases principais de dezembro UTC e o solstício usam os minutos publicados por Fred Espenak no AstroPixels, conferidos contra o Astronomy Engine (diferença máxima de 45 segundos). O equinócio de setembro dá o contexto de estação antes do solstício. Os instantes publicados ficam em [december-2026.ts](../src/data/december-2026.ts). As fontes são as tabelas de [fases](https://www.astropixels.com/ephemeris/phasescat/phases2001.html) e [estações](https://www.astropixels.com/ephemeris/soleq2001.html). Os demais dados lunares e as janelas tradicionais seguem restritos a 2027.
+
 ## 1. De onde vêm os horários
 
 | Informação apresentada | Origem usada em 2027 | Registro no projeto |

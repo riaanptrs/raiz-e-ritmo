@@ -6,13 +6,14 @@ Aplicativo web gratuito para observar os ritmos astronômicos, compreender inter
 
 ## Estado da implementação
 
-A primeira versão funcional inclui calendário, guias de observação e ajuda para instalação e uso offline. Usa **React, TypeScript e Vite**, com calendário de **2027**, explicações e estrutura de PWA. O destino previsto é GitHub Pages no caminho `/raiz-e-ritmo/`. Esta implementação **não publica o site automaticamente**.
+A primeira versão funcional inclui calendário, guias de observação e ajuda para instalação e uso offline. Usa **React, TypeScript e Vite**, com calendário de **dezembro de 2026 a dezembro de 2027**, explicações e estrutura de PWA. O destino previsto é GitHub Pages no caminho `/raiz-e-ritmo/`. Esta implementação **não publica o site automaticamente**.
 
 O calendário separa astronomia, interpretação tradicional e evidência agrícola. Não promete efeitos sobre produtividade ou sabor. **A classificação completa de raiz, folha, flor e fruto permanece indisponível**: limites e ajustes de calendários editoriais ainda não foram reproduzidos por um método completo e verificável.
 
 ### O que funciona
 
-- Calendário mensal, detalhes por dia e navegação por teclado; datas fora de 2027 têm uma indicação clara.
+- Calendário mensal, detalhes por dia e navegação por teclado; datas fora da cobertura têm uma indicação clara.
+- Dezembro de 2026 tem cobertura parcial: fases principais e solstício, com horários publicados por Fred Espenak no AstroPixels. Os demais dados lunares e as janelas tradicionais estão disponíveis para 2027.
 - 49 fases principais publicadas pelo USNO, preservadas com sua precisão original de minuto.
 - Nós lunares, direção e extremos de declinação, regiões IAU, equinócios e solstícios calculados e conferidos contra referências externas.
 - 26 perigeus/apogeus de 2027 derivados de JPL DE441, mais o apogeu de 1º de janeiro de 2028 necessário à consulta de 31 de dezembro em fusos ocidentais.

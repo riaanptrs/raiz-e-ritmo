@@ -1,9 +1,12 @@
 import { Temporal } from '@js-temporal/polyfill';
+import { decemberEvents, precedingEquinox } from '../data/december-2026';
 import rawData from '../data/calendar-2027.json';
 import { hemisphereMotion } from './tradition';
 import type { CalendarData, CalendarInterval, DayPlan, Hemisphere } from './types';
 
-export const COVERAGE_YEAR = 2027;
+export const COVERAGE_START = '2026-12-01';
+export const COVERAGE_END = '2027-12-31';
+export const COVERAGE_LABEL = 'dezembro de 2026 a dezembro de 2027';
 export const calendarData = rawData as CalendarData;
 
 export function localDateKey(instant: string | Date, timeZone: string): string {
@@ -33,7 +36,7 @@ export function formatMonth(dateKey: string): string {
 
 export function getInitialDate(timeZone: string, now = new Date()): string {
   const today = localDateKey(now, timeZone);
-  return today.startsWith(`${COVERAGE_YEAR}-`) ? today : `${COVERAGE_YEAR}-01-01`;
+  return today < COVERAGE_START ? COVERAGE_START : today > COVERAGE_END ? COVERAGE_END : today;
 }
 
 export function shiftDateMonth(dateKey: string, delta: number): string {
@@ -59,7 +62,10 @@ export function intersectIntervals(intervals: CalendarInterval[], start: number,
 
 export function seasonAt(instantUtc: string, hemisphere: Hemisphere): string {
   if (hemisphere === 'equatorial') return 'Faixa equatorial: considere o regime local de chuva e seca.';
-  const last = calendarData.events.filter(e => e.kind === 'season' && e.instantUtc <= instantUtc).at(-1);
+  const events = instantUtc < '2027-01-01'
+    ? [precedingEquinox, ...decemberEvents]
+    : calendarData.events;
+  const last = events.filter(e => e.kind === 'season' && Date.parse(e.instantUtc) <= Date.parse(instantUtc)).at(-1);
   if (!last) return 'Estação astronômica indisponível.';
   const north: Record<string, string> = { march_equinox: 'Primavera', june_solstice: 'Verão', september_equinox: 'Outono', december_solstice: 'Inverno' };
   const south: Record<string, string> = { march_equinox: 'Outono', june_solstice: 'Inverno', september_equinox: 'Primavera', december_solstice: 'Verão' };
@@ -70,9 +76,22 @@ export function seasonAt(instantUtc: string, hemisphere: Hemisphere): string {
 export function getDayPlan(dateKey: string, timeZone: string, hemisphere: Hemisphere): DayPlan {
   if (!['north', 'south', 'equatorial'].includes(hemisphere)) throw new RangeError('Unknown hemisphere.');
   const [start, end] = localDayBounds(dateKey, timeZone);
-  const supported = Temporal.PlainDate.from(dateKey).year === COVERAGE_YEAR && start >= Date.parse(calendarData.startUtc) && end <= Date.parse(calendarData.endUtc) && end > start;
+  const date = Temporal.PlainDate.from(dateKey).toString();
+  const limited = date.startsWith('2026-12-');
+  const supported = date >= COVERAGE_START && date <= COVERAGE_END && end > start
+    && (limited || (start >= Date.parse(calendarData.startUtc) && end <= Date.parse(calendarData.endUtc)));
   const base: DayPlan = { dateKey, supported, timeZone, hemisphere, events: [], motion: [], constellations: [], cautions: [], nextPhase: null, seasonLabel: '', agriculturalStatus: 'unavailable' };
   if (!supported) return base;
+  if (limited) {
+    return {
+      ...base,
+      events: decemberEvents.filter(event => Date.parse(event.instantUtc) >= start && Date.parse(event.instantUtc) < end),
+      nextPhase: decemberEvents.find(event => event.kind === 'phase' && Date.parse(event.instantUtc) >= end)
+        ?? calendarData.events.find(event => event.kind === 'phase' && event.instantUtc.startsWith('2027-'))
+        ?? null,
+      seasonLabel: seasonAt(new Date((start + end) / 2).toISOString(), hemisphere),
+    };
+  }
   return {
     ...base,
     events: calendarData.events.filter(e => Date.parse(e.instantUtc) >= start && Date.parse(e.instantUtc) < end),
