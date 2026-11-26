@@ -91,4 +91,4 @@ Se o caminho público mudar, ajuste `vite.config.ts` e confira manifest, assets 
 - [Validação de 2027](docs/VALIDATION_2027.md): referências, resultados e discrepância corrigida.
 - [Produto](docs/PRODUCT_BRIEF.md), [roadmap](docs/ROADMAP.md) e [Task 01](docs/CODEX_TASK_01.md).
 
-Código e textos originais aguardam uma decisão explícita de licença para distribuição. Dependências conservam suas próprias licenças. Livros privados, artes de editoras e calendários comerciais completos não fazem parte deste repositório.
+Código e textos originais aguardam uma decisão explícita de licença para distribuição. Dependências conservam suas próprias licenças. O build inclui os avisos das dependências distribuídas com o aplicativo em `dist/third-party-licenses.txt`. Livros privados, artes de editoras e calendários comerciais completos não fazem parte deste repositório.

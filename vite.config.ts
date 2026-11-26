@@ -6,6 +6,7 @@ export default defineConfig({
   base: '/raiz-e-ritmo/',
   build: {
     target: 'es2022',
+    license: { fileName: 'third-party-licenses.txt' },
     rolldownOptions: {
       output: {
         codeSplitting: {
