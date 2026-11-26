@@ -198,18 +198,19 @@ function PreparationGuide() {
       </div>
     </dl>
     <PreparationQuantities />
-    <h3>Como preparar para usar</h3>
+    <h3>Como preparar uma aplicação em pequena escala</h3>
+    <p><strong>Exemplo de um canteiro de 10 m²:</strong> a faixa de referência é 0,05 a 0,30 g de 500 para o solo, ou 2,5 a 5 mg de 501 para as plantas em crescimento. São aplicações distintas, cada uma na sua etapa. Para 100 L de composto, a referência é 0,01 a 0,02 mL de cada preparado de composto. Use a calculadora se a área ou o volume forem diferentes.</p>
     <ol>
       <li><strong>Escolha o produto para a tarefa.</strong> Use um preparado pronto de procedência conhecida e confira o rótulo para dose, diluição, modo de mistura e uso na cultura. O 500 vai ao solo, o 501 às plantas e o conjunto 502 a 507 à pilha de composto.</li>
       <li><strong>Calibre a água com o equipamento limpo.</strong> Para uma aplicação líquida, teste primeiro com água pura em uma área medida. Se usar 2 L em 100 m², com a mesma cobertura precisará de 0,2 L para 10 m² ou 200 L para 1 ha. Ajuste a técnica para distribuir uniformemente, sem escorrer.</li>
       <li><strong>Misture apenas o que vai usar.</strong> Siga o rótulo sobre o volume mínimo de mistura, a agitação e o prazo de uso. Em área pequena, prefira um lote pré-dosado ou compartilhado quando o equipamento não comportar o volume calculado.</li>
     </ol>
-    <h3>Como adaptar a produção</h3>
+    <h3>Como obter os preparados para uma horta pequena</h3>
     <p><strong>507, valeriana.</strong> A base vegetal é o suco das flores de <i>Valeriana officinalis</i>, obtido por prensagem. Steiner descreve diluir o extrato em água morna antes de aplicá-lo à pilha. A passagem não fixa uma diluição para pequenas pilhas. Se você precisa de uma dose reproduzível, use um extrato com rótulo e dosador.</p>
     <p className="source-note">Steiner, palestra de 13 de junho de 1924, p. 107 do PDF consultado.</p>
     <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
     <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
-    <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. O planejamento de aplicação segue a etapa da cultura. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
+    <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. No canteiro, planeje o 500 antes da semeadura, o 501 com a cultura em crescimento e os preparados de composto quando estiver preparando a pilha. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
     <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
   </details>;
 }
@@ -258,13 +259,30 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
         <p>Para guardar a produção ou colher sementes, o Stella Natura usa critérios próprios de acordo com a parte da planta a ser colhida. Esses critérios dependem das categorias raiz, folha, flor e fruto, que ainda estão indisponíveis neste calendário. Para o uso diário, observe o que já está pronto e colha a quantidade que pretende consumir fresca.</p>
       </article>
     </div>
-    <details className="preparation-guide">
-      <summary>Como observar ervas em vasos e hortaliças em canteiros?</summary>
-      <p>Escolha uma erva e uma hortaliça que você já cultiva. Em cada uma, registre quando surgem as primeiras folhas e quando começa a floração, se ocorrer. Anote as diferenças de sol e umidade entre os locais em vez de esperar que as duas plantas sigam o mesmo ritmo.</p>
-      <p className="source-note">Exercício do Raiz &amp; Ritmo inspirado em Charles Kovacs, <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF consultado.</p>
-    </details>
+    <section aria-labelledby="garden-crops">
+      <h2 id="garden-crops">Ervas e hortaliças comuns no Brasil</h2>
+      <p>Escolha a época de semeadura conforme a cultura e as condições da sua região. Os exemplos ajudam a observar vasos e canteiros pequenos ao longo do cultivo.</p>
+      <div className="garden-actions">
+        <article>
+          <h3>Manjericão, cebolinha e coentro</h3>
+          <p>Se cultivar para colher folhas e ramos frescos, observe primeiro o crescimento de folhas novas. Quando tiver o que precisa para a refeição, colha a quantidade que vai usar. Se cultivar coentro para semente, acompanhe a floração e anote a formação das sementes em uma planta reservada para esse fim.</p>
+          <p className="note">Aplicação para a horta da distinção entre colheita fresca e colheita para semente, descrita no <cite>Stella Natura</cite>. O guia não atribui dias a essas ervas.</p>
+        </article>
+        <article>
+          <h3>Alface e outras folhas</h3>
+          <p>Para semear alface, retire a vegetação que compete com a muda e deixe a superfície do canteiro solta. Observe as primeiras folhas e o momento em que as plantas começam a alongar o caule. Se a intenção é consumir as folhas frescas, colha conforme o uso na cozinha.</p>
+          <p className="note">Kovacs orienta o preparo do canteiro em <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF. O <cite>Stella Natura</cite> inclui a alface entre as culturas de folha na sua orientação de semeadura.</p>
+        </article>
+        <article>
+          <h3>Cenoura, rabanete e tomate</h3>
+          <p>Registre a semeadura e observe o desenvolvimento de cada cultura. Quando colher uma cenoura ou um rabanete para consumo, anote como a raiz se desenvolveu. No tomate, acompanhe a floração e o amadurecimento dos frutos.</p>
+          <p className="note">O <cite>Stella Natura</cite> usa cenoura e rabanete como exemplos de culturas de raiz, e tomate como cultura de fruto. Essas categorias descrevem a tradição da publicação. O calendário do Raiz &amp; Ritmo ainda não fornece as datas correspondentes.</p>
+        </article>
+      </div>
+    </section>
     <p className="note">No detalhe de cada data coberta de 2027, as janelas do Stella Natura indicam quando essa tradição sugere evitar a semeadura. Para acompanhar transplantes e colheitas, anote o estágio da planta e as condições do local.</p>
     <p className="source-note">Transplante e colheita: Sherry Wildfeuer, <cite>Stella Natura</cite>, orientações da edição de 2024.</p>
+    <h2>Preparados biodinâmicos</h2>
     <PreparationGuide />
     <button className="text-button garden-source-button" onClick={onMethod}>Ver fontes do guia da horta</button>
   </section>;
