@@ -280,8 +280,12 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <ol>
         <li><strong>Escolha um dia.</strong> Confira o fuso e identifique o que aparece. Uma fase tem hora marcada. Uma janela tradicional pode começar na véspera e terminar no dia seguinte.</li>
         <li><strong>Confira as condições.</strong> Antes de semear, veja se o solo está úmido sem estar encharcado e considere a chuva e a temperatura. Antes de transplantar, observe o estágio e o vigor da muda.</li>
-        <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa. Se comparar duas semeaduras, mantenha condições semelhantes e registre também as diferenças. Uma diferença na germinação pode ter várias causas.</li>
+        <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa.</li>
       </ol>
+      <h3>Como comparar duas semeaduras</h3>
+      <p>Ao relatar o curso de 1924, Steiner descreveu como um grupo de agricultores reuniria informações sobre o solo, o clima e o entorno de cada propriedade antes de testar as práticas propostas.</p>
+      <p>Na horta, comece com dois trechos semelhantes. Se quiser observar duas datas de semeadura, use sementes do mesmo lote, na mesma profundidade, e mantenha o manejo tão parecido quanto possível. Anote chuva e temperatura e conte quantas mudas emergiram após o mesmo número de dias em cada trecho. Uma diferença ajuda a formular a próxima pergunta e pode ter várias causas.</p>
+      <p className="source-note">Rudolf Steiner, relato de 20 de junho de 1924 em <cite>Spiritual Foundations for the Renewal of Agriculture</cite>, tradução de Catherine Creeger e Malcolm Gardner, 1993, pp. 9 e 11 do PDF consultado. O exemplo da horta é uma adaptação do Raiz &amp; Ritmo.</p>
       <p>Um estudo da UNESP com cenouras em dois períodos encontrou diferenças em alguns contrastes. O estudo não encontrou diferença associada ao ritmo ascendente e descendente nos aspectos avaliados. <SourceLink href={SOURCES.evidence}>Consultar o estudo</SourceLink></p>
     </article>
     <article className="reading-card rhythm-guide"><div><span className="eyebrow">CADA RITMO TEM SUA PRÓPRIA PERGUNTA</span><h2>A Lua tem mais de um ciclo</h2><p>“Crescente” não significa “ascendente”. E um nó ascendente não é o início da Lua ascendente.</p></div><dl>
