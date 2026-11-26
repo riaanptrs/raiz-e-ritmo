@@ -56,3 +56,11 @@
 @media (max-width: 700px) {
   .garden-actions { grid-template-columns: 1fr; gap: 12px; }
 }
+
+.preparation-guide { margin-top: 20px; border-top: 1px solid var(--line); padding-top: 12px; }
+.preparation-guide summary { min-height: 44px; padding: 10px 4px; cursor: pointer; font-weight: 650; }
+.preparation-guide dl { margin: 18px 0; }
+.preparation-guide dl > div + div { border-top: 1px solid var(--line); margin-top: 14px; padding-top: 14px; }
+.preparation-guide dt { font-weight: 650; }
+.preparation-guide dd { margin: 5px 0 0; color: #40543e; line-height: 1.65; }
+.preparation-guide dd.source-note { margin-top: 5px !important; }

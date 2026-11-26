@@ -152,6 +152,32 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
   </aside>;
 }
 
+function PreparationGuide() {
+  return <details className="preparation-guide">
+    <summary>Quando entram os preparados biodinâmicos?</summary>
+    <p>Na tradição biodinâmica, o momento depende do trabalho em andamento. Use este guia para entender onde cada preparado se encaixa.</p>
+    <dl>
+      <div>
+        <dt>Antes de semear · 500, esterco de chifre</dt>
+        <dd>Se você segue essa prática, planeje a aplicação no solo na etapa de preparo do canteiro. Steiner a coloca antes da semeadura para que, segundo sua explicação, o solo receba o preparado antes da semente.</dd>
+        <dd className="source-note">Steiner, palestra de agricultura de 12 de junho de 1924 e perguntas, pp. 92–93 do PDF.</dd>
+      </div>
+      <div>
+        <dt>Com a cultura em crescimento · 501, sílica de chifre</dt>
+        <dd>Steiner descreve o uso sobre as plantas, como complemento ao trabalho no solo. Planeje essa etapa em função da cultura já estabelecida. A passagem consultada não fixa um dia ou horário de aplicação para cada hortaliça.</dd>
+        <dd className="source-note">Steiner, palestra de agricultura de 12 de junho de 1924, p. 86 do PDF.</dd>
+      </div>
+      <div>
+        <dt>Durante a compostagem · preparados 502 a 507</dt>
+        <dd>Se estiver preparando uma pilha de composto, é nessa etapa que entra o conjunto de preparados descrito na obra. A aplicação é na pilha, durante o preparo do composto que será usado mais adiante.</dd>
+        <dd className="source-note">Hugh J. Courtney, introdução, pp. 7–8, e Steiner, perguntas da palestra de 13 de junho de 1924, p. 111 do PDF.</dd>
+      </div>
+    </dl>
+    <p className="note">Estas indicações descrevem a prática tradicional. As fases da Lua e as janelas de semeadura deste calendário não geram alertas de aplicação. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
+    <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
+  </details>;
+}
+
 function GardenGuide() {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
     <h2 id="garden-title">O que fazer hoje na horta?</h2>
@@ -174,6 +200,7 @@ function GardenGuide() {
       </article>
     </div>
     <p className="note">As janelas tradicionais aparecem nos detalhes das datas cobertas. Elas se referem à semeadura e não definem dias de transplante ou colheita.</p>
+    <PreparationGuide />
   </section>;
 }
 
