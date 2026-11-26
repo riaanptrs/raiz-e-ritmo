@@ -159,6 +159,10 @@ function preparationRange(value: number, minRate: number, maxRate: number, unit:
   return `${format.format(value * minRate)} a ${format.format(value * maxRate)} ${unit}`;
 }
 
+function AgricultureCourseCitation({ location }: { location: string }) {
+  return <p className="source-note">Rudolf Steiner, <cite>Agriculture Course: The Birth of the Biodynamic Method</cite>, tradução de George Adams, Rudolf Steiner Press, 2012. {location}</p>;
+}
+
 function PreparationQuantities() {
   const [area, setArea] = useState('10');
   const [areaUnit, setAreaUnit] = useState('m²');
@@ -170,6 +174,11 @@ function PreparationQuantities() {
     <h3 id="prep-quantities">Quanto usar na sua área?</h3>
     <p>As faixas de referência do Apêndice 8 da Demeter são de 50 a 300 g/ha para o 500, de 2,5 a 5 g/ha para o 501 e de 1 a 2 mL de cada preparado de composto por 10 m³. São referências de aplicação da tradição, sem indicação de eficácia para um canteiro específico.</p>
     <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026 · Apêndice 8, p. 122</SourceLink>
+    <details>
+      <summary>Por que a calculadora usa gramas?</summary>
+      <p>No curso de 1924, Steiner usou um balde de ordenha suíço como referência e deixou a padronização das medidas em aberto. A calculadora usa as faixas métricas da Demeter para converter a quantidade conforme a área ou o volume de composto.</p>
+      <AgricultureCourseCitation location="Discussão da palestra 4, p. 78 do PDF consultado." />
+    </details>
     <div className="preparation-inputs">
       <label>Área a tratar<input type="number" step="any" min="0" inputMode="decimal" value={area} onChange={event => setArea(event.target.value)} /></label>
       <label>Unidade de área<select value={areaUnit} onChange={event => setAreaUnit(event.target.value)}><option>m²</option><option>ha</option></select></label>
@@ -192,8 +201,8 @@ function PreparationGuide() {
     <dl>
       <div>
         <dt>Antes de semear · 500, esterco de chifre</dt>
-        <dd>Se você segue essa prática, planeje a aplicação no solo na etapa de preparo do canteiro. Steiner a coloca antes da semeadura para que, segundo sua explicação, o solo receba o preparado antes da semente.</dd>
-        <dd className="source-note">Steiner, palestra de agricultura de 12 de junho de 1924 e perguntas, pp. 92–93 do PDF.</dd>
+        <dd>Se você segue essa prática, planeje a aplicação no solo na etapa de preparo do canteiro. Steiner propôs essa ordem para que, segundo sua explicação, o preparado pudesse atuar no solo antes da chegada da semente. Ele também relata uma aplicação tardia naquele ano e deixa a avaliação do resultado em aberto.</dd>
+        <dd className="source-note">Steiner, discussão da palestra 4 em Agriculture Course (George Adams, 2012), p. 82 do PDF consultado. Ver também What Is Biodynamics?, pp. 92–93 do PDF consultado.</dd>
       </div>
       <div>
         <dt>Com a cultura em crescimento · 501, sílica de chifre</dt>
@@ -262,6 +271,9 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <h2>Como a tradição usa os calendários</h2>
       <p>Hugh J. Courtney descreve métodos diferentes de dividir o céu e registra que alguns praticantes não conseguiram repetir os resultados que esperavam. As orientações mudam conforme o calendário consultado. Para escolher a tarefa de hoje, comece pelas condições que você pode observar na horta.</p>
       <p className="source-note">Hugh J. Courtney, introdução a <cite>What Is Biodynamics?</cite>, de Rudolf Steiner, SteinerBooks, 2005, páginas 11–12 do PDF consultado.</p>
+      <h3>Por que observar a chuva junto com a Lua?</h3>
+      <p>Na primeira palestra do curso de 1924, Steiner propôs que a chuva antes da Lua cheia poderia influenciar a germinação de certas plantas. Essa hipótese faz parte da explicação biodinâmica para observar os dois ritmos. Na horta, confira se o solo está úmido, sem estar encharcado, e se a época é adequada para a cultura antes de semear.</p>
+      <AgricultureCourseCitation location="Palestra 1, p. 26 do PDF consultado." />
     </article>
     <article className="reading-card observation-guide">
       <h2>Da leitura à observação</h2>
