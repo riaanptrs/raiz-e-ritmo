@@ -6,7 +6,7 @@ import {
   getInitialDate, localDateKey, monthCells, seasonAt, shiftDateMonth,
 } from './lib/calendar';
 
-type View = 'calendar' | 'learn' | 'method' | 'help';
+type View = 'calendar' | 'garden' | 'learn' | 'method' | 'help';
 type Settings = { timeZone: string; hemisphere: Hemisphere };
 const STORAGE_KEY = 'raiz-e-ritmo.settings.v1';
 const DEFAULTS: Settings = { timeZone: 'America/Sao_Paulo', hemisphere: 'south' };
@@ -133,7 +133,7 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
       </section>
       </>}
     </>}
-    <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Dias de raiz, folha, flor e fruto</strong><p>Essas quatro categorias ainda estão indisponíveis no calendário. O guia da horta já traz orientações para semear, transplantar e colher.</p><a href="#garden-title">Ir para o guia da horta</a></div></div>
+    <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Dias de raiz, folha, flor e fruto</strong><p>Essas quatro categorias ainda estão indisponíveis no calendário. O guia da horta já traz orientações para semear, transplantar e colher.</p><a href="?pagina=horta">Ir para o guia da horta</a></div></div>
   </aside>;
 }
 
@@ -216,7 +216,7 @@ function PreparationGuide() {
 
 function GardenGuide({ onMethod }: { onMethod: () => void }) {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
-    <h2 id="garden-title" tabIndex={-1}>O que fazer hoje na horta?</h2>
+    <h1 id="garden-title">Guia biodinâmico da horta</h1>
     <p>Na agricultura biodinâmica de Rudolf Steiner, a propriedade é vista como um organismo. Para uma horta pequena, isso começa com uma pergunta prática: como o solo, a água, as plantas e a vida no entorno se relacionam neste lugar?</p>
     <details className="preparation-guide">
       <summary>Como usar o calendário com as orientações de Steiner?</summary>
@@ -364,7 +364,7 @@ function Help({ offlineReady }: { offlineReady: boolean }) {
 export default function App() {
   const [settings, setSettings] = useState<Settings>(readSettings);
   const [dateKey, setDateKey] = useState(() => getInitialDate(readSettings().timeZone));
-  const [view, setView] = useState<View>('calendar');
+  const [view, setView] = useState<View>(() => new URLSearchParams(window.location.search).get('pagina') === 'horta' ? 'garden' : 'calendar');
   const [customZone, setCustomZone] = useState('');
   const [showCustomZone, setShowCustomZone] = useState(false);
   const [zoneError, setZoneError] = useState('');
@@ -430,6 +430,11 @@ export default function App() {
   }, []);
 
   function navigate(next: View) {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get('pagina') === 'horta' && next !== 'garden') {
+      url.searchParams.delete('pagina');
+      window.history.replaceState(null, '', url);
+    }
     setView(next);
     mainRef.current?.focus({ preventScroll: true });
     window.scrollTo({ top: 0, behavior: 'auto' });
@@ -470,7 +475,11 @@ export default function App() {
     <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
         <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>DEZ 2026 A DEZ 2027</span></div></div><BotanicalDrawing /></section>
-        <GardenGuide onMethod={() => navigate('method')} />
+        <section className="garden-guide reading-card" aria-labelledby="garden-intro-title">
+          <h2 id="garden-intro-title">O que fazer hoje na horta?</h2>
+          <p>Veja como observar o solo e as plantas, quando semear, transplantar e colher, e em que etapa entram os preparados biodinâmicos.</p>
+          <a className="button primary-button" href="?pagina=horta">Abrir o guia biodinâmico da horta</a>
+        </section>
         <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
           else { setSettings(previous => ({ ...previous, timeZone: e.target.value })); setShowCustomZone(false); setZoneError(''); }
@@ -501,7 +510,7 @@ export default function App() {
           <a className="day-jump" href="#day-title">Ver detalhes de {formatDate(dateKey)}</a>
           <div className="garden-reminder"><span><Icon kind="leaf" size={28} /></span><div><h3>O jardim também tem algo a dizer.</h3><p>Observe o solo, o clima e a planta antes de escolher uma tarefa. O calendário ajuda a formular perguntas e registrar experiências.</p><button className="text-button" onClick={() => navigate('learn')}>Aprender a usar o calendário</button></div></div>
         </section><DayDetail plan={plan} onMethod={() => navigate('method')} /></div>
-      </> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : view === 'method' ? <Method /> : <Help offlineReady={offlineReady} />}
+      </> : view === 'garden' ? <GardenGuide onMethod={() => navigate('method')} /> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : view === 'method' ? <Method /> : <Help offlineReady={offlineReady} />}
     </main>
     <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Dezembro de 2026 a dezembro de 2027'}</span></div></footer>
   </>;
