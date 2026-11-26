@@ -25,6 +25,8 @@ const SOURCES = {
   seasons: 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027',
   iau: 'https://www.iau.org/IAU/Astronomy-FAQs/Constellations.aspx',
   evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
+  planting: 'https://extension.umn.edu/planting-and-growing-guides/planting-vegetable-garden',
+  harvest: 'https://extension.umn.edu/planting-and-growing-guides/harvesting-and-storing-home-garden-vegetables',
   usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
   jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
   engine: 'https://github.com/cosinekitty/astronomy',
@@ -150,6 +152,31 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
   </aside>;
 }
 
+function GardenGuide() {
+  return <section className="garden-guide reading-card" aria-labelledby="garden-title">
+    <h2 id="garden-title">O que fazer hoje na horta?</h2>
+    <p>Escolha pela condição do solo e pelo estágio da planta. Estas orientações valem mesmo fora das datas do calendário.</p>
+    <div className="garden-actions">
+      <article>
+        <h3>Semear</h3>
+        <p>Confira a época de semeadura indicada para sua região na embalagem. Semeie na profundidade indicada e mantenha o substrato úmido, sem encharcar.</p>
+        <SourceLink href={SOURCES.planting}>Guia de semeadura</SourceLink>
+      </article>
+      <article>
+        <h3>Transplantar</h3>
+        <p>Se a muda cresceu em local protegido, acostume-a ao sol e ao vento aos poucos antes de levá-la ao canteiro. Dê preferência a um fim de tarde ou dia nublado e regue após o transplante.</p>
+        <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Guia de transplante</SourceLink>
+      </article>
+      <article>
+        <h3>Colher</h3>
+        <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
+        <SourceLink href={SOURCES.harvest}>Guia de colheita por cultura</SourceLink>
+      </article>
+    </div>
+    <p className="note">As janelas tradicionais aparecem nos detalhes das datas cobertas. Elas se referem à semeadura e não definem dias de transplante ou colheita.</p>
+  </section>;
+}
+
 function Learning({ onMethod }: { onMethod: () => void }) {
   return <section className="reading-view" aria-labelledby="learn-title">
     <div className="section-intro"><span className="eyebrow">APRENDER COM O JARDIM</span><h1 id="learn-title">Observe o céu.<br />Conheça o seu chão.</h1><p>Um calendário se torna mais útil quando você entende o que ele mostra, de onde vem a orientação e o que precisa observar no seu próprio cultivo.</p></div>
@@ -158,6 +185,11 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <article className="learning-card"><span className="card-icon"><Icon kind="leaf" size={28} /></span><h2>Como usar no cotidiano?</h2><p>Comece observando umidade do solo, clima e estágio da planta. Registre o que fez, as condições e o resultado. Use as indicações tradicionais como uma escolha a investigar, sem deixar o calendário substituir a atenção ao jardim.</p><SourceLink href={SOURCES.stella}>Calendário, clima e observação</SourceLink></article>
       <article className="learning-card"><span className="card-icon"><Icon kind="calendar" size={28} /></span><h2>Quando consultar?</h2><p>Ao planejar uma tarefa, confira o horário local e os intervalos dentro do dia. Uma transição pode acontecer no meio da manhã ou à noite. O mesmo evento pode cair em datas diferentes conforme o fuso.</p><SourceLink href={SOURCES.jpl}>Como os eventos são definidos</SourceLink></article>
     </div>
+    <article className="reading-card">
+      <h2>Como a tradição usa os calendários</h2>
+      <p>Hugh J. Courtney descreve métodos diferentes de dividir o céu e registra que alguns praticantes não conseguiram repetir os resultados que esperavam. As orientações mudam conforme o calendário consultado. Para escolher a tarefa de hoje, comece pelas condições que você pode observar na horta.</p>
+      <p className="source-note">Hugh J. Courtney, introdução a <cite>What Is Biodynamics?</cite>, de Rudolf Steiner, SteinerBooks, 2005, páginas 11–12 do PDF consultado.</p>
+    </article>
     <article className="reading-card observation-guide">
       <h2>Da leitura à observação</h2>
       <ol>
@@ -323,6 +355,7 @@ export default function App() {
     <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
         <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>EDIÇÃO {COVERAGE_YEAR}</span></div></div><BotanicalDrawing /></section>
+        <GardenGuide />
         <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
           else { setSettings(previous => ({ ...previous, timeZone: e.target.value })); setShowCustomZone(false); setZoneError(''); }

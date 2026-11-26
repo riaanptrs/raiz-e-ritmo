@@ -12,6 +12,7 @@ O calendário separa astronomia, interpretação tradicional e evidência agríc
 
 ### O que funciona
 
+- Orientações práticas para semear, transplantar e colher a partir do solo e do estágio da planta, acessíveis o ano inteiro.
 - Calendário mensal, detalhes por dia e navegação por teclado; datas fora de 2027 têm uma indicação clara.
 - 49 fases principais publicadas pelo USNO, preservadas com sua precisão original de minuto.
 - Nós lunares, direção e extremos de declinação, regiões IAU, equinócios e solstícios calculados e conferidos contra referências externas.

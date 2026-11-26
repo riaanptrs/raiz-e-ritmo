@@ -47,3 +47,12 @@
 .skip-link:not(:focus) { clip-path: inset(50%); }
 .calendar-toolbar h2, .day-heading h2 { text-transform: none; }
 .calendar-toolbar h2::first-letter, .day-heading h2::first-letter { text-transform: uppercase; }
+
+.garden-guide { margin-top: 22px; }
+.garden-actions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.garden-actions article { padding: 18px; background: #f1f5ed; border-radius: 9px; }
+.garden-actions h3 { margin: 0 0 8px; }
+.garden-actions a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 700px) {
+  .garden-actions { grid-template-columns: 1fr; gap: 12px; }
+}
