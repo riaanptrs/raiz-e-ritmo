@@ -176,6 +176,25 @@ function PreparationQuantities() {
   </section>;
 }
 
+function CompostGuide() {
+  return <section aria-labelledby="compost-title">
+    <h2 id="compost-title">Compostagem biodinâmica com sobras da cozinha</h2>
+    <p>Steiner descreve o composto como uma forma de devolver os resíduos da horta ao solo. Ele propõe montar a pilha em camadas finas e cobrir cada camada. Para uma casa, adapte essa ideia aos resíduos vegetais que você consegue reunir.</p>
+    <AgricultureCourseCitation location="Palestra 4, pp. 69–70 do PDF consultado." />
+    <h3>Como montar e cuidar da composteira</h3>
+    <ol>
+      <li><strong>Separe dois tipos de material.</strong> Use cascas e aparas de frutas e hortaliças como material úmido. Guarde folhas secas, palha ou raminhos picados para cobrir. Para esta composteira doméstica, separe carnes, peixes, laticínios, óleo e sobras gordurosas.</li>
+      <li><strong>Comece pela base.</strong> Em uma caixa ventilada ou numa pilha no quintal, coloque uma camada fina de raminhos para deixar o ar passar. Cubra com folhas secas, espalhe os restos vegetais picados em uma camada fina e cubra as sobras com mais material seco a cada adição. Evite apertar as camadas.</li>
+      <li><strong>Cuide da umidade.</strong> O conteúdo deve ficar úmido, sem ficar encharcado. Se estiver seco ao apertar um punhado com luva, umedeça aos poucos. Se escorrer água ou aparecer cheiro forte de podridão, acrescente material seco, solte a mistura e proteja da chuva sem vedar a entrada de ar.</li>
+      <li><strong>Deixe o lote maturar.</strong> Quando a caixa estiver cheia, comece outro lote para as sobras novas. Espere o primeiro ficar escuro, solto e com cheiro de terra, com a maior parte das sobras já desfeita. A caixa pequena tende a aquecer menos e pode levar mais tempo. Use esses sinais para decidir quando incorporar o composto ao canteiro.</li>
+    </ol>
+    <h3>Quando entram os preparados 502–507?</h3>
+    <p><strong>Pilha montada de uma vez:</strong> na orientação de Julie Moore, aplique os preparados após montar a pilha. Os preparados 502 a 506 vão em pontos separados no interior, que depois são fechados com o próprio material. A valeriana, 507, é aplicada por último sobre a pilha, antes de cobrir.</p>
+    <p><strong>Caixa que recebe sobras aos poucos:</strong> Moore descreve, como alternativa biodinâmica, usar um iniciador de compostagem pronto à base do preparado de barril de Maria Thun (Mausdorf) ao acrescentar material. Siga a dose do produto. Para uma pilha montada de uma vez, a calculadora abaixo estima os preparados individuais pelo volume da pilha.</p>
+    <p className="source-note">Julie Moore, <cite>Composting the Biodynamic Way</cite>, <cite>Kitchen Garden</cite>, outubro de 2016, pp. 63–66, material disponibilizado pela Associação Biodinâmica britânica. Controle de umidade e aeração: Associação Biodinâmica britânica, <cite>Biodynamic Basics: the art and science of making and applying compost</cite>.</p>
+  </section>;
+}
+
 function PreparationGuide() {
   return <details className="preparation-guide">
     <summary>Quando entram os preparados biodinâmicos?</summary>
@@ -282,6 +301,7 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
     </section>
     <p className="note">No detalhe de cada data coberta de 2027, as janelas do Stella Natura indicam quando essa tradição sugere evitar a semeadura. Para acompanhar transplantes e colheitas, anote o estágio da planta e as condições do local.</p>
     <p className="source-note">Transplante e colheita: Sherry Wildfeuer, <cite>Stella Natura</cite>, orientações da edição de 2024.</p>
+    <CompostGuide />
     <h2>Preparados biodinâmicos</h2>
     <PreparationGuide />
     <button className="text-button garden-source-button" onClick={onMethod}>Ver fontes do guia da horta</button>
