@@ -105,7 +105,7 @@ function IntervalList({ intervals, timeZone }: { intervals: CalendarInterval[]; 
 function EventItem({ event, timeZone }: { event: AstroEvent; timeZone: string }) {
   return <li className="event-item">
     <span className="event-icon">{event.kind === 'phase' ? <MoonIcon type={event.type} size={27} /> : event.kind === 'season' ? <Icon kind="sun" size={25} /> : <span className={`orbit-symbol ${event.kind}`} aria-hidden="true" />}</span>
-    <div><strong>{event.label}</strong><span>{event.detail || (event.kind === 'phase' ? 'Instante da fase principal' : 'Evento astronômico')}</span></div>
+    <div><strong>{event.label}</strong><span>{event.kind === 'phase' ? 'Instante da fase principal' : event.detail || 'Evento astronômico'}</span></div>
     <time dateTime={event.instantUtc}>{formatTime(event.instantUtc, timeZone)}</time>
   </li>;
 }

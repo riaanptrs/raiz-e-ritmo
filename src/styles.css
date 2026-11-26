@@ -44,3 +44,6 @@
 }
 .season-change { margin-top: 15px; }
 .season-change p + p { margin-top: 5px; }
+.skip-link:not(:focus) { clip-path: inset(50%); }
+.calendar-toolbar h2, .day-heading h2 { text-transform: none; }
+.calendar-toolbar h2::first-letter, .day-heading h2::first-letter { text-transform: uppercase; }
