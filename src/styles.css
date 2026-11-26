@@ -20,3 +20,27 @@
 @media(max-width:1120px){.brand small{font-size:.65rem}.cell-phase>span{display:none}.cell-caution>span{display:none}.settings-panel{grid-template-columns:1fr 1fr}.settings-intro{grid-column:1/-1}.settings-footnote{padding-top:12px}.calendar-day,.calendar-blank{min-height:96px}}
 @media(max-width:850px){.settings-panel{grid-template-columns:1fr 1fr}.cell-phase>span{display:inline}.cell-phase{font-size:.75rem}.cell-caution>span{display:inline}.calendar-day,.calendar-blank{min-height:105px}}
 @media(max-width:520px){.brand small{font-size:.65rem}.brand{font-size:1.35rem}.site-header nav button{font-size:.875rem}.site-header nav button svg{display:none}.hero-meta{font-size:.75rem;flex-wrap:wrap}.hero .eyebrow{font-size:.7rem}.settings-panel label{font-size:.875rem}.settings-panel select{font-size:.875rem;min-height:46px}.settings-panel{grid-template-columns:1fr}.settings-intro,.settings-footnote{grid-column:auto}.settings-footnote{font-size:.8rem!important}.cell-phase>span,.cell-caution>span,.cell-event-word{display:none}.cell-event{font-size:.875rem;min-width:18px;text-align:center;padding:1px 4px}.cell-phase .moon-icon{width:20px;height:20px}.cell-caution svg{width:14px;height:14px}.calendar-day,.calendar-blank{min-height:89px}.day-number{font-size:.95rem}.calendar-legend{font-size:.875rem;gap:12px}.calendar-help{font-size:.8rem!important}.calendar-toolbar .eyebrow{font-size:.7rem}.calendar-zone{font-size:.8rem!important}.garden-reminder h3{font-size:1.2rem}.garden-reminder p{font-size:.9rem}.coverage-banner strong,.coverage-banner p{font-size:.9rem}.connection-banner>div{font-size:.875rem}.custom-zone{grid-column:auto}.section-intro .eyebrow{font-size:.75rem}.reading-card p,.reading-card ul,.rhythm-guide dd{font-size:.95rem}table{font-size:.9rem}thead th{font-size:.875rem}.footer-links{gap:16px}}
+
+/* Keep the calendar readable and its controls easy to reach on touch screens. */
+.calendar-zone { overflow-wrap: anywhere; }
+.day-context { flex-wrap: wrap; overflow-wrap: anywhere; color: #4b614a; }
+.month-navigation button, .today-button, .footer-links button, .footer-links a { min-height: 44px; }
+.month-navigation button { min-width: 44px; }
+.footer-links a { display: inline-flex; align-items: center; }
+.day-jump { display: none; }
+.observation-guide ol { padding-inline-start: 1.5rem; color: #40543e; line-height: 1.65; }
+.observation-guide li { padding-inline-start: .3rem; }
+.event-item > div > span, .interval-time, .note, .offline-label { color: #4f624b !important; }
+.tradition-section .note, .classification-note p { color: #675638 !important; }
+.table-scroll th, .table-scroll td { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 850px) {
+  .day-jump { display: flex; align-items: center; min-height: 44px; margin: 0 16px 14px; font-weight: 600; }
+}
+@media (max-width: 520px) {
+  .hero { min-height: 0; }
+  .hero h1 { margin-bottom: 16px; }
+  .site-header nav button { min-height: 44px; }
+  .calendar-legend { line-height: 1.4; }
+}
+.season-change { margin-top: 15px; }
+.season-change p + p { margin-top: 5px; }

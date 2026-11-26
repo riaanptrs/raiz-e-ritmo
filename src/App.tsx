@@ -3,10 +3,10 @@ import type { KeyboardEvent, ReactNode } from 'react';
 import type { AstroEvent, CalendarInterval, DayPlan, Hemisphere } from './lib/types';
 import {
   COVERAGE_YEAR, formatDate, formatInstant, formatMonth, formatTime, getDayPlan,
-  getInitialDate, localDateKey, monthCells, shiftDateMonth,
+  getInitialDate, localDateKey, monthCells, seasonAt, shiftDateMonth,
 } from './lib/calendar';
 
-type View = 'calendar' | 'learn' | 'method';
+type View = 'calendar' | 'learn' | 'method' | 'help';
 type Settings = { timeZone: string; hemisphere: Hemisphere };
 const STORAGE_KEY = 'raiz-e-ritmo.settings.v1';
 const DEFAULTS: Settings = { timeZone: 'America/Sao_Paulo', hemisphere: 'south' };
@@ -20,6 +20,11 @@ const ZONES = [
 ] as const;
 const HEMISPHERES: Record<Hemisphere, string> = { south: 'Hemisfério Sul', north: 'Hemisfério Norte', equatorial: 'Região equatorial' };
 const SOURCES = {
+  repo: 'https://github.com/riaanptrs/raiz-e-ritmo',
+  docs: 'https://github.com/riaanptrs/raiz-e-ritmo/blob/f53d80cae78e82288463b2d512f9024e01134cbd/docs',
+  seasons: 'https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027',
+  iau: 'https://www.iau.org/IAU/Astronomy-FAQs/Constellations.aspx',
+  evidence: 'https://acervodigital.unesp.br/handle/11449/93462',
   usno: 'https://aa.usno.navy.mil/calculated/moon/phases?year=2027',
   jpl: 'https://ssd.jpl.nasa.gov/horizons/manual.html',
   engine: 'https://github.com/cosinekitty/astronomy',
@@ -106,27 +111,31 @@ function EventItem({ event, timeZone }: { event: AstroEvent; timeZone: string })
 }
 
 function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) {
+  const seasonChange = plan.hemisphere === 'equatorial' ? undefined : plan.events.find(event => event.kind === 'season');
   return <aside className="day-panel" aria-labelledby="day-title">
     <div className="day-heading">
       <span className="eyebrow">UM OLHAR PARA O DIA</span>
-      <h2 id="day-title">{formatDate(plan.dateKey)}</h2>
-      <span className="day-context"><Icon kind="globe" size={16} /> {HEMISPHERES[plan.hemisphere]}</span>
+      <h2 id="day-title" tabIndex={-1}>{formatDate(plan.dateKey)}</h2>
+      <span className="day-context"><Icon kind="globe" size={16} /> {HEMISPHERES[plan.hemisphere]} · {plan.timeZone}</span>
     </div>
     {!plan.supported ? <div className="panel-section"><h3>Fora da cobertura</h3><p>Esta versão contém dados de {COVERAGE_YEAR}. Escolha uma data desse ano para consultar o calendário.</p></div> : <>
       <section className="panel-section">
         <h3>O céu neste dia</h3>
         {plan.events.length > 0 ? <ul className="event-list">{plan.events.map(event => <EventItem key={event.id} event={event} timeZone={plan.timeZone} />)}</ul> : <p>Nenhum evento astronômico pontual registrado neste dia.</p>}
         {plan.nextPhase && <div className="next-phase"><MoonIcon type={plan.nextPhase.type} /><p><span>Próxima fase principal</span><strong>{plan.nextPhase.label}</strong><span>{formatInstant(plan.nextPhase.instantUtc, plan.timeZone)}</span></p></div>}
-        {plan.seasonLabel && <p className="season-line"><Icon kind="sun" size={17} /> {plan.seasonLabel}</p>}
+        {seasonChange ? <div className="season-change">
+          <p>Antes das {formatTime(seasonChange.instantUtc, plan.timeZone)}: {seasonAt(new Date(Date.parse(seasonChange.instantUtc) - 1).toISOString(), plan.hemisphere)}</p>
+          <p>A partir das {formatTime(seasonChange.instantUtc, plan.timeZone)}: {seasonAt(seasonChange.instantUtc, plan.hemisphere)}</p>
+        </div> : plan.seasonLabel && <p className="season-line"><Icon kind="sun" size={17} /> {plan.seasonLabel}</p>}
       </section>
       <section className="panel-section">
         <h3>Percurso da Lua</h3>
-        <IntervalList intervals={plan.motion} timeZone={plan.timeZone} />
+        {plan.motion.length ? <IntervalList intervals={plan.motion} timeZone={plan.timeZone} /> : <p>Dados de direção lunar indisponíveis neste dia.</p>}
         <p className="note">A direção norte/sul é astronômica. “Ascendente” e “descendente” seguem aqui uma convenção biodinâmica por hemisfério.</p>
       </section>
       <section className="panel-section">
         <h3>Constelação no céu</h3>
-        <IntervalList intervals={plan.constellations} timeZone={plan.timeZone} />
+        {plan.constellations.length ? <IntervalList intervals={plan.constellations} timeZone={plan.timeZone} /> : <p>Dados de constelação indisponíveis neste dia.</p>}
         <p className="note">Regiões astronômicas da IAU. Não determinam, por si, uma recomendação de cultivo.</p>
       </section>
       <section className="panel-section tradition-section">
@@ -136,8 +145,8 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
         <p className="note">Regras de nós lunares e perigeu descritas no Stella Natura. Outros fatores do calendário não estão incluídos; benefício ou prejuízo agrícola não foi demonstrado por este cálculo.</p>
         <button className="text-button" onClick={onMethod}>Entender estas regras</button>
       </section>
-      <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Classificação biodinâmica indisponível</strong><p>Dias de raiz, folha, flor e fruto aguardam um método completo e validado.</p></div></div>
     </>}
+    <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Classificação biodinâmica indisponível</strong><p>Dias de raiz, folha, flor e fruto aguardam um método completo e validado.</p></div></div>
   </aside>;
 }
 
@@ -145,10 +154,19 @@ function Learning({ onMethod }: { onMethod: () => void }) {
   return <section className="reading-view" aria-labelledby="learn-title">
     <div className="section-intro"><span className="eyebrow">APRENDER COM O JARDIM</span><h1 id="learn-title">Observe o céu.<br />Conheça o seu chão.</h1><p>Um calendário se torna mais útil quando você entende o que ele mostra, de onde vem a orientação e o que precisa observar no seu próprio cultivo.</p></div>
     <div className="learning-grid">
-      <article className="learning-card"><span className="card-icon"><Icon kind="globe" size={28} /></span><h2>Por que acompanhar?</h2><p>Na tradição biodinâmica, ritmos celestes fazem parte da observação da propriedade. O calendário organiza esses ritmos e suas interpretações; a precisão de uma data não comprova um efeito sobre a planta.</p><SourceLink href={SOURCES.stella}>A perspectiva do Stella Natura</SourceLink></article>
+      <article className="learning-card"><span className="card-icon"><Icon kind="globe" size={28} /></span><h2>Por que acompanhar?</h2><p>A agricultura biodinâmica propõe cuidar da propriedade como um conjunto de solo, plantas e outros seres vivos. Algumas tradições biodinâmicas consultam ritmos celestes ao escolher datas de semeadura e transplante. O calendário registra essas interpretações.</p><SourceLink href={SOURCES.stella}>A perspectiva do Stella Natura</SourceLink></article>
       <article className="learning-card"><span className="card-icon"><Icon kind="leaf" size={28} /></span><h2>Como usar no cotidiano?</h2><p>Comece observando umidade do solo, clima e estágio da planta. Registre o que fez, as condições e o resultado. Use as indicações tradicionais como uma escolha a investigar, sem deixar o calendário substituir a atenção ao jardim.</p><SourceLink href={SOURCES.stella}>Calendário, clima e observação</SourceLink></article>
       <article className="learning-card"><span className="card-icon"><Icon kind="calendar" size={28} /></span><h2>Quando consultar?</h2><p>Ao planejar uma tarefa, confira o horário local e os intervalos dentro do dia. Uma transição pode acontecer no meio da manhã ou à noite. O mesmo evento pode cair em datas diferentes conforme o fuso.</p><SourceLink href={SOURCES.jpl}>Como os eventos são definidos</SourceLink></article>
     </div>
+    <article className="reading-card observation-guide">
+      <h2>Da leitura à observação</h2>
+      <ol>
+        <li><strong>Escolha um dia.</strong> Confira o fuso e identifique o que aparece. Uma fase tem hora marcada. Uma janela tradicional pode começar na véspera e terminar no dia seguinte.</li>
+        <li><strong>Confira as condições.</strong> Antes de semear, veja se o solo está úmido sem estar encharcado e considere a chuva e a temperatura. Antes de transplantar, observe o estágio e o vigor da muda.</li>
+        <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa. Se comparar duas semeaduras, mantenha condições semelhantes e registre também as diferenças. Uma diferença na germinação pode ter várias causas.</li>
+      </ol>
+      <p>Um estudo da UNESP com cenouras em dois períodos encontrou diferenças em alguns contrastes. O estudo não encontrou diferença associada ao ritmo ascendente e descendente nos aspectos avaliados. <SourceLink href={SOURCES.evidence}>Consultar o estudo</SourceLink></p>
+    </article>
     <article className="reading-card rhythm-guide"><div><span className="eyebrow">CADA RITMO TEM SUA PRÓPRIA PERGUNTA</span><h2>A Lua tem mais de um ciclo</h2><p>“Crescente” não significa “ascendente”. E um nó ascendente não é o início da Lua ascendente.</p></div><dl>
       <div><dt>Fase lunar</dt><dd>Relação angular entre Sol e Lua vista da Terra: nova, quartos e cheia.</dd></div>
       <div><dt>Declinação</dt><dd>Movimento da Lua para norte ou sul do equador celeste, usado nesta versão para a convenção de ascensão e descensão.</dd></div>
@@ -169,14 +187,30 @@ function Method() {
       <tr><th>Nós lunares</th><td>Cruzamentos do plano da eclíptica. Os termos ascendente e descendente indicam o sentido do cruzamento, em qualquer hemisfério.</td></tr>
       <tr><th>Perigeu e apogeu</th><td>26 extremos da distância geocêntrica lunar de 2027, derivados de posições JPL DE441. Há cobertura adjacente ao ano: o apogeu de 1º de janeiro de 2028 pode aparecer em 31 de dezembro de 2027 no horário local.</td></tr>
       <tr><th>Declinação lunar</th><td>Variação para norte ou sul e seus pontos de inversão. A interpretação por hemisfério é separada da observação geométrica.</td></tr>
-      <tr><th>Constelação</th><td>Região IAU na direção da Lua, incluindo regiões que não pertencem às doze categorias tradicionais. Não é um “dia de cultivo”.</td></tr>
-      <tr><th>Estações astronômicas</th><td>Equinócios e solstícios; o nome da estação acompanha o hemisfério escolhido.</td></tr>
+      <tr><th>Constelação</th><td>Região IAU na direção da Lua, incluindo regiões que não pertencem às doze categorias tradicionais. <SourceLink href={SOURCES.iau}>Limites oficiais da IAU</SourceLink>.</td></tr>
+      <tr><th>Estações astronômicas</th><td>Equinócios e solstícios; o nome da estação acompanha o hemisfério escolhido. <SourceLink href={SOURCES.seasons}>Tabela USNO</SourceLink>.</td></tr>
     </tbody></table></div><p className="source-note">Os instantes de fases publicados preservam os minutos da referência USNO. O <SourceLink href={SOURCES.engine}>Astronomy Engine</SourceLink> fornece os demais cálculos, com a exceção dos ápsides desta edição, derivados do <SourceLink href={SOURCES.jpl}>JPL Horizons</SourceLink>.</p></article>
     <article className="reading-card"><h2>Verificação desta edição</h2><p>Nas comparações com USNO e JPL, as diferenças máximas foram de <strong>73 segundos nas fases calculadas</strong>, <strong>29 segundos nos nós lunares</strong>, <strong>11 segundos nas inversões de declinação</strong> e <strong>42 segundos nos equinócios e solstícios</strong>. As fases mostradas no calendário continuam a usar os horários publicados pelo USNO.</p><p>A checagem identificou uma diferença de até <strong>16 minutos e 14 segundos</strong> em um dos ápsides lunares calculados pela biblioteca. Por isso, esta edição usa eventos de perigeu e apogeu derivados diretamente dos dados JPL. O refinamento com amostras mais próximas mudou esses horários em menos de um segundo; essa comparação usa o mesmo modelo e não demonstra uma precisão física de um segundo.</p><p className="note">São verificações numéricas de datas e posições. Não validam efeitos de uma prática agrícola nem a equivalência com um calendário editorial completo. Os procedimentos, tolerâncias e resultados ficam documentados no repositório.</p></article>
     <article className="reading-card partial-method"><span className="small-tag">PERFIL TRADICIONAL PARCIAL</span><h2>Duas regras do Stella Natura</h2><p>As janelas exibidas aplicam dois intervalos descritos pela editora Sherry Wildfeuer:</p><ul><li><strong>Nós lunares:</strong> duas horas antes e duas horas depois do cruzamento.</li><li><strong>Perigeu:</strong> doze horas antes e doze horas depois do instante de menor distância.</li></ul><p>A implementação não reproduz o calendário completo. Ajustes por outros planetas, eclipses, transições entre setores e associações agrícolas não entram nessas janelas. Ausência de uma janela não significa indicação favorável.</p><p>Esses intervalos são orientações tradicionais para evitar semeadura, não resultados demonstrados pelo cálculo astronômico.</p><SourceLink href={SOURCES.stella}>Ler as regras publicadas pelo Stella Natura</SourceLink></article>
     <article className="reading-card"><h2>Por que não copiar a lógica de qualquer calendário?</h2><p>É necessário definir limites de setores, coordenadas, época de referência, horários de transição, margens e exceções. Diferentes publicações fazem escolhas distintas. O MABD explica que os limites usados por sua tradição não são idênticos aos dos astrônomos.</p><p>O Raiz &amp; Ritmo não apresenta uma classificação IAU como reprodução de Maria Thun, ABD ou Assesoar. A classificação completa de raiz, folha, flor e fruto permanece indisponível.</p><SourceLink href={SOURCES.mabd}>Explicações do MABD</SourceLink></article>
     <article className="reading-card"><h2>Hemisfério e fuso são configurações independentes</h2><p>Mudar o hemisfério preserva os instantes dos eventos. Mudar o fuso recalcula o dia e a hora exibidos, incluindo mudanças de horário de verão previstas na base de fusos do dispositivo. Intervalos podem atravessar a meia-noite.</p><p>Ascendente e descendente, na leitura tradicional implementada, invertem-se entre Norte e Sul. A direção física norte/sul continua a mesma. Na região equatorial, mostramos a direção sem aplicar essa inversão. Uma previsão da altura no horizonte exigiria latitude e cálculo topocêntrico, que não fazem parte desta versão.</p><SourceLink href={SOURCES.bda}>Fonte da convenção entre hemisférios</SourceLink></article>
-    <div className="source-directory"><h2>Consultar, reproduzir, melhorar</h2><p>O código, os dados e a documentação do método estão disponíveis para inspeção.</p><a className="button primary-button" href="https://github.com/riaanptrs/raiz-e-ritmo" target="_blank" rel="noreferrer">Abrir o projeto no GitHub</a><p className="note">As preferências ficam neste navegador. O aplicativo não exige conta.</p></div>
+    <div className="source-directory"><h2>Consultar, reproduzir, melhorar</h2><p>O código, os dados e a documentação do método estão disponíveis para inspeção.</p><a className="button primary-button" href={SOURCES.repo} target="_blank" rel="noreferrer">Abrir o projeto no GitHub</a><p><SourceLink href={SOURCES.docs + "/DATA_METHOD.md"}>Documentação do método</SourceLink> · <SourceLink href={SOURCES.docs + "/VALIDATION_2027.md"}>Relatório de validação de 2027</SourceLink></p><p className="note">As preferências ficam neste navegador. O aplicativo não exige conta.</p></div>
+  </section>;
+}
+
+function Help({ offlineReady }: { offlineReady: boolean }) {
+  return <section className="reading-view" aria-labelledby="help-title">
+    <div className="section-intro"><h1 id="help-title">Instalação e uso offline</h1><p>Tenha o calendário de 2027 e os guias à mão mesmo quando a conexão falhar.</p></div>
+    <article className="reading-card">
+      <h2>Adicionar ao seu dispositivo</h2>
+      <p>No Android ou computador, procure <strong>Instalar aplicativo</strong> ou <strong>Adicionar à tela inicial</strong> no menu do navegador, quando disponível. No iPhone ou iPad, abra no Safari, toque em <strong>Compartilhar</strong> e escolha <strong>Adicionar à Tela de Início</strong>.</p>
+    </article>
+    <article className="reading-card">
+      <h2>Preparar o acesso offline</h2>
+      <p>Abra o calendário com internet na primeira visita e aguarde o aviso <strong>Acesso offline preparado</strong>. O calendário e os guias ficam disponíveis neste navegador. Os links de fontes externas precisam de conexão.</p>
+      <p role="status">{offlineReady ? 'Acesso offline preparado neste navegador.' : 'O acesso offline ainda não está preparado neste navegador.'}</p>
+      <p>Ao voltar à internet, aguarde o aviso de nova versão. Se ele aparecer, selecione <strong>Atualizar aplicativo</strong> para carregar os novos arquivos.</p>
+    </article>
   </section>;
 }
 
@@ -248,8 +282,15 @@ export default function App() {
     };
   }, []);
 
-  function navigate(next: View) { setView(next); window.scrollTo({ top: 0, behavior: 'auto' }); }
-  function chooseToday() { setDateKey(today); setView('calendar'); }
+  function navigate(next: View) {
+    setView(next);
+    mainRef.current?.focus({ preventScroll: true });
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+  function chooseToday() {
+    setDateKey(today);
+    navigate('calendar');
+  }
   function keyboardDay(event: KeyboardEvent<HTMLButtonElement>, day: string) {
     const offsets: Record<string, number> = { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -7, ArrowDown: 7 };
     let next = day;
@@ -279,10 +320,10 @@ export default function App() {
       <button className="today-button" onClick={chooseToday}>Hoje</button>
     </div></header>
     {(!online || updateAvailable || offlineFailed) && <div className="connection-banner" role="status"><div>{!online ? offlineReady ? 'Você está sem conexão. Consulte os dados e guias já disponíveis neste dispositivo.' : 'Você está sem conexão. O acesso offline ainda não foi preparado neste dispositivo.' : offlineFailed ? 'Não foi possível preparar o acesso offline neste navegador.' : 'Uma nova versão está pronta.'}{updateAvailable && <button onClick={() => window.dispatchEvent(new Event('rr:apply-update'))}>Atualizar aplicativo</button>}</div></div>}
-    <main id="main-content" ref={mainRef}>
+    <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
-        <section className="hero"><div className="hero-copy"><span className="eyebrow">CALENDÁRIO &amp; CULTIVO CONSCIENTE</span><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Conheça os ritmos do céu e as tradições da biodinâmica. Cultive com observação, contexto e boas perguntas.</p><div className="hero-meta"><span>EDIÇÃO {COVERAGE_YEAR}</span><span>Gratuito · Em português</span></div></div><BotanicalDrawing /></section>
-        <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2><p>O céu é compartilhado. A leitura é local.</p></div></div><label>Hemisfério<select value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label>Fuso horário<select value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
+        <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>EDIÇÃO {COVERAGE_YEAR}</span></div></div><BotanicalDrawing /></section>
+        <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
           else { setSettings(previous => ({ ...previous, timeZone: e.target.value })); setShowCustomZone(false); setZoneError(''); }
         }}>{ZONES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}{!knownZone && <option value={settings.timeZone}>{settings.timeZone}</option>}<option value="custom">Outro fuso IANA…</option></select></label>
@@ -290,8 +331,8 @@ export default function App() {
           {showCustomZone && <form className="custom-zone" onSubmit={event => { event.preventDefault(); applyCustomZone(); }}><label htmlFor="custom-zone">Identificador do fuso<input id="custom-zone" value={customZone} onChange={event => setCustomZone(event.target.value)} placeholder="America/Recife" aria-describedby={zoneError ? 'zone-error' : undefined} aria-invalid={!!zoneError} /></label><button className="button secondary-button" type="submit">Aplicar fuso</button>{zoneError && <p id="zone-error" role="alert">{zoneError}</p>}</form>}
           {storageUnavailable && <p className="settings-footnote" role="status">Seu navegador não permitiu salvar as preferências. Elas valem enquanto esta página estiver aberta.</p>}
         </section>
-        <div className="calendar-layout"><section className="calendar-panel" aria-labelledby="calendar-title"><div className="calendar-toolbar"><div><span className="eyebrow">EXPLORE O MÊS</span><h2 id="calendar-title">{formatMonth(dateKey)}</h2></div><div className="month-navigation"><button aria-label="Mês anterior" onClick={() => setDateKey(previous => shiftDateMonth(previous, -1))}><Icon kind="chevron-left" /></button><button aria-label="Próximo mês" onClick={() => setDateKey(previous => shiftDateMonth(previous, 1))}><Icon kind="chevron-right" /></button></div></div>
-          <p className="calendar-zone">Horários em {settings.timeZone}</p>
+        <div className="calendar-layout"><section className="calendar-panel" aria-labelledby="calendar-title"><div className="calendar-toolbar"><div><h2 id="calendar-title" aria-live="polite">{formatMonth(dateKey)}</h2></div><div className="month-navigation"><button aria-label="Mês anterior" onClick={() => setDateKey(previous => shiftDateMonth(previous, -1))}><Icon kind="chevron-left" /></button><button aria-label="Próximo mês" onClick={() => setDateKey(previous => shiftDateMonth(previous, 1))}><Icon kind="chevron-right" /></button></div></div>
+          <p className="calendar-zone">{HEMISPHERES[settings.hemisphere]} · {settings.timeZone}</p>
           {!plan.supported && <div className="coverage-banner"><div><strong>Você está fora do calendário de {COVERAGE_YEAR}.</strong><p>A consulta desta versão cobre janeiro a dezembro de {COVERAGE_YEAR}.</p></div><button className="button secondary-button" onClick={() => setDateKey(`${COVERAGE_YEAR}-01-01`)}>Voltar a {COVERAGE_YEAR}</button></div>}
           <div className="weekdays" aria-hidden="true">{['seg', 'ter', 'qua', 'qui', 'sex', 'sáb', 'dom'].map(day => <span key={day}>{day}</span>)}</div>
           <div className="calendar-grid" role="group" aria-label={`Dias de ${formatMonth(dateKey)}`}>{cells.map((day, index) => {
@@ -307,12 +348,13 @@ export default function App() {
               {info.cautions.length > 0 && <span className="cell-caution"><Icon kind="info" size={12} /><span>Janela</span></span>}
             </button>;
           })}</div>
-          <div className="calendar-legend"><span><MoonIcon type="full_moon" size={16} />Fase principal</span><span><span className="legend-event" aria-hidden="true" />Evento astronômico</span><span><Icon kind="info" size={15} />Janela tradicional parcial</span></div>
+          <div className="calendar-legend"><span><MoonIcon type="full_moon" size={16} />Fase principal (símbolo esquemático)</span><span><span className="legend-event" aria-hidden="true" />Evento astronômico</span><span><Icon kind="info" size={15} />Janela tradicional parcial</span></div>
           <p className="calendar-help">Selecione um dia para ver os horários e as explicações. No teclado, use as setas para mudar de dia e Page Up / Page Down para mudar de mês.</p>
+          <a className="day-jump" href="#day-title">Ver detalhes de {formatDate(dateKey)}</a>
           <div className="garden-reminder"><span><Icon kind="leaf" size={28} /></span><div><h3>O jardim também tem algo a dizer.</h3><p>Observe o solo, o clima e a planta antes de escolher uma tarefa. O calendário ajuda a formular perguntas e registrar experiências.</p><button className="text-button" onClick={() => navigate('learn')}>Aprender a usar o calendário</button></div></div>
         </section><DayDetail plan={plan} onMethod={() => navigate('method')} /></div>
-      </> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : <Method />}
+      </> : view === 'learn' ? <Learning onMethod={() => navigate('method')} /> : view === 'method' ? <Method /> : <Help offlineReady={offlineReady} />}
     </main>
-    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span><p>Um convite a observar, compreender e cultivar.</p></div><div className="footer-links"><button onClick={() => navigate('method')}>Fontes e limites</button><a href="https://github.com/riaanptrs/raiz-e-ritmo" target="_blank" rel="noreferrer">Projeto no GitHub</a><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Calendário 2027 · versão inicial'}</span></div></footer>
+    <footer className="site-footer"><div><span className="footer-brand">Raiz &amp; Ritmo</span></div><div className="footer-links"><button onClick={() => navigate('help')}>Instalação e ajuda</button><button onClick={() => navigate('method')}>Fontes e limites</button><a href={SOURCES.repo} target="_blank" rel="noreferrer">Projeto no GitHub</a><span className="offline-label">{offlineReady ? <><Icon kind="cloud" size={16} />Acesso offline preparado</> : 'Calendário 2027 · versão inicial'}</span></div></footer>
   </>;
 }

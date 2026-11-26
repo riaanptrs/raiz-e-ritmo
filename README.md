@@ -6,7 +6,7 @@ Aplicativo web gratuito para observar os ritmos astronômicos, compreender inter
 
 ## Estado da implementação
 
-A primeira versão funcional está pronta para revisão. Usa **React, TypeScript e Vite**, com calendário de **2027**, explicações e estrutura de PWA. O destino previsto é GitHub Pages no caminho `/raiz-e-ritmo/`. Esta implementação **não publica o site automaticamente**.
+A primeira versão funcional inclui calendário, guias de observação e ajuda para instalação e uso offline. Usa **React, TypeScript e Vite**, com calendário de **2027**, explicações e estrutura de PWA. O destino previsto é GitHub Pages no caminho `/raiz-e-ritmo/`. Esta implementação **não publica o site automaticamente**.
 
 O calendário separa astronomia, interpretação tradicional e evidência agrícola. Não promete efeitos sobre produtividade ou sabor. **A classificação completa de raiz, folha, flor e fruto permanece indisponível**: limites e ajustes de calendários editoriais ainda não foram reproduzidos por um método completo e verificável.
 
@@ -76,7 +76,14 @@ Os testes de cache executam o worker real gerado em um ambiente controlado de re
 
 ## Publicação prevista
 
-O build usa base `/raiz-e-ritmo/`; manifest e worker mantêm esse escopo. Para uma publicação futura no GitHub Pages, o artefato é o conteúdo de `dist/`. Não há workflow de deploy automático nesta alteração. Se o caminho público mudar, ajuste `vite.config.ts`, gere novo build e confira o escopo antes de publicar.
+O workflow **Publish GitHub Pages** só executa por acionamento manual e publica exclusivamente a partir de `main`. A revisão, a integração e a publicação são etapas separadas.
+
+1. Revise a alteração, confirme a licença do código e do conteúdo e integre a versão aprovada em `main`.
+2. No GitHub, abra **Settings → Pages → Build and deployment** e selecione **GitHub Actions** como fonte. Se necessário, configure o ambiente `github-pages` para exigir aprovação antes do deploy.
+3. Em **Actions → Publish GitHub Pages → Run workflow**, selecione `main`. O workflow instala as dependências do lockfile, verifica e compila o projeto, e publica o conteúdo de `dist/`.
+4. Abra a URL exibida na execução. Confira o caminho `/raiz-e-ritmo/`, o escopo do service worker e a instalação nos dispositivos pretendidos.
+
+Se o caminho público mudar, ajuste `vite.config.ts` e confira manifest, assets e escopo do worker no build. Veja a [documentação oficial de publicação do GitHub Pages](https://docs.github.com/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
 
 ## Documentação
 
