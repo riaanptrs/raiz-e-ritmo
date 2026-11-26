@@ -178,7 +178,6 @@ function PreparationQuantities() {
   return <section className="preparation-quantities" aria-labelledby="prep-quantities">
     <h3 id="prep-quantities">Quanto usar na sua área?</h3>
     <p>As faixas de referência do Apêndice 8 da Demeter são de 50 a 300 g/ha para o 500, de 2,5 a 5 g/ha para o 501 e de 1 a 2 mL de cada preparado de composto por 10 m³. São referências de aplicação da tradição, sem indicação de eficácia para um canteiro específico.</p>
-    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026 · Apêndice 8, p. 122</SourceLink>
     <details>
       <summary>Por que a calculadora usa gramas?</summary>
       <p>No curso de 1924, Steiner usou um balde de ordenha suíço como referência e deixou a padronização das medidas em aberto. A calculadora usa as faixas métricas da Demeter para converter a quantidade conforme a área ou o volume de composto.</p>
@@ -232,13 +231,12 @@ function PreparationGuide() {
     <p className="source-note">Steiner, palestra de 13 de junho de 1924, p. 107 do PDF consultado.</p>
     <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
     <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
-    <SourceLink href={DEMETER_STANDARD + '#page=122'}>Orientações de produção e materiais · Demeter 2026, Apêndice 8</SourceLink>
     <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. O planejamento de aplicação segue a etapa da cultura. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
     <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
   </details>;
 }
 
-function GardenGuide() {
+function GardenGuide({ onMethod }: { onMethod: () => void }) {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
     <h2 id="garden-title" tabIndex={-1}>O que fazer hoje na horta?</h2>
     <p>Na agricultura biodinâmica de Rudolf Steiner, a propriedade é vista como um organismo. Para uma horta pequena, isso começa com uma pergunta prática: como o solo, a água, as plantas e a vida no entorno se relacionam neste lugar?</p>
@@ -269,28 +267,25 @@ function GardenGuide() {
         <p>Steiner propôs observar a chuva junto com a Lua cheia ao pensar na germinação. Se você segue a prática do preparado 500, ele orientou aplicá-lo ao solo antes de semear.</p>
         <p>Para decidir se o canteiro está pronto, confira a época da cultura na sua região e a umidade do solo. Semeie na profundidade indicada para a cultura.</p>
         <AgricultureCourseCitation location="Palestra 1 e discussão da palestra 4, pp. 26 e 82 do PDF consultado." />
-        <SourceLink href={SOURCES.planting}>Complemento de horticultura: semeadura</SourceLink>
       </article>
       <article>
         <h4>Transplantar</h4>
         <p><strong>Quando:</strong> quando a muda estiver vigorosa e acostumada às condições externas. Prefira um fim de tarde ou um dia nublado.</p>
         <p><strong>Por quê e como:</strong> a adaptação gradual reduz o choque do transplante. Exponha as mudas ao sol e ao vento aos poucos antes de plantar e regue depois.</p>
-        <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Complemento de horticultura: transplante</SourceLink>
       </article>
       <article>
         <h4>Colher</h4>
         <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
-        <SourceLink href={SOURCES.harvest}>Complemento de horticultura: colheita</SourceLink>
       </article>
     </div>
     <details className="preparation-guide">
       <summary>Ervas em vasos e hortaliças em canteiros</summary>
       <p><strong>Manjericão ou hortelã:</strong> use um vaso com furos para a água sair. Colha folhas ou ramos conforme precisar, à medida que a planta cresce. Mantenha a hortelã em um recipiente próprio se quiser conter sua expansão.</p>
       <p><strong>Alface ou tomate:</strong> observe a parte que será colhida. Na alface, procure folhas tenras. No tomate de variedade vermelha, observe quando a cor fica uniformemente rosada ou vermelha.</p>
-      <SourceLink href={SOURCES.herbs}>Complemento de horticultura: cultivo de ervas</SourceLink>
     </details>
     <p className="note">As janelas do Stella Natura são uma orientação tradicional para semeadura. Para transplante e colheita, use os sinais da planta e as condições do local.</p>
     <PreparationGuide />
+    <button className="text-button garden-source-button" onClick={onMethod}>Ver fontes do guia da horta</button>
   </section>;
 }
 
@@ -346,6 +341,18 @@ function Method() {
   return <section className="reading-view" aria-labelledby="method-title">
     <div className="section-intro"><span className="eyebrow">FONTES E MÉTODO</span><h1 id="method-title">Clareza em cada cálculo.</h1><p>Astronomia, interpretação tradicional e evidência agrícola respondem a perguntas diferentes. Aqui você encontra o que está incluído e o que ainda precisa ser resolvido.</p></div>
     <div className="method-principles"><article><span className="small-tag">ASTRONOMIA</span><h2>O que acontece no céu</h2><p>Eventos e posições calculáveis, com horários convertidos para o fuso escolhido.</p></article><article><span className="small-tag">TRADIÇÃO</span><h2>Como é interpretado</h2><p>Regras atribuídas à publicação que as descreve. Não existe uma regra única para todos os calendários.</p></article><article><span className="small-tag">EVIDÊNCIA</span><h2>O que isso demonstra</h2><p>Acertar a geometria não demonstra uma melhora de produtividade, sabor ou saúde das plantas.</p></article></div>
+    <article className="reading-card">
+      <h2>Fontes do guia da horta</h2>
+      <p>As palestras de Rudolf Steiner fundamentam a leitura biodinâmica. As referências a cada edição e às páginas consultadas aparecem junto às orientações no guia.</p>
+      <p>As práticas de manejo, como acostumar mudas ao sol e ao vento antes de transplantar, têm como complemento os materiais de extensão da Universidade de Minnesota:</p>
+      <ul>
+        <li><SourceLink href={SOURCES.planting}>Semeadura e plantio</SourceLink></li>
+        <li><SourceLink href="https://extension.umn.edu/garden-and-home/yard-and-garden/gardening-in-minnesota/planting-the-vegetable-garden#hardening-1975660">Aclimatação de mudas antes do transplante</SourceLink></li>
+        <li><SourceLink href={SOURCES.harvest}>Ponto de colheita das hortaliças</SourceLink></li>
+        <li><SourceLink href={SOURCES.herbs}>Cultivo e colheita de ervas</SourceLink></li>
+      </ul>
+      <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026. <SourceLink href={DEMETER_STANDARD + '#page=122'}>Demeter 2026, Apêndice 8</SourceLink></p>
+    </article>
     <article className="reading-card"><h2>O que esta versão calcula</h2><div className="table-scroll"><table><thead><tr><th>Informação</th><th>Definição e limites</th></tr></thead><tbody>
       <tr><th>Dezembro de 2026</th><td>Fases principais e solstício, em UTC com precisão de minuto, das tabelas de Fred Espenak. <SourceLink href="https://www.astropixels.com/ephemeris/phasescat/phases2001.html">Fases</SourceLink> · <SourceLink href="https://www.astropixels.com/ephemeris/soleq2001.html">Estações</SourceLink>.</td></tr>
       <tr><th>Fases principais de 2027</th><td>49 instantes da referência USNO, preservados com precisão de minuto. <SourceLink href={SOURCES.usno}>Tabela original</SourceLink>.</td></tr>
@@ -488,7 +495,7 @@ export default function App() {
     <main id="main-content" ref={mainRef} tabIndex={-1}>
       {view === 'calendar' ? <>
         <section className="hero"><div className="hero-copy"><h1>Seu jardim,<br />no ritmo da natureza.</h1><p>Consulte os eventos do céu no seu horário local e conheça as tradições biodinâmicas que orientam a observação do jardim.</p><div className="hero-meta"><span>DEZ 2026 A DEZ 2027</span></div></div><BotanicalDrawing /></section>
-        <GardenGuide />
+        <GardenGuide onMethod={() => navigate('method')} />
         <section className="settings-panel" aria-labelledby="settings-title"><div className="settings-intro"><Icon kind="globe" size={25} /><div><h2 id="settings-title">Seu lugar no mundo</h2></div></div><label><span id="hemisphere-label">Hemisfério</span><select aria-labelledby="hemisphere-label" value={settings.hemisphere} onChange={e => setSettings(previous => ({ ...previous, hemisphere: e.target.value as Hemisphere }))}>{Object.entries(HEMISPHERES).map(([value, label]) => <option value={value} key={value}>{label}</option>)}</select></label><label><span id="timezone-label">Fuso horário</span><select aria-labelledby="timezone-label" value={showCustomZone ? 'custom' : settings.timeZone} onChange={e => {
           if (e.target.value === 'custom') { setShowCustomZone(true); setCustomZone(settings.timeZone); }
           else { setSettings(previous => ({ ...previous, timeZone: e.target.value })); setShowCustomZone(false); setZoneError(''); }

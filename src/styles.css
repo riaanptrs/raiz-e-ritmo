@@ -76,3 +76,4 @@
 .panel-section p.december-note { margin-bottom: 16px; }
 .classification-note a { display: inline-flex; align-items: center; min-height: 44px; }
 .garden-actions h4 { margin: 0 0 8px; font-size: 1.05rem; }
+.garden-source-button { min-height: 44px; margin-top: 12px; }
