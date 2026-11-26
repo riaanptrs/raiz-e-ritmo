@@ -74,3 +74,4 @@
 }
 
 .panel-section p.december-note { margin-bottom: 16px; }
+.classification-note a { display: inline-flex; align-items: center; min-height: 44px; }
