@@ -21,6 +21,8 @@ Provide four simple destinations:
 
 Display the chosen time zone prominently enough to interpret dates. Default to `America/Sao_Paulo`; let users change it. Preserve their selection locally. A date without a principal phase event should say so without inventing additional events.
 
+Choose hemisphere independently of time zone: South, North or equatorial. Preserve the worldwide event instant when switching hemispheres. Reverse the named traditional ascending/descending convention and astronomical season names where appropriate, while keeping physical northward/southward motion and lunar-node names unchanged. Use neutral direction wording for the equatorial setting. Do not infer a regional planting season from hemisphere alone.
+
 For unavailable agricultural intervals, use direct wording such as **“Classificação biodinâmica indisponível para esta data.”** Explain that root, leaf, flower and fruit recommendations require a validated method. Do not colour dates with guessed categories.
 
 ## Educational content

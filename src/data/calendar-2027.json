@@ -1,0 +1,3936 @@
+{
+  "schemaVersion": 1,
+  "year": 2027,
+  "startUtc": "2026-12-20T00:00:00.000Z",
+  "endUtc": "2028-01-12T00:00:00.000Z",
+  "engine": "Astronomy Engine 2.1.19; USNO phases; JPL DE441 apsides",
+  "methodVersion": "raiz-e-ritmo-astronomy-and-partial-tradition-v1",
+  "events": [
+    {
+      "id": "december_solstice-2026-12-21T20:50:22.000Z",
+      "type": "december_solstice",
+      "kind": "season",
+      "label": "Solstício de dezembro",
+      "instantUtc": "2026-12-21T20:50:22.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "declination_maximum-2026-12-23T12:25:48.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2026-12-23T12:25:48.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "full_moon-2026-12-24T01:28:45.000Z",
+      "type": "full_moon",
+      "kind": "phase",
+      "label": "Lua cheia",
+      "instantUtc": "2026-12-24T01:28:45.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "descending_node-2026-12-27T07:54:49.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2026-12-27T07:54:49.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "last_quarter-2026-12-30T19:00:07.000Z",
+      "type": "last_quarter",
+      "kind": "phase",
+      "label": "Quarto minguante",
+      "instantUtc": "2026-12-30T19:00:07.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "declination_minimum-2027-01-05T20:39:03.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-01-05T20:39:03.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270107T082456-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-01-07T08:24:56Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 406.603 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270107T2024-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-01-07T20:24:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "ascending_node-2027-01-10T15:57:00.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-01-10T15:57:00.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270115T2034-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-01-15T20:34:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-01-19T23:09:59.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-01-19T23:09:59.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270121T215435-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-01-21T21:54:35Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 357.288 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270122T1217-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-01-22T12:17:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "descending_node-2027-01-23T17:25:54.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-01-23T17:25:54.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270129T1055-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-01-29T10:55:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-02-02T02:32:18.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-02-02T02:32:18.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270203T134145-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-02-03T13:41:45Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 406.167 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270206T1556-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-02-06T15:56:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "ascending_node-2027-02-06T21:43:03.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-02-06T21:43:03.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270214T0758-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-02-14T07:58:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-02-16T07:58:11.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-02-16T07:58:11.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270219T073800-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-02-19T07:38:00Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 361.030 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-02-20T04:40:21.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-02-20T04:40:21.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270220T2323-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-02-20T23:23:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20270228T0516-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-02-28T05:16:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-03-01T09:36:53.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-03-01T09:36:53.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270303T054556-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-03-03T05:45:56Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 405.183 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-03-06T04:39:56.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-03-06T04:39:56.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270308T0929-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-03-08T09:29:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-03-15T14:14:11.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-03-15T14:14:11.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270315T1625-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-03-15T16:25:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20270319T043626-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-03-19T04:36:26Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 366.461 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-03-19T13:05:48.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-03-19T13:05:48.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "march_equinox-2027-03-20T20:24:43.000Z",
+      "type": "march_equinox",
+      "kind": "season",
+      "label": "Equinócio de março",
+      "instantUtc": "2027-03-20T20:24:43.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "phase-20270322T1044-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-03-22T10:44:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-03-28T17:38:00.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-03-28T17:38:00.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270330T0054-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-03-30T00:54:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20270331T013447-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-03-31T01:34:47Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.288 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-04-02T10:16:25.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-04-02T10:16:25.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270406T2351-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-04-06T23:51:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-04-11T19:25:26.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-04-11T19:25:26.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270413T2256-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-04-13T22:56:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20270414T003613-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-04-14T00:36:13Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 370.041 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-04-15T16:31:08.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-04-15T16:31:08.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270420T2227-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-04-20T22:27:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-04-25T01:39:06.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-04-25T01:39:06.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270427T212018-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-04-27T21:20:18Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.129 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270428T2018-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-04-28T20:18:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "ascending_node-2027-04-29T13:23:16.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-04-29T13:23:16.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270506T1058-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-05-06T10:58:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-05-09T01:37:55.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-05-09T01:37:55.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270509T200041-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-05-09T20:00:41Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 366.657 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-05-12T17:03:14.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-05-12T17:03:14.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270513T0444-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-05-13T04:44:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20270520T1059-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-05-20T10:59:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-05-22T08:47:14.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-05-22T08:47:14.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270525T150832-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-05-25T15:08:32Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.766 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-05-26T15:19:51.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-05-26T15:19:51.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270528T1358-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-05-28T13:58:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20270604T1940-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-06-04T19:40:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-06-05T09:53:50.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-06-05T09:53:50.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270606T144632-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-06-06T14:46:32Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 361.717 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-06-08T19:23:24.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-06-08T19:23:24.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270611T1056-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-06-11T10:56:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-06-18T14:50:11.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-06-18T14:50:11.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270619T0044-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-06-19T00:44:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "june_solstice-2027-06-21T14:10:34.000Z",
+      "type": "june_solstice",
+      "kind": "season",
+      "label": "Solstício de junho",
+      "instantUtc": "2027-06-21T14:10:34.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "apsis-20270622T045706-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-06-22T04:57:06Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 405.675 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-06-22T18:24:58.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-06-22T18:24:58.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270627T0454-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-06-27T04:54:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-07-02T19:44:44.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-07-02T19:44:44.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270704T0302-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-07-04T03:02:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20270704T204852-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-07-04T20:48:52Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 358.289 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-07-06T02:15:02.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-07-06T02:15:02.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270710T1839-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-07-10T18:39:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-07-15T20:19:11.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-07-15T20:19:11.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20270718T1545-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-07-18T15:45:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20270719T113651-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-07-19T11:36:51Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 406.209 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-07-19T23:32:51.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-07-19T23:32:51.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270726T1655-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-07-26T16:55:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-07-30T05:43:40.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-07-30T05:43:40.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270802T061824-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-08-02T06:18:24Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 357.359 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270802T1005-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-08-02T10:05:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "descending_node-2027-08-02T12:33:56.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-08-02T12:33:56.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270809T0454-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-08-09T04:54:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-08-12T02:06:47.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-08-12T02:06:47.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270815T140859-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-08-15T14:08:59Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 406.098 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-08-16T05:48:10.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-08-16T05:48:10.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270817T0729-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-08-17T07:29:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20270825T0227-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-08-25T02:27:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-08-26T14:15:33.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-08-26T14:15:33.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "descending_node-2027-08-29T23:01:01.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-08-29T23:01:01.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20270830T153450-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-08-30T15:34:50Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 359.196 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270831T1741-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-08-31T17:41:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20270907T1831-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-09-07T18:31:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-09-08T08:54:46.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-09-08T08:54:46.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20270911T232923-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-09-11T23:29:23Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 405.411 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "ascending_node-2027-09-12T11:24:36.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-09-12T11:24:36.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20270915T2303-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-09-15T23:03:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-09-22T20:36:09.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-09-22T20:36:09.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "september_equinox-2027-09-23T06:01:18.000Z",
+      "type": "september_equinox",
+      "kind": "season",
+      "label": "Equinócio de setembro",
+      "instantUtc": "2027-09-23T06:01:18.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "phase-20270923T1020-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-09-23T10:20:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "descending_node-2027-09-26T06:03:13.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-09-26T06:03:13.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20270927T200309-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-09-27T20:03:09Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 363.434 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20270930T0236-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-09-30T02:36:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-10-05T16:48:33.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-10-05T16:48:33.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20271007T1147-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-10-07T11:47:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "ascending_node-2027-10-09T14:57:31.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-10-09T14:57:31.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20271009T154314-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-10-09T15:43:14Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.568 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20271015T1347-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-10-15T13:47:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-10-20T01:39:43.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-10-20T01:39:43.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20271022T1729-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-10-22T17:29:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "descending_node-2027-10-23T08:14:29.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-10-23T08:14:29.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20271025T052608-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-10-25T05:26:08Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 368.620 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20271029T1336-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-10-29T13:36:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-11-02T01:11:18.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-11-02T01:11:18.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "ascending_node-2027-11-05T16:52:50.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-11-05T16:52:50.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20271106T0800-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-11-06T08:00:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20271106T113722-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-11-06T11:37:22Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.222 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20271114T0326-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-11-14T03:26:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-11-16T07:34:41.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-11-16T07:34:41.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "apsis-20271119T001842-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-11-19T00:18:42Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 369.327 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-11-19T08:33:24.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-11-19T08:33:24.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20271121T0048-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-11-21T00:48:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "phase-20271128T0324-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-11-28T03:24:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_minimum-2027-11-29T09:05:13.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-11-29T09:05:13.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "ascending_node-2027-12-02T19:36:33.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-12-02T19:36:33.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20271204T084428-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2027-12-04T08:44:28Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 404.698 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "phase-20271206T0522-first_quarter",
+      "kind": "phase",
+      "type": "first_quarter",
+      "label": "Quarto crescente",
+      "instantUtc": "2027-12-06T05:22:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "declination_maximum-2027-12-13T15:57:50.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2027-12-13T15:57:50.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20271213T1609-full_moon",
+      "kind": "phase",
+      "type": "full_moon",
+      "label": "Lua cheia",
+      "instantUtc": "2027-12-13T16:09:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "apsis-20271216T023354-perigee",
+      "kind": "apsis",
+      "type": "perigee",
+      "label": "Perigeu lunar",
+      "instantUtc": "2027-12-16T02:33:54Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Menor distância neste ciclo: aproximadamente 364.007 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "descending_node-2027-12-16T12:19:09.000Z",
+      "type": "descending_node",
+      "kind": "node",
+      "label": "Nodo lunar descendente",
+      "instantUtc": "2027-12-16T12:19:09.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do norte para o sul; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "phase-20271220T0911-last_quarter",
+      "kind": "phase",
+      "type": "last_quarter",
+      "label": "Quarto minguante",
+      "instantUtc": "2027-12-20T09:11:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "december_solstice-2027-12-22T02:42:19.000Z",
+      "type": "december_solstice",
+      "kind": "season",
+      "label": "Solstício de dezembro",
+      "instantUtc": "2027-12-22T02:42:19.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "declination_minimum-2027-12-26T15:49:03.000Z",
+      "type": "declination_minimum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao sul",
+      "instantUtc": "2027-12-26T15:49:03.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    },
+    {
+      "id": "phase-20271227T2012-new_moon",
+      "kind": "phase",
+      "type": "new_moon",
+      "label": "Lua nova",
+      "instantUtc": "2027-12-27T20:12:00Z",
+      "source": "https://aa.usno.navy.mil/calculated/moon/phases?year=2027",
+      "detail": "Horário publicado pelo USNO, com precisão de minuto; cálculo independente conferido separadamente."
+    },
+    {
+      "id": "ascending_node-2027-12-30T00:50:17.000Z",
+      "type": "ascending_node",
+      "kind": "node",
+      "label": "Nodo lunar ascendente",
+      "instantUtc": "2027-12-30T00:50:17.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Travessia da eclíptica do sul para o norte; o nome é o mesmo nos dois hemisférios."
+    },
+    {
+      "id": "apsis-20280101T035918-apogee",
+      "kind": "apsis",
+      "type": "apogee",
+      "label": "Apogeu lunar",
+      "instantUtc": "2028-01-01T03:59:18Z",
+      "source": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+      "detail": "Maior distância neste ciclo: aproximadamente 405.662 km. Horário derivado de dados JPL, exibido com precisão de minuto."
+    },
+    {
+      "id": "first_quarter-2028-01-05T01:41:06.000Z",
+      "type": "first_quarter",
+      "kind": "phase",
+      "label": "Quarto crescente",
+      "instantUtc": "2028-01-05T01:41:06.000Z",
+      "source": "https://github.com/cosinekitty/astronomy"
+    },
+    {
+      "id": "declination_maximum-2028-01-10T02:25:43.000Z",
+      "type": "declination_maximum",
+      "kind": "declination",
+      "label": "Declinação lunar máxima ao norte",
+      "instantUtc": "2028-01-10T02:25:43.000Z",
+      "source": "https://github.com/cosinekitty/astronomy",
+      "detail": "Mudança de direção norte–sul, calculada a partir do centro da Terra. Não é a altura da Lua no horizonte local."
+    }
+  ],
+  "motion": [
+    {
+      "id": "motion-2026-12-20T00:00:00.000Z",
+      "startUtc": "2026-12-20T00:00:00.000Z",
+      "endUtc": "2026-12-23T12:25:48.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2026-12-23T12:25:48.000Z",
+      "startUtc": "2026-12-23T12:25:48.000Z",
+      "endUtc": "2027-01-05T20:39:03.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-01-05T20:39:03.000Z",
+      "startUtc": "2027-01-05T20:39:03.000Z",
+      "endUtc": "2027-01-19T23:09:59.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-01-19T23:09:59.000Z",
+      "startUtc": "2027-01-19T23:09:59.000Z",
+      "endUtc": "2027-02-02T02:32:18.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-02-02T02:32:18.000Z",
+      "startUtc": "2027-02-02T02:32:18.000Z",
+      "endUtc": "2027-02-16T07:58:11.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-02-16T07:58:11.000Z",
+      "startUtc": "2027-02-16T07:58:11.000Z",
+      "endUtc": "2027-03-01T09:36:53.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-03-01T09:36:53.000Z",
+      "startUtc": "2027-03-01T09:36:53.000Z",
+      "endUtc": "2027-03-15T14:14:11.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-03-15T14:14:11.000Z",
+      "startUtc": "2027-03-15T14:14:11.000Z",
+      "endUtc": "2027-03-28T17:38:00.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-03-28T17:38:00.000Z",
+      "startUtc": "2027-03-28T17:38:00.000Z",
+      "endUtc": "2027-04-11T19:25:26.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-04-11T19:25:26.000Z",
+      "startUtc": "2027-04-11T19:25:26.000Z",
+      "endUtc": "2027-04-25T01:39:06.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-04-25T01:39:06.000Z",
+      "startUtc": "2027-04-25T01:39:06.000Z",
+      "endUtc": "2027-05-09T01:37:55.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-05-09T01:37:55.000Z",
+      "startUtc": "2027-05-09T01:37:55.000Z",
+      "endUtc": "2027-05-22T08:47:14.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-05-22T08:47:14.000Z",
+      "startUtc": "2027-05-22T08:47:14.000Z",
+      "endUtc": "2027-06-05T09:53:50.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-06-05T09:53:50.000Z",
+      "startUtc": "2027-06-05T09:53:50.000Z",
+      "endUtc": "2027-06-18T14:50:11.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-06-18T14:50:11.000Z",
+      "startUtc": "2027-06-18T14:50:11.000Z",
+      "endUtc": "2027-07-02T19:44:44.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-07-02T19:44:44.000Z",
+      "startUtc": "2027-07-02T19:44:44.000Z",
+      "endUtc": "2027-07-15T20:19:11.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-07-15T20:19:11.000Z",
+      "startUtc": "2027-07-15T20:19:11.000Z",
+      "endUtc": "2027-07-30T05:43:40.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-07-30T05:43:40.000Z",
+      "startUtc": "2027-07-30T05:43:40.000Z",
+      "endUtc": "2027-08-12T02:06:47.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-08-12T02:06:47.000Z",
+      "startUtc": "2027-08-12T02:06:47.000Z",
+      "endUtc": "2027-08-26T14:15:33.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-08-26T14:15:33.000Z",
+      "startUtc": "2027-08-26T14:15:33.000Z",
+      "endUtc": "2027-09-08T08:54:46.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-09-08T08:54:46.000Z",
+      "startUtc": "2027-09-08T08:54:46.000Z",
+      "endUtc": "2027-09-22T20:36:09.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-09-22T20:36:09.000Z",
+      "startUtc": "2027-09-22T20:36:09.000Z",
+      "endUtc": "2027-10-05T16:48:33.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-10-05T16:48:33.000Z",
+      "startUtc": "2027-10-05T16:48:33.000Z",
+      "endUtc": "2027-10-20T01:39:43.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-10-20T01:39:43.000Z",
+      "startUtc": "2027-10-20T01:39:43.000Z",
+      "endUtc": "2027-11-02T01:11:18.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-11-02T01:11:18.000Z",
+      "startUtc": "2027-11-02T01:11:18.000Z",
+      "endUtc": "2027-11-16T07:34:41.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-11-16T07:34:41.000Z",
+      "startUtc": "2027-11-16T07:34:41.000Z",
+      "endUtc": "2027-11-29T09:05:13.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-11-29T09:05:13.000Z",
+      "startUtc": "2027-11-29T09:05:13.000Z",
+      "endUtc": "2027-12-13T15:57:50.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-12-13T15:57:50.000Z",
+      "startUtc": "2027-12-13T15:57:50.000Z",
+      "endUtc": "2027-12-26T15:49:03.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2027-12-26T15:49:03.000Z",
+      "startUtc": "2027-12-26T15:49:03.000Z",
+      "endUtc": "2028-01-10T02:25:43.000Z",
+      "kind": "motion",
+      "direction": "northward",
+      "label": "Lua em direção ao norte",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    },
+    {
+      "id": "motion-2028-01-10T02:25:43.000Z",
+      "startUtc": "2028-01-10T02:25:43.000Z",
+      "endUtc": "2028-01-12T00:00:00.000Z",
+      "kind": "motion",
+      "direction": "southward",
+      "label": "Lua em direção ao sul",
+      "detail": "Movimento da declinação geocêntrica, separado da fase e dos nodos lunares."
+    }
+  ],
+  "constellations": [
+    {
+      "id": "iau-2026-12-20T00:00:00.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-20T00:00:00.000Z",
+      "endUtc": "2026-12-21T16:33:37.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-21T16:33:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-21T16:33:37.000Z",
+      "endUtc": "2026-12-23T22:51:53.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-23T22:51:53.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-23T22:51:53.000Z",
+      "endUtc": "2026-12-25T17:58:54.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-25T17:58:54.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-25T17:58:54.000Z",
+      "endUtc": "2026-12-27T02:49:44.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-27T02:49:44.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-27T02:49:44.000Z",
+      "endUtc": "2026-12-28T15:33:35.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-28T15:33:35.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-28T15:33:35.000Z",
+      "endUtc": "2026-12-28T19:40:41.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-28T19:40:41.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-28T19:40:41.000Z",
+      "endUtc": "2026-12-29T18:20:07.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2026-12-29T18:20:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2026-12-29T18:20:07.000Z",
+      "endUtc": "2027-01-02T05:30:36.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-02T05:30:36.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-02T05:30:36.000Z",
+      "endUtc": "2027-01-03T22:09:27.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-03T22:09:27.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-03T22:09:27.000Z",
+      "endUtc": "2027-01-05T03:51:54.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-05T03:51:54.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-05T03:51:54.000Z",
+      "endUtc": "2027-01-06T02:47:42.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-06T02:47:42.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-06T02:47:42.000Z",
+      "endUtc": "2027-01-08T21:29:11.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-08T21:29:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-08T21:29:11.000Z",
+      "endUtc": "2027-01-11T06:49:58.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-11T06:49:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-11T06:49:58.000Z",
+      "endUtc": "2027-01-12T19:20:27.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-12T19:20:27.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-12T19:20:27.000Z",
+      "endUtc": "2027-01-16T06:29:09.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-16T06:29:09.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-16T06:29:09.000Z",
+      "endUtc": "2027-01-18T02:30:21.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-18T02:30:21.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-18T02:30:21.000Z",
+      "endUtc": "2027-01-20T10:15:34.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-20T10:15:34.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-20T10:15:34.000Z",
+      "endUtc": "2027-01-22T05:34:10.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-22T05:34:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-22T05:34:10.000Z",
+      "endUtc": "2027-01-23T13:55:33.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-23T13:55:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-23T13:55:33.000Z",
+      "endUtc": "2027-01-25T01:09:17.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-25T01:09:17.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-25T01:09:17.000Z",
+      "endUtc": "2027-01-25T05:36:10.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-25T05:36:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-25T05:36:10.000Z",
+      "endUtc": "2027-01-26T03:28:57.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-26T03:28:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-26T03:28:57.000Z",
+      "endUtc": "2027-01-29T12:18:19.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-29T12:18:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-29T12:18:19.000Z",
+      "endUtc": "2027-01-31T04:28:53.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-01-31T04:28:53.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-01-31T04:28:53.000Z",
+      "endUtc": "2027-02-01T10:06:09.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-01T10:06:09.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-01T10:06:09.000Z",
+      "endUtc": "2027-02-02T09:03:04.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-02T09:03:04.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-02T09:03:04.000Z",
+      "endUtc": "2027-02-05T03:46:47.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-05T03:46:47.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-05T03:46:47.000Z",
+      "endUtc": "2027-02-07T12:48:52.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-07T12:48:52.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-07T12:48:52.000Z",
+      "endUtc": "2027-02-09T00:52:45.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-09T00:52:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-09T00:52:45.000Z",
+      "endUtc": "2027-02-12T12:34:02.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-12T12:34:02.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-12T12:34:02.000Z",
+      "endUtc": "2027-02-14T09:44:53.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-14T09:44:53.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-14T09:44:53.000Z",
+      "endUtc": "2027-02-16T19:35:10.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-16T19:35:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-16T19:35:10.000Z",
+      "endUtc": "2027-02-18T16:15:32.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-18T16:15:32.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-18T16:15:32.000Z",
+      "endUtc": "2027-02-20T01:07:11.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-20T01:07:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-20T01:07:11.000Z",
+      "endUtc": "2027-02-21T12:16:37.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-21T12:16:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-21T12:16:37.000Z",
+      "endUtc": "2027-02-21T16:40:49.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-21T16:40:49.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-21T16:40:49.000Z",
+      "endUtc": "2027-02-22T14:11:24.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-22T14:11:24.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-22T14:11:24.000Z",
+      "endUtc": "2027-02-25T20:49:33.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-25T20:49:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-25T20:49:33.000Z",
+      "endUtc": "2027-02-27T12:06:03.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-27T12:06:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-27T12:06:03.000Z",
+      "endUtc": "2027-02-28T17:19:20.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-02-28T17:19:20.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-02-28T17:19:20.000Z",
+      "endUtc": "2027-03-01T16:07:01.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-01T16:07:01.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-01T16:07:01.000Z",
+      "endUtc": "2027-03-04T10:50:21.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-04T10:50:21.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-04T10:50:21.000Z",
+      "endUtc": "2027-03-06T19:44:02.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-06T19:44:02.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-06T19:44:02.000Z",
+      "endUtc": "2027-03-08T07:32:52.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-08T07:32:52.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-08T07:32:52.000Z",
+      "endUtc": "2027-03-11T18:01:51.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-11T18:01:51.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-11T18:01:51.000Z",
+      "endUtc": "2027-03-13T15:10:59.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-13T15:10:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-13T15:10:59.000Z",
+      "endUtc": "2027-03-16T02:09:03.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-16T02:09:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-16T02:09:03.000Z",
+      "endUtc": "2027-03-18T00:19:55.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-18T00:19:55.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-18T00:19:55.000Z",
+      "endUtc": "2027-03-19T10:16:28.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-19T10:16:28.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-19T10:16:28.000Z",
+      "endUtc": "2027-03-20T22:12:46.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-20T22:12:46.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-20T22:12:46.000Z",
+      "endUtc": "2027-03-21T02:42:57.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-21T02:42:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-21T02:42:57.000Z",
+      "endUtc": "2027-03-22T00:25:46.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-22T00:25:46.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-22T00:25:46.000Z",
+      "endUtc": "2027-03-25T06:20:24.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-25T06:20:24.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-25T06:20:24.000Z",
+      "endUtc": "2027-03-26T20:51:35.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-26T20:51:35.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-26T20:51:35.000Z",
+      "endUtc": "2027-03-28T01:35:52.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-28T01:35:52.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-28T01:35:52.000Z",
+      "endUtc": "2027-03-29T00:07:35.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-29T00:07:35.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-29T00:07:35.000Z",
+      "endUtc": "2027-03-31T18:41:57.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-03-31T18:41:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-03-31T18:41:57.000Z",
+      "endUtc": "2027-04-03T03:47:17.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-03T03:47:17.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-03T03:47:17.000Z",
+      "endUtc": "2027-04-04T15:20:25.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-04T15:20:25.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-04T15:20:25.000Z",
+      "endUtc": "2027-04-08T00:49:33.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-08T00:49:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-08T00:49:33.000Z",
+      "endUtc": "2027-04-09T21:04:19.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-09T21:04:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-09T21:04:19.000Z",
+      "endUtc": "2027-04-12T07:30:05.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-12T07:30:05.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-12T07:30:05.000Z",
+      "endUtc": "2027-04-14T06:09:38.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-14T06:09:38.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-14T06:09:38.000Z",
+      "endUtc": "2027-04-15T16:53:07.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-15T16:53:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-15T16:53:07.000Z",
+      "endUtc": "2027-04-17T05:18:11.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-17T05:18:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-17T05:18:11.000Z",
+      "endUtc": "2027-04-17T10:24:58.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-17T10:24:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-17T10:24:58.000Z",
+      "endUtc": "2027-04-18T08:38:58.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-18T08:38:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-18T08:38:58.000Z",
+      "endUtc": "2027-04-21T15:21:45.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-21T15:21:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-21T15:21:45.000Z",
+      "endUtc": "2027-04-23T05:40:58.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-23T05:40:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-23T05:40:58.000Z",
+      "endUtc": "2027-04-24T10:09:29.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-24T10:09:29.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-24T10:09:29.000Z",
+      "endUtc": "2027-04-25T08:29:09.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-25T08:29:09.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-25T08:29:09.000Z",
+      "endUtc": "2027-04-28T02:52:00.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-28T02:52:00.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-28T02:52:00.000Z",
+      "endUtc": "2027-04-30T12:21:52.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-04-30T12:21:52.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-04-30T12:21:52.000Z",
+      "endUtc": "2027-05-01T23:26:32.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-01T23:26:32.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-01T23:26:32.000Z",
+      "endUtc": "2027-05-05T09:31:41.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-05T09:31:41.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-05T09:31:41.000Z",
+      "endUtc": "2027-05-07T04:56:01.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-07T04:56:01.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-07T04:56:01.000Z",
+      "endUtc": "2027-05-09T13:55:47.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-09T13:55:47.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-09T13:55:47.000Z",
+      "endUtc": "2027-05-11T11:47:31.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-11T11:47:31.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-11T11:47:31.000Z",
+      "endUtc": "2027-05-12T22:22:26.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-12T22:22:26.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-12T22:22:26.000Z",
+      "endUtc": "2027-05-14T10:06:56.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-14T10:06:56.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-14T10:06:56.000Z",
+      "endUtc": "2027-05-14T16:15:19.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-14T16:15:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-14T16:15:19.000Z",
+      "endUtc": "2027-05-15T14:50:30.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-15T14:50:30.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-15T14:50:30.000Z",
+      "endUtc": "2027-05-18T22:51:42.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-18T22:51:42.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-18T22:51:42.000Z",
+      "endUtc": "2027-05-20T13:29:44.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-20T13:29:44.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-20T13:29:44.000Z",
+      "endUtc": "2027-05-21T18:01:58.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-21T18:01:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-21T18:01:58.000Z",
+      "endUtc": "2027-05-22T16:20:22.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-22T16:20:22.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-22T16:20:22.000Z",
+      "endUtc": "2027-05-25T10:39:28.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-25T10:39:28.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-25T10:39:28.000Z",
+      "endUtc": "2027-05-27T20:33:50.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-27T20:33:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-27T20:33:50.000Z",
+      "endUtc": "2027-05-29T06:59:09.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-05-29T06:59:09.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-05-29T06:59:09.000Z",
+      "endUtc": "2027-06-01T19:17:49.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-01T19:17:49.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-01T19:17:49.000Z",
+      "endUtc": "2027-06-03T14:36:54.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-03T14:36:54.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-03T14:36:54.000Z",
+      "endUtc": "2027-06-05T22:34:02.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-05T22:34:02.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-05T22:34:02.000Z",
+      "endUtc": "2027-06-07T19:09:26.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-07T19:09:26.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-07T19:09:26.000Z",
+      "endUtc": "2027-06-09T04:50:36.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-09T04:50:36.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-09T04:50:36.000Z",
+      "endUtc": "2027-06-10T14:55:28.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-10T14:55:28.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-10T14:55:28.000Z",
+      "endUtc": "2027-06-10T22:00:26.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-10T22:00:26.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-10T22:00:26.000Z",
+      "endUtc": "2027-06-11T20:25:48.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-11T20:25:48.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-11T20:25:48.000Z",
+      "endUtc": "2027-06-15T04:54:16.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-15T04:54:16.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-15T04:54:16.000Z",
+      "endUtc": "2027-06-16T19:58:07.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-16T19:58:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-16T19:58:07.000Z",
+      "endUtc": "2027-06-18T00:45:25.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-18T00:45:25.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-18T00:45:25.000Z",
+      "endUtc": "2027-06-18T23:11:41.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-18T23:11:41.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-18T23:11:41.000Z",
+      "endUtc": "2027-06-21T17:38:50.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-21T17:38:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-21T17:38:50.000Z",
+      "endUtc": "2027-06-23T09:37:01.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-23T09:37:01.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-23T09:37:01.000Z",
+      "endUtc": "2027-06-23T10:33:33.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-23T10:33:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-23T10:33:33.000Z",
+      "endUtc": "2027-06-24T03:46:58.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-24T03:46:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-24T03:46:58.000Z",
+      "endUtc": "2027-06-25T13:36:18.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-25T13:36:18.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-25T13:36:18.000Z",
+      "endUtc": "2027-06-29T04:40:33.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-06-29T04:40:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-06-29T04:40:33.000Z",
+      "endUtc": "2027-07-01T00:47:23.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-01T00:47:23.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-01T00:47:23.000Z",
+      "endUtc": "2027-07-03T08:53:11.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-03T08:53:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-03T08:53:11.000Z",
+      "endUtc": "2027-07-05T04:43:11.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-05T04:43:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-05T04:43:11.000Z",
+      "endUtc": "2027-07-06T13:27:59.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-06T13:27:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-06T13:27:59.000Z",
+      "endUtc": "2027-07-07T21:51:32.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-07T21:51:32.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-07T21:51:32.000Z",
+      "endUtc": "2027-07-08T05:22:12.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-08T05:22:12.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-08T05:22:12.000Z",
+      "endUtc": "2027-07-09T03:10:50.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-09T03:10:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-09T03:10:50.000Z",
+      "endUtc": "2027-07-12T10:32:50.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-12T10:32:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-12T10:32:50.000Z",
+      "endUtc": "2027-07-14T01:40:37.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-14T01:40:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-14T01:40:37.000Z",
+      "endUtc": "2027-07-15T06:38:10.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-15T06:38:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-15T06:38:10.000Z",
+      "endUtc": "2027-07-16T05:13:10.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-16T05:13:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-16T05:13:10.000Z",
+      "endUtc": "2027-07-18T23:54:46.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-18T23:54:46.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-18T23:54:46.000Z",
+      "endUtc": "2027-07-20T15:32:17.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-20T15:32:17.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-20T15:32:17.000Z",
+      "endUtc": "2027-07-20T16:49:45.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-20T16:49:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-20T16:49:45.000Z",
+      "endUtc": "2027-07-21T10:03:40.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-21T10:03:40.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-21T10:03:40.000Z",
+      "endUtc": "2027-07-22T19:33:00.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-22T19:33:00.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-22T19:33:00.000Z",
+      "endUtc": "2027-07-26T12:29:21.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-26T12:29:21.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-26T12:29:21.000Z",
+      "endUtc": "2027-07-28T09:52:39.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-28T09:52:39.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-28T09:52:39.000Z",
+      "endUtc": "2027-07-30T19:20:46.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-07-30T19:20:46.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-07-30T19:20:46.000Z",
+      "endUtc": "2027-08-01T15:28:40.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-01T15:28:40.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-01T15:28:40.000Z",
+      "endUtc": "2027-08-02T23:52:35.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-02T23:52:35.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-02T23:52:35.000Z",
+      "endUtc": "2027-08-04T07:22:07.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-04T07:22:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-04T07:22:07.000Z",
+      "endUtc": "2027-08-04T14:49:14.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-04T14:49:14.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-04T14:49:14.000Z",
+      "endUtc": "2027-08-05T11:57:54.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-05T11:57:54.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-05T11:57:54.000Z",
+      "endUtc": "2027-08-08T17:08:34.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-08T17:08:34.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-08T17:08:34.000Z",
+      "endUtc": "2027-08-10T07:44:03.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-10T07:44:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-10T07:44:03.000Z",
+      "endUtc": "2027-08-11T12:33:08.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-11T12:33:08.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-11T12:33:08.000Z",
+      "endUtc": "2027-08-12T11:08:03.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-12T11:08:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-12T11:08:03.000Z",
+      "endUtc": "2027-08-15T05:58:43.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-15T05:58:43.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-15T05:58:43.000Z",
+      "endUtc": "2027-08-16T21:36:51.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-16T21:36:51.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-16T21:36:51.000Z",
+      "endUtc": "2027-08-16T22:51:22.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-16T22:51:22.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-16T22:51:22.000Z",
+      "endUtc": "2027-08-17T16:01:41.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-17T16:01:41.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-17T16:01:41.000Z",
+      "endUtc": "2027-08-19T01:25:39.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-19T01:25:39.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-19T01:25:39.000Z",
+      "endUtc": "2027-08-22T18:34:53.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-22T18:34:53.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-22T18:34:53.000Z",
+      "endUtc": "2027-08-24T16:57:24.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-24T16:57:24.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-24T16:57:24.000Z",
+      "endUtc": "2027-08-27T04:18:33.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-27T04:18:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-27T04:18:33.000Z",
+      "endUtc": "2027-08-29T01:42:59.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-29T01:42:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-29T01:42:59.000Z",
+      "endUtc": "2027-08-30T10:35:56.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-30T10:35:56.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-30T10:35:56.000Z",
+      "endUtc": "2027-08-31T18:09:04.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-08-31T18:09:04.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-08-31T18:09:04.000Z",
+      "endUtc": "2027-09-01T01:27:42.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-01T01:27:42.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-01T01:27:42.000Z",
+      "endUtc": "2027-09-01T22:16:57.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-01T22:16:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-01T22:16:57.000Z",
+      "endUtc": "2027-09-05T01:26:22.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-05T01:26:22.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-05T01:26:22.000Z",
+      "endUtc": "2027-09-06T15:05:58.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-06T15:05:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-06T15:05:58.000Z",
+      "endUtc": "2027-09-07T19:26:31.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-07T19:26:31.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-07T19:26:31.000Z",
+      "endUtc": "2027-09-08T17:47:53.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-08T17:47:53.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-08T17:47:53.000Z",
+      "endUtc": "2027-09-11T12:30:31.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-11T12:30:31.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-11T12:30:31.000Z",
+      "endUtc": "2027-09-13T03:58:57.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-13T03:58:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-13T03:58:57.000Z",
+      "endUtc": "2027-09-13T05:22:48.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-13T05:22:48.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-13T05:22:48.000Z",
+      "endUtc": "2027-09-13T22:30:10.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-13T22:30:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-13T22:30:10.000Z",
+      "endUtc": "2027-09-15T07:48:03.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-15T07:48:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-15T07:48:03.000Z",
+      "endUtc": "2027-09-19T00:01:56.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-19T00:01:56.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-19T00:01:56.000Z",
+      "endUtc": "2027-09-20T22:28:47.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-20T22:28:47.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-20T22:28:47.000Z",
+      "endUtc": "2027-09-23T11:01:33.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-23T11:01:33.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-23T11:01:33.000Z",
+      "endUtc": "2027-09-25T09:57:18.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-25T09:57:18.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-25T09:57:18.000Z",
+      "endUtc": "2027-09-26T19:54:19.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-26T19:54:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-26T19:54:19.000Z",
+      "endUtc": "2027-09-28T04:03:14.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-28T04:03:14.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-28T04:03:14.000Z",
+      "endUtc": "2027-09-28T11:37:10.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-28T11:37:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-28T11:37:10.000Z",
+      "endUtc": "2027-09-29T08:37:59.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-09-29T08:37:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-09-29T08:37:59.000Z",
+      "endUtc": "2027-10-02T11:03:38.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-02T11:03:38.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-02T11:03:38.000Z",
+      "endUtc": "2027-10-03T23:54:45.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-03T23:54:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-03T23:54:45.000Z",
+      "endUtc": "2027-10-05T03:40:50.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-05T03:40:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-05T03:40:50.000Z",
+      "endUtc": "2027-10-06T01:40:19.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-06T01:40:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-06T01:40:19.000Z",
+      "endUtc": "2027-10-08T19:55:03.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-08T19:55:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-08T19:55:03.000Z",
+      "endUtc": "2027-10-10T10:35:17.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-10T10:35:17.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-10T10:35:17.000Z",
+      "endUtc": "2027-10-10T12:49:37.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-10T12:49:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-10T12:49:37.000Z",
+      "endUtc": "2027-10-11T05:58:16.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-11T05:58:16.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-11T05:58:16.000Z",
+      "endUtc": "2027-10-12T14:51:58.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-12T14:51:58.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-12T14:51:58.000Z",
+      "endUtc": "2027-10-16T06:27:57.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-16T06:27:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-16T06:27:57.000Z",
+      "endUtc": "2027-10-18T04:10:02.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-18T04:10:02.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-18T04:10:02.000Z",
+      "endUtc": "2027-10-20T16:24:12.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-20T16:24:12.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-20T16:24:12.000Z",
+      "endUtc": "2027-10-22T16:00:32.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-22T16:00:32.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-22T16:00:32.000Z",
+      "endUtc": "2027-10-24T02:52:37.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-24T02:52:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-24T02:52:37.000Z",
+      "endUtc": "2027-10-25T11:20:54.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-25T11:20:54.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-25T11:20:54.000Z",
+      "endUtc": "2027-10-25T19:48:04.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-25T19:48:04.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-25T19:48:04.000Z",
+      "endUtc": "2027-10-26T17:22:44.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-26T17:22:44.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-26T17:22:44.000Z",
+      "endUtc": "2027-10-29T20:41:07.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-29T20:41:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-29T20:41:07.000Z",
+      "endUtc": "2027-10-31T09:18:30.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-10-31T09:18:30.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-10-31T09:18:30.000Z",
+      "endUtc": "2027-11-01T12:44:20.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-01T12:44:20.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-01T12:44:20.000Z",
+      "endUtc": "2027-11-02T10:26:09.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-02T10:26:09.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-02T10:26:09.000Z",
+      "endUtc": "2027-11-05T04:05:35.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-05T04:05:35.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-05T04:05:35.000Z",
+      "endUtc": "2027-11-06T17:18:50.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-06T17:18:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-06T17:18:50.000Z",
+      "endUtc": "2027-11-06T21:01:50.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-06T21:01:50.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-06T21:01:50.000Z",
+      "endUtc": "2027-11-07T14:15:31.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-07T14:15:31.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-07T14:15:31.000Z",
+      "endUtc": "2027-11-08T22:21:26.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-08T22:21:26.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-08T22:21:26.000Z",
+      "endUtc": "2027-11-12T14:49:05.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-12T14:49:05.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-12T14:49:05.000Z",
+      "endUtc": "2027-11-14T11:44:30.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-14T11:44:30.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-14T11:44:30.000Z",
+      "endUtc": "2027-11-16T22:37:21.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-16T22:37:21.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-16T22:37:21.000Z",
+      "endUtc": "2027-11-18T21:32:02.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-18T21:32:02.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-18T21:32:02.000Z",
+      "endUtc": "2027-11-20T08:22:59.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-20T08:22:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-20T08:22:59.000Z",
+      "endUtc": "2027-11-21T16:10:45.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-21T16:10:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-21T16:10:45.000Z",
+      "endUtc": "2027-11-22T01:50:48.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-22T01:50:48.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-22T01:50:48.000Z",
+      "endUtc": "2027-11-22T23:53:10.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-22T23:53:10.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-22T23:53:10.000Z",
+      "endUtc": "2027-11-26T04:51:18.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-26T04:51:18.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-26T04:51:18.000Z",
+      "endUtc": "2027-11-27T17:54:19.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-27T17:54:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-27T17:54:19.000Z",
+      "endUtc": "2027-11-28T21:25:44.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-28T21:25:44.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-28T21:25:44.000Z",
+      "endUtc": "2027-11-29T19:05:13.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-11-29T19:05:13.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-11-29T19:05:13.000Z",
+      "endUtc": "2027-12-02T12:24:21.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-02T12:24:21.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-02T12:24:21.000Z",
+      "endUtc": "2027-12-04T00:07:26.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-04T00:07:26.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-04T00:07:26.000Z",
+      "endUtc": "2027-12-04T05:18:45.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-04T05:18:45.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-04T05:18:45.000Z",
+      "endUtc": "2027-12-04T22:37:16.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-04T22:37:16.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-04T22:37:16.000Z",
+      "endUtc": "2027-12-06T05:46:38.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-06T05:46:38.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-06T05:46:38.000Z",
+      "endUtc": "2027-12-10T00:34:01.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-10T00:34:01.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-10T00:34:01.000Z",
+      "endUtc": "2027-12-11T21:29:07.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-11T21:29:07.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-11T21:29:07.000Z",
+      "endUtc": "2027-12-14T07:20:29.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-14T07:20:29.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-14T07:20:29.000Z",
+      "endUtc": "2027-12-16T04:54:11.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-16T04:54:11.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-16T04:54:11.000Z",
+      "endUtc": "2027-12-17T14:47:28.000Z",
+      "constellation": "Cnc",
+      "label": "Câncer",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-17T14:47:28.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-17T14:47:28.000Z",
+      "endUtc": "2027-12-18T21:02:14.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-18T21:02:14.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-18T21:02:14.000Z",
+      "endUtc": "2027-12-19T07:30:24.000Z",
+      "constellation": "Sex",
+      "label": "Sextante",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-19T07:30:24.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-19T07:30:24.000Z",
+      "endUtc": "2027-12-20T05:23:59.000Z",
+      "constellation": "Leo",
+      "label": "Leão",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-20T05:23:59.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-20T05:23:59.000Z",
+      "endUtc": "2027-12-23T11:05:19.000Z",
+      "constellation": "Vir",
+      "label": "Virgem",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-23T11:05:19.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-23T11:05:19.000Z",
+      "endUtc": "2027-12-25T00:46:39.000Z",
+      "constellation": "Lib",
+      "label": "Libra",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-25T00:46:39.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-25T00:46:39.000Z",
+      "endUtc": "2027-12-26T04:42:01.000Z",
+      "constellation": "Sco",
+      "label": "Escorpião",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-26T04:42:01.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-26T04:42:01.000Z",
+      "endUtc": "2027-12-27T02:34:57.000Z",
+      "constellation": "Oph",
+      "label": "Ofiúco",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-27T02:34:57.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-27T02:34:57.000Z",
+      "endUtc": "2027-12-29T20:05:03.000Z",
+      "constellation": "Sgr",
+      "label": "Sagitário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-29T20:05:03.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-29T20:05:03.000Z",
+      "endUtc": "2027-12-31T06:59:00.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-31T06:59:00.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-31T06:59:00.000Z",
+      "endUtc": "2027-12-31T12:56:52.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2027-12-31T12:56:52.000Z",
+      "kind": "constellation",
+      "startUtc": "2027-12-31T12:56:52.000Z",
+      "endUtc": "2028-01-01T06:16:37.000Z",
+      "constellation": "Cap",
+      "label": "Capricórnio",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2028-01-01T06:16:37.000Z",
+      "kind": "constellation",
+      "startUtc": "2028-01-01T06:16:37.000Z",
+      "endUtc": "2028-01-02T12:47:31.000Z",
+      "constellation": "Aqr",
+      "label": "Aquário",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2028-01-02T12:47:31.000Z",
+      "kind": "constellation",
+      "startUtc": "2028-01-02T12:47:31.000Z",
+      "endUtc": "2028-01-06T10:03:13.000Z",
+      "constellation": "Psc",
+      "label": "Peixes",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2028-01-06T10:03:13.000Z",
+      "kind": "constellation",
+      "startUtc": "2028-01-06T10:03:13.000Z",
+      "endUtc": "2028-01-08T07:56:44.000Z",
+      "constellation": "Ari",
+      "label": "Áries",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2028-01-08T07:56:44.000Z",
+      "kind": "constellation",
+      "startUtc": "2028-01-08T07:56:44.000Z",
+      "endUtc": "2028-01-10T18:11:13.000Z",
+      "constellation": "Tau",
+      "label": "Touro",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    },
+    {
+      "id": "iau-2028-01-10T18:11:13.000Z",
+      "kind": "constellation",
+      "startUtc": "2028-01-10T18:11:13.000Z",
+      "endUtc": "2028-01-12T00:00:00.000Z",
+      "constellation": "Gem",
+      "label": "Gêmeos",
+      "detail": "Região astronômica da IAU. Não determina um dia de raiz, folha, flor ou fruto neste aplicativo."
+    }
+  ],
+  "cautions": [
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2026-12-27T07:54:49.000Z",
+      "kind": "caution",
+      "startUtc": "2026-12-27T05:54:49.000Z",
+      "endUtc": "2026-12-27T09:54:49.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-01-10T15:57:00.000Z",
+      "kind": "caution",
+      "startUtc": "2027-01-10T13:57:00.000Z",
+      "endUtc": "2027-01-10T17:57:00.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270121T215435-perigee",
+      "kind": "caution",
+      "startUtc": "2027-01-21T09:54:35.000Z",
+      "endUtc": "2027-01-22T09:54:35.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-01-23T17:25:54.000Z",
+      "kind": "caution",
+      "startUtc": "2027-01-23T15:25:54.000Z",
+      "endUtc": "2027-01-23T19:25:54.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-02-06T21:43:03.000Z",
+      "kind": "caution",
+      "startUtc": "2027-02-06T19:43:03.000Z",
+      "endUtc": "2027-02-06T23:43:03.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270219T073800-perigee",
+      "kind": "caution",
+      "startUtc": "2027-02-18T19:38:00.000Z",
+      "endUtc": "2027-02-19T19:38:00.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-02-20T04:40:21.000Z",
+      "kind": "caution",
+      "startUtc": "2027-02-20T02:40:21.000Z",
+      "endUtc": "2027-02-20T06:40:21.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-03-06T04:39:56.000Z",
+      "kind": "caution",
+      "startUtc": "2027-03-06T02:39:56.000Z",
+      "endUtc": "2027-03-06T06:39:56.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270319T043626-perigee",
+      "kind": "caution",
+      "startUtc": "2027-03-18T16:36:26.000Z",
+      "endUtc": "2027-03-19T16:36:26.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-03-19T13:05:48.000Z",
+      "kind": "caution",
+      "startUtc": "2027-03-19T11:05:48.000Z",
+      "endUtc": "2027-03-19T15:05:48.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-04-02T10:16:25.000Z",
+      "kind": "caution",
+      "startUtc": "2027-04-02T08:16:25.000Z",
+      "endUtc": "2027-04-02T12:16:25.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270414T003613-perigee",
+      "kind": "caution",
+      "startUtc": "2027-04-13T12:36:13.000Z",
+      "endUtc": "2027-04-14T12:36:13.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-04-15T16:31:08.000Z",
+      "kind": "caution",
+      "startUtc": "2027-04-15T14:31:08.000Z",
+      "endUtc": "2027-04-15T18:31:08.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-04-29T13:23:16.000Z",
+      "kind": "caution",
+      "startUtc": "2027-04-29T11:23:16.000Z",
+      "endUtc": "2027-04-29T15:23:16.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270509T200041-perigee",
+      "kind": "caution",
+      "startUtc": "2027-05-09T08:00:41.000Z",
+      "endUtc": "2027-05-10T08:00:41.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-05-12T17:03:14.000Z",
+      "kind": "caution",
+      "startUtc": "2027-05-12T15:03:14.000Z",
+      "endUtc": "2027-05-12T19:03:14.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-05-26T15:19:51.000Z",
+      "kind": "caution",
+      "startUtc": "2027-05-26T13:19:51.000Z",
+      "endUtc": "2027-05-26T17:19:51.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270606T144632-perigee",
+      "kind": "caution",
+      "startUtc": "2027-06-06T02:46:32.000Z",
+      "endUtc": "2027-06-07T02:46:32.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-06-08T19:23:24.000Z",
+      "kind": "caution",
+      "startUtc": "2027-06-08T17:23:24.000Z",
+      "endUtc": "2027-06-08T21:23:24.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-06-22T18:24:58.000Z",
+      "kind": "caution",
+      "startUtc": "2027-06-22T16:24:58.000Z",
+      "endUtc": "2027-06-22T20:24:58.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270704T204852-perigee",
+      "kind": "caution",
+      "startUtc": "2027-07-04T08:48:52.000Z",
+      "endUtc": "2027-07-05T08:48:52.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-07-06T02:15:02.000Z",
+      "kind": "caution",
+      "startUtc": "2027-07-06T00:15:02.000Z",
+      "endUtc": "2027-07-06T04:15:02.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-07-19T23:32:51.000Z",
+      "kind": "caution",
+      "startUtc": "2027-07-19T21:32:51.000Z",
+      "endUtc": "2027-07-20T01:32:51.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270802T061824-perigee",
+      "kind": "caution",
+      "startUtc": "2027-08-01T18:18:24.000Z",
+      "endUtc": "2027-08-02T18:18:24.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-08-02T12:33:56.000Z",
+      "kind": "caution",
+      "startUtc": "2027-08-02T10:33:56.000Z",
+      "endUtc": "2027-08-02T14:33:56.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-08-16T05:48:10.000Z",
+      "kind": "caution",
+      "startUtc": "2027-08-16T03:48:10.000Z",
+      "endUtc": "2027-08-16T07:48:10.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-08-29T23:01:01.000Z",
+      "kind": "caution",
+      "startUtc": "2027-08-29T21:01:01.000Z",
+      "endUtc": "2027-08-30T01:01:01.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270830T153450-perigee",
+      "kind": "caution",
+      "startUtc": "2027-08-30T03:34:50.000Z",
+      "endUtc": "2027-08-31T03:34:50.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-09-12T11:24:36.000Z",
+      "kind": "caution",
+      "startUtc": "2027-09-12T09:24:36.000Z",
+      "endUtc": "2027-09-12T13:24:36.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-09-26T06:03:13.000Z",
+      "kind": "caution",
+      "startUtc": "2027-09-26T04:03:13.000Z",
+      "endUtc": "2027-09-26T08:03:13.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20270927T200309-perigee",
+      "kind": "caution",
+      "startUtc": "2027-09-27T08:03:09.000Z",
+      "endUtc": "2027-09-28T08:03:09.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-10-09T14:57:31.000Z",
+      "kind": "caution",
+      "startUtc": "2027-10-09T12:57:31.000Z",
+      "endUtc": "2027-10-09T16:57:31.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-10-23T08:14:29.000Z",
+      "kind": "caution",
+      "startUtc": "2027-10-23T06:14:29.000Z",
+      "endUtc": "2027-10-23T10:14:29.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20271025T052608-perigee",
+      "kind": "caution",
+      "startUtc": "2027-10-24T17:26:08.000Z",
+      "endUtc": "2027-10-25T17:26:08.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-11-05T16:52:50.000Z",
+      "kind": "caution",
+      "startUtc": "2027-11-05T14:52:50.000Z",
+      "endUtc": "2027-11-05T18:52:50.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20271119T001842-perigee",
+      "kind": "caution",
+      "startUtc": "2027-11-18T12:18:42.000Z",
+      "endUtc": "2027-11-19T12:18:42.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-11-19T08:33:24.000Z",
+      "kind": "caution",
+      "startUtc": "2027-11-19T06:33:24.000Z",
+      "endUtc": "2027-11-19T10:33:24.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-12-02T19:36:33.000Z",
+      "kind": "caution",
+      "startUtc": "2027-12-02T17:36:33.000Z",
+      "endUtc": "2027-12-02T21:36:33.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-apsis-20271216T023354-perigee",
+      "kind": "caution",
+      "startUtc": "2027-12-15T14:33:54.000Z",
+      "endUtc": "2027-12-16T14:33:54.000Z",
+      "label": "Perigeu · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 12 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-descending_node-2027-12-16T12:19:09.000Z",
+      "kind": "caution",
+      "startUtc": "2027-12-16T10:19:09.000Z",
+      "endUtc": "2027-12-16T14:19:09.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    },
+    {
+      "id": "stella-natura-lunar-cautions-partial-v1-ascending_node-2027-12-30T00:50:17.000Z",
+      "kind": "caution",
+      "startUtc": "2027-12-29T22:50:17.000Z",
+      "endUtc": "2027-12-30T02:50:17.000Z",
+      "label": "Nodo lunar · intervalo tradicional",
+      "detail": "Stella Natura sugere evitar a semeadura nas 2 horas antes e depois deste evento. Regra tradicional, não dano comprovado. Este perfil cobre apenas nodos lunares e perigeus."
+    }
+  ]
+}

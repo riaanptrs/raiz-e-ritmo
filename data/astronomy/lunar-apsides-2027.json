@@ -1,0 +1,298 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "lunar-apsides-2027-jpl-v1",
+  "year": 2027,
+  "coverage_basis": "Core lunar apsides within 2027 UTC, with separately verified adjacent UTC events for local-year boundaries",
+  "boundary_policy": "Combine events and boundary_events before grouping by the selected local date. Boundary entries support the core local year; they are not full coverage of another year.",
+  "data_kind": "astronomical_events",
+  "source": {
+    "name": "NASA/JPL Horizons DE441",
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&START_TIME=%272026-12-25%27&STOP_TIME=%272028-01-05%27&STEP_SIZE=%271+h%27&QUANTITIES=%272%2C20%2C29%2C31%27&CSV_FORMAT=%27YES%27&ANG_FORMAT=%27DEG%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27",
+    "retrieved_utc": "2026-11-26T08:10:10.810299+00:00",
+    "raw_input_sha256": "addbb065e05b575a7109ffa4f26c84e9d2a7a9921225eb30ca130f179ff74aa4",
+    "reference_fixture": "jpl-2027-reference.json",
+    "reference_fixture_sha256": "c84f0685c1b7b994b7356d463e45193587048a5313931e76291c99f3805ae9c4",
+    "boundary_reference": {
+      "file": "jpl-apsis-boundary-reference.json",
+      "sha256": "a420e49c149244cb5b83b63e2840a6c03366ad7644e14ef67314a33e8a30636a"
+    },
+    "frame": "Earth-centred apparent range and range-rate, light-time corrected; Moon centre, DE441.",
+    "method": "Zero crossings of a cubic spline of hourly JPL range-rate. Distance interpolated from the same source. Instants retain the original hourly-reference result, rounded to the nearest second.",
+    "numeric_timestamp_resolution": "second",
+    "display_precision": "minute",
+    "physical_accuracy": "No one-second physical-accuracy claim; displayed minute precision is distinct from the numerical root resolution."
+  },
+  "verification": {
+    "status": "JPL_sampling_cross_checked",
+    "report": "jpl-apsis-refinement-2027.json",
+    "method": "Fresh JPL range-rate queries around every apsis, independently refitted before comparison with the original reference.",
+    "events_checked": 27,
+    "core_year": 2027,
+    "core_events_checked": 26,
+    "boundary_events_checked": 1,
+    "fresh_JPL_samples": 108,
+    "maximum_absolute_difference_seconds": 0.776666,
+    "maximum_linear_cubic_difference_seconds": 0.194142,
+    "maximum_estimated_rate_print_quantization_seconds": 0.769,
+    "comparison_reference": "Original hourly spline timestamps rounded to the nearest second, as committed in the reference fixture.",
+    "fresh_raw_sha256": [
+      "40e8253e2cbf67ec27be35714876aa99d74ad0d66b78f53165dbbd6fd717c45b",
+      "6e4a9838b7a083ff4da171ff47950397cc797a87f36b54ac046a6aec29bcfe22",
+      "3cce8a762b3d6a14162e6eaa71a36531dc3cf4e0a71e1a97127ebc8aa63af8bd"
+    ]
+  },
+  "limitations": [
+    "Bounded year coverage: do not extrapolate these events into unsupported years.",
+    "These global geocentric instants do not change between hemispheres; local dates and clock times depend on the selected time zone.",
+    "The sampling check uses the same JPL physical ephemeris and is not evidence of a crop response.",
+    "A biodynamic caution period around a perigee is an additional attributed rule, not a duration supplied by this dataset.",
+    "Horizons UT output after 1962 is UTC; future intervals use the last known leap-second offset at retrieval."
+  ],
+  "events": [
+    {
+      "id": "apsis-20270107T082456-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-01-07T08:24:56Z",
+      "distance_km": 406603.1,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270121T215435-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-01-21T21:54:35Z",
+      "distance_km": 357288.4,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270203T134145-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-02-03T13:41:45Z",
+      "distance_km": 406167.1,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270219T073800-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-02-19T07:38:00Z",
+      "distance_km": 361030.3,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270303T054556-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-03-03T05:45:56Z",
+      "distance_km": 405182.8,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270319T043626-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-03-19T04:36:26Z",
+      "distance_km": 366460.6,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270331T013447-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-03-31T01:34:47Z",
+      "distance_km": 404287.7,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270414T003613-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-04-14T00:36:13Z",
+      "distance_km": 370040.6,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270427T212018-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-04-27T21:20:18Z",
+      "distance_km": 404129.3,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270509T200041-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-05-09T20:00:41Z",
+      "distance_km": 366656.8,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270525T150832-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-05-25T15:08:32Z",
+      "distance_km": 404766.4,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270606T144632-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-06-06T14:46:32Z",
+      "distance_km": 361717.4,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270622T045706-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-06-22T04:57:06Z",
+      "distance_km": 405675.1,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270704T204852-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-07-04T20:48:52Z",
+      "distance_km": 358289.1,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270719T113651-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-07-19T11:36:51Z",
+      "distance_km": 406209.0,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270802T061824-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-08-02T06:18:24Z",
+      "distance_km": 357359.4,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270815T140859-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-08-15T14:08:59Z",
+      "distance_km": 406098.3,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270830T153450-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-08-30T15:34:50Z",
+      "distance_km": 359196.3,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270911T232923-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-09-11T23:29:23Z",
+      "distance_km": 405410.9,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20270927T200309-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-09-27T20:03:09Z",
+      "distance_km": 363433.6,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271009T154314-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-10-09T15:43:14Z",
+      "distance_km": 404567.5,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271025T052608-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-10-25T05:26:08Z",
+      "distance_km": 368620.3,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271106T113722-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-11-06T11:37:22Z",
+      "distance_km": 404221.5,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271119T001842-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-11-19T00:18:42Z",
+      "distance_km": 369326.5,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271204T084428-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2027-12-04T08:44:28Z",
+      "distance_km": 404697.6,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    },
+    {
+      "id": "apsis-20271216T023354-perigee",
+      "type": "perigee",
+      "label_pt_BR": "Perigeu lunar",
+      "instant_utc": "2027-12-16T02:33:54Z",
+      "distance_km": 364007.2,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    }
+  ],
+  "boundary_events": [
+    {
+      "id": "apsis-20280101T035918-apogee",
+      "type": "apogee",
+      "label_pt_BR": "Apogeu lunar",
+      "instant_utc": "2028-01-01T03:59:18Z",
+      "distance_km": 405662.0,
+      "precision": "minute",
+      "verification_status": "JPL_sampling_cross_checked"
+    }
+  ]
+}

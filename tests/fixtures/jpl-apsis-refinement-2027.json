@@ -1,0 +1,963 @@
+{
+  "schema_version": "1.0",
+  "year": 2027,
+  "purpose": "Fresh DE441 sampling check of the hourly-derived lunar apsides; independent of the application's ephemeris library.",
+  "reference_fixture": "jpl-2027-reference.json",
+  "reference_fixture_sha256": "c84f0685c1b7b994b7356d463e45193587048a5313931e76291c99f3805ae9c4",
+  "boundary_reference": {
+    "file": "jpl-apsis-boundary-reference.json",
+    "sha256": "a420e49c149244cb5b83b63e2840a6c03366ad7644e14ef67314a33e8a30636a"
+  },
+  "method": {
+    "sampling": "Four new JPL samples per apsis, at offsets minus120, minus60, plus60 and plus120 seconds from the coarse reference. Source times themselves are the independent variables.",
+    "root": "CubicSpline range-rate root in the inner sign-changing bracket; also linear interpolation of that bracket.",
+    "classification": "Range-rate negative-to-positive is perigee; positive-to-negative is apogee.",
+    "acceptance_limit_seconds": 60,
+    "software": {
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    }
+  },
+  "summary": {
+    "events_checked": 27,
+    "core_year": 2027,
+    "core_events_checked": 26,
+    "boundary_events_checked": 1,
+    "fresh_JPL_samples": 108,
+    "maximum_absolute_difference_seconds": 0.776666,
+    "maximum_linear_cubic_difference_seconds": 0.194142,
+    "maximum_estimated_rate_print_quantization_seconds": 0.769,
+    "comparison_reference": "Original hourly spline timestamps rounded to the nearest second, as committed in the reference fixture."
+  },
+  "limits": [
+    "The fresh requests use the same DE441 ephemeris. This tests sampling/interpolation, not independent physical observations.",
+    "Range-rate is printed to1e-7 km/s; half_LSB divided by the rate slope estimates timing sensitivity to this rounding, not a confidence interval.",
+    "Microseconds in diagnostic roots describe numerical output, not asserted physical accuracy.",
+    "Comparison with the rounded-second fixture differs slightly from the initial research comparison with unrounded hourly roots.",
+    "No planting, yield, flavour or biodynamic recommendation is verified by this check."
+  ],
+  "sources": [
+    {
+      "raw_file": "apsis_refinement_raw_1.json",
+      "provenance_file": "apsis_refinement_raw_1.json.provenance.json",
+      "sha256": "40e8253e2cbf67ec27be35714876aa99d74ad0d66b78f53165dbbd6fd717c45b",
+      "bytes": 8562,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272461412.8492592592%27+%272461412.8499537036%27+%272461412.8513425924%27+%272461412.8520370373%27+%272461427.4115162035%27+%272461427.4122106479%27+%272461427.4135995372%27+%272461427.4142939816%27+%272461440.0692708334%27+%272461440.0699652778%27+%272461440.0713541666%27+%272461440.0720486110%27+%272461455.8166666669%27+%272461455.8173611113%27+%272461455.8187500001%27+%272461455.8194444445%27+%272461467.7388425926%27+%272461467.7395370370%27+%272461467.7409259258%27+%272461467.7416203702%27+%272461483.6905787038%27+%272461483.6912731482%27+%272461483.6926620370%27+%272461483.6933564814%27+%272461495.5644328706%27+%272461495.5651273150%27+%272461495.5665162038%27+%272461495.5672106482%27+%272461509.5237615742%27+%272461509.5244560186%27+%272461509.5258449074%27+%272461509.5265393518%27+%272461523.3877083333%27+%272461523.3884027777%27+%272461523.3897916665%27+%272461523.3904861109%27+%272461535.3324189815%27+%272461535.3331134259%27+%272461535.3345023147%27+%272461535.3351967591%27+%272461551.1295370371%27+%272461551.1302314815%27+%272461551.1316203703%27+%272461551.1323148147%27+%272461563.1142592593%27+%272461563.1149537037%27+%272461563.1163425925%27+%272461563.1170370369%27+%272461578.7049305555%27+%272461578.7056249999%27+%272461578.7070138888%27+%272461578.7077083332%27&TLIST_TYPE=%27JD%27&QUANTITIES=%2720%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27FRACSEC%27",
+      "retrieved_utc": "2026-11-26T09:30:43.673047+00:00",
+      "request": {
+        "format": "json",
+        "COMMAND": "'301'",
+        "OBJ_DATA": "'NO'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'OBSERVER'",
+        "CENTER": "'500@399'",
+        "TLIST": "'2461412.8492592592' '2461412.8499537036' '2461412.8513425924' '2461412.8520370373' '2461427.4115162035' '2461427.4122106479' '2461427.4135995372' '2461427.4142939816' '2461440.0692708334' '2461440.0699652778' '2461440.0713541666' '2461440.0720486110' '2461455.8166666669' '2461455.8173611113' '2461455.8187500001' '2461455.8194444445' '2461467.7388425926' '2461467.7395370370' '2461467.7409259258' '2461467.7416203702' '2461483.6905787038' '2461483.6912731482' '2461483.6926620370' '2461483.6933564814' '2461495.5644328706' '2461495.5651273150' '2461495.5665162038' '2461495.5672106482' '2461509.5237615742' '2461509.5244560186' '2461509.5258449074' '2461509.5265393518' '2461523.3877083333' '2461523.3884027777' '2461523.3897916665' '2461523.3904861109' '2461535.3324189815' '2461535.3331134259' '2461535.3345023147' '2461535.3351967591' '2461551.1295370371' '2461551.1302314815' '2461551.1316203703' '2461551.1323148147' '2461563.1142592593' '2461563.1149537037' '2461563.1163425925' '2461563.1170370369' '2461578.7049305555' '2461578.7056249999' '2461578.7070138888' '2461578.7077083332'",
+        "TLIST_TYPE": "'JD'",
+        "QUANTITIES": "'20'",
+        "CSV_FORMAT": "'YES'",
+        "EXTRA_PREC": "'YES'",
+        "TIME_TYPE": "'UT'",
+        "TIME_DIGITS": "'FRACSEC'"
+      },
+      "api_signature": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      }
+    },
+    {
+      "raw_file": "apsis_refinement_raw_2.json",
+      "provenance_file": "apsis_refinement_raw_2.json.provenance.json",
+      "sha256": "6e4a9838b7a083ff4da171ff47950397cc797a87f36b54ac046a6aec29bcfe22",
+      "bytes": 8562,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272461591.3658796297%27+%272461591.3665740741%27+%272461591.3679629629%27+%272461591.3686574074%27+%272461605.9825347224%27+%272461605.9832291668%27+%272461605.9846180556%27+%272461605.9853125000%27+%272461619.7613888890%27+%272461619.7620833335%27+%272461619.7634722223%27+%272461619.7641666667%27+%272461633.0881828703%27+%272461633.0888773147%27+%272461633.0902662035%27+%272461633.0909606484%27+%272461648.1478009261%27+%272461648.1484953705%27+%272461648.1498842593%27+%272461648.1505787037%27+%272461660.4773495370%27+%272461660.4780439814%27+%272461660.4794328702%27+%272461660.4801273150%27+%272461676.3341319445%27+%272461676.3348263889%27+%272461676.3362152777%27+%272461676.3369097221%27+%272461688.1536342595%27+%272461688.1543287039%27+%272461688.1557175927%27+%272461688.1564120371%27+%272461703.7250925926%27+%272461703.7257870371%27+%272461703.7271759259%27+%272461703.7278703703%27+%272461715.9828935186%27+%272461715.9835879630%27+%272461715.9849768518%27+%272461715.9856712963%27+%272461728.5115972222%27+%272461728.5122916666%27+%272461728.5136805554%27+%272461728.5143749998%27+%272461743.8628240740%27+%272461743.8635185184%27+%272461743.8649074072%27+%272461743.8656018521%27+%272461755.6054861112%27+%272461755.6061805557%27+%272461755.6075694445%27+%272461755.6082638889%27&TLIST_TYPE=%27JD%27&QUANTITIES=%2720%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27FRACSEC%27",
+      "retrieved_utc": "2026-11-26T09:30:48.913002+00:00",
+      "request": {
+        "format": "json",
+        "COMMAND": "'301'",
+        "OBJ_DATA": "'NO'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'OBSERVER'",
+        "CENTER": "'500@399'",
+        "TLIST": "'2461591.3658796297' '2461591.3665740741' '2461591.3679629629' '2461591.3686574074' '2461605.9825347224' '2461605.9832291668' '2461605.9846180556' '2461605.9853125000' '2461619.7613888890' '2461619.7620833335' '2461619.7634722223' '2461619.7641666667' '2461633.0881828703' '2461633.0888773147' '2461633.0902662035' '2461633.0909606484' '2461648.1478009261' '2461648.1484953705' '2461648.1498842593' '2461648.1505787037' '2461660.4773495370' '2461660.4780439814' '2461660.4794328702' '2461660.4801273150' '2461676.3341319445' '2461676.3348263889' '2461676.3362152777' '2461676.3369097221' '2461688.1536342595' '2461688.1543287039' '2461688.1557175927' '2461688.1564120371' '2461703.7250925926' '2461703.7257870371' '2461703.7271759259' '2461703.7278703703' '2461715.9828935186' '2461715.9835879630' '2461715.9849768518' '2461715.9856712963' '2461728.5115972222' '2461728.5122916666' '2461728.5136805554' '2461728.5143749998' '2461743.8628240740' '2461743.8635185184' '2461743.8649074072' '2461743.8656018521' '2461755.6054861112' '2461755.6061805557' '2461755.6075694445' '2461755.6082638889'",
+        "TLIST_TYPE": "'JD'",
+        "QUANTITIES": "'20'",
+        "CSV_FORMAT": "'YES'",
+        "EXTRA_PREC": "'YES'",
+        "TIME_TYPE": "'UT'",
+        "TIME_DIGITS": "'FRACSEC'"
+      },
+      "api_signature": {
+        "version": "1.2",
+        "source": "NASA/JPL Horizons API"
+      }
+    },
+    {
+      "raw_file": "apsis_refinement_raw_boundary.json",
+      "provenance_file": "apsis_refinement_raw_boundary.json.provenance.json",
+      "sha256": "3cce8a762b3d6a14162e6eaa71a36531dc3cf4e0a71e1a97127ebc8aa63af8bd",
+      "bytes": 5586,
+      "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=json&COMMAND=%27301%27&OBJ_DATA=%27NO%27&MAKE_EPHEM=%27YES%27&EPHEM_TYPE=%27OBSERVER%27&CENTER=%27500%40399%27&TLIST=%272461771.6647916664%27+%272461771.6654861113%27+%272461771.6668750001%27+%272461771.6675694445%27&TLIST_TYPE=%27JD%27&QUANTITIES=%2720%27&CSV_FORMAT=%27YES%27&EXTRA_PREC=%27YES%27&TIME_TYPE=%27UT%27&TIME_DIGITS=%27FRACSEC%27",
+      "retrieved_utc": "2026-11-26T09:42:57.078581+00:00",
+      "request": {
+        "format": "json",
+        "COMMAND": "'301'",
+        "OBJ_DATA": "'NO'",
+        "MAKE_EPHEM": "'YES'",
+        "EPHEM_TYPE": "'OBSERVER'",
+        "CENTER": "'500@399'",
+        "TLIST": "'2461771.6647916664' '2461771.6654861113' '2461771.6668750001' '2461771.6675694445'",
+        "TLIST_TYPE": "'JD'",
+        "QUANTITIES": "'20'",
+        "CSV_FORMAT": "'YES'",
+        "EXTRA_PREC": "'YES'",
+        "TIME_TYPE": "'UT'",
+        "TIME_DIGITS": "'FRACSEC'"
+      },
+      "api_signature": {
+        "source": "NASA/JPL Horizons API",
+        "version": "1.2"
+      }
+    }
+  ],
+  "events": [
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-01-07T08:24:56Z",
+      "fresh_cubic_root_utc": "2027-01-07T08:24:56.776666Z",
+      "fresh_linear_root_utc": "2027-01-07T08:24:56.582524Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.776666,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.194142,
+      "estimated_rate_print_quantization_seconds": 0.582,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-01-07T08:22:56Z",
+          "distance_au": 0.00271797401693,
+          "range_rate_km_s": 1.03e-05
+        },
+        {
+          "instant_utc": "2027-01-07T08:23:56Z",
+          "distance_au": 0.00271797402005,
+          "range_rate_km_s": 5.2e-06
+        },
+        {
+          "instant_utc": "2027-01-07T08:25:56Z",
+          "distance_au": 0.00271797402008,
+          "range_rate_km_s": -5.1e-06
+        },
+        {
+          "instant_utc": "2027-01-07T08:26:56Z",
+          "distance_au": 0.00271797401699,
+          "range_rate_km_s": -1.03e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-01-21T21:54:35Z",
+      "fresh_cubic_root_utc": "2027-01-21T21:54:34.685368Z",
+      "fresh_linear_root_utc": "2027-01-21T21:54:34.622642Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.314632,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.062726,
+      "estimated_rate_print_quantization_seconds": 0.189,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-01-21T21:52:35Z",
+          "distance_au": 0.002388325204,
+          "range_rate_km_s": -3.17e-05
+        },
+        {
+          "instant_utc": "2027-01-21T21:53:35Z",
+          "distance_au": 0.00238832519448,
+          "range_rate_km_s": -1.58e-05
+        },
+        {
+          "instant_utc": "2027-01-21T21:55:35Z",
+          "distance_au": 0.00238832519458,
+          "range_rate_km_s": 1.6e-05
+        },
+        {
+          "instant_utc": "2027-01-21T21:56:35Z",
+          "distance_au": 0.00238832520421,
+          "range_rate_km_s": 3.2e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-02-03T13:41:45Z",
+      "fresh_cubic_root_utc": "2027-02-03T13:41:44.568862Z",
+      "fresh_linear_root_utc": "2027-02-03T13:41:44.568345Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.431138,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000517,
+      "estimated_rate_print_quantization_seconds": 0.431,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-02-03T13:39:45Z",
+          "distance_au": 0.00271505963583,
+          "range_rate_km_s": 1.38e-05
+        },
+        {
+          "instant_utc": "2027-02-03T13:40:45Z",
+          "distance_au": 0.00271505963998,
+          "range_rate_km_s": 6.9e-06
+        },
+        {
+          "instant_utc": "2027-02-03T13:42:45Z",
+          "distance_au": 0.00271505963995,
+          "range_rate_km_s": -7e-06
+        },
+        {
+          "instant_utc": "2027-02-03T13:43:45Z",
+          "distance_au": 0.00271505963576,
+          "range_rate_km_s": -1.39e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-02-19T07:38:00Z",
+      "fresh_cubic_root_utc": "2027-02-19T07:38:00.000000Z",
+      "fresh_linear_root_utc": "2027-02-19T07:38:00.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.0,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.0,
+      "estimated_rate_print_quantization_seconds": 0.229,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-02-19T07:36:00Z",
+          "distance_au": 0.00241333848954,
+          "range_rate_km_s": -2.63e-05
+        },
+        {
+          "instant_utc": "2027-02-19T07:37:00Z",
+          "distance_au": 0.00241333848164,
+          "range_rate_km_s": -1.31e-05
+        },
+        {
+          "instant_utc": "2027-02-19T07:39:00Z",
+          "distance_au": 0.00241333848164,
+          "range_rate_km_s": 1.31e-05
+        },
+        {
+          "instant_utc": "2027-02-19T07:40:00Z",
+          "distance_au": 0.00241333848955,
+          "range_rate_km_s": 2.63e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-03-03T05:45:56Z",
+      "fresh_cubic_root_utc": "2027-03-03T05:45:56.000000Z",
+      "fresh_linear_root_utc": "2027-03-03T05:45:56.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.0,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.0,
+      "estimated_rate_print_quantization_seconds": 0.33,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-03-03T05:43:56Z",
+          "distance_au": 0.0027084797136,
+          "range_rate_km_s": 1.82e-05
+        },
+        {
+          "instant_utc": "2027-03-03T05:44:56Z",
+          "distance_au": 0.00270847971907,
+          "range_rate_km_s": 9.1e-06
+        },
+        {
+          "instant_utc": "2027-03-03T05:46:56Z",
+          "distance_au": 0.00270847971906,
+          "range_rate_km_s": -9.1e-06
+        },
+        {
+          "instant_utc": "2027-03-03T05:47:56Z",
+          "distance_au": 0.00270847971357,
+          "range_rate_km_s": -1.82e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-03-19T04:36:26Z",
+      "fresh_cubic_root_utc": "2027-03-19T04:36:26.467829Z",
+      "fresh_linear_root_utc": "2027-03-19T04:36:26.350877Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.467829,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.116952,
+      "estimated_rate_print_quantization_seconds": 0.351,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-03-19T04:34:26Z",
+          "distance_au": 0.00244963808135,
+          "range_rate_km_s": -1.71e-05
+        },
+        {
+          "instant_utc": "2027-03-19T04:35:26Z",
+          "distance_au": 0.0024496380762,
+          "range_rate_km_s": -8.6e-06
+        },
+        {
+          "instant_utc": "2027-03-19T04:37:26Z",
+          "distance_au": 0.00244963807618,
+          "range_rate_km_s": 8.5e-06
+        },
+        {
+          "instant_utc": "2027-03-19T04:38:26Z",
+          "distance_au": 0.00244963808131,
+          "range_rate_km_s": 1.71e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-03-31T01:34:47Z",
+      "fresh_cubic_root_utc": "2027-03-31T01:34:46.710378Z",
+      "fresh_linear_root_utc": "2027-03-31T01:34:46.710145Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.289622,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000233,
+      "estimated_rate_print_quantization_seconds": 0.29,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-03-31T01:32:47Z",
+          "distance_au": 0.00270249631158,
+          "range_rate_km_s": 2.06e-05
+        },
+        {
+          "instant_utc": "2027-03-31T01:33:47Z",
+          "distance_au": 0.00270249631778,
+          "range_rate_km_s": 1.03e-05
+        },
+        {
+          "instant_utc": "2027-03-31T01:35:47Z",
+          "distance_au": 0.00270249631775,
+          "range_rate_km_s": -1.04e-05
+        },
+        {
+          "instant_utc": "2027-03-31T01:36:47Z",
+          "distance_au": 0.00270249631153,
+          "range_rate_km_s": -2.07e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-04-14T00:36:13Z",
+      "fresh_cubic_root_utc": "2027-04-14T00:36:13.000000Z",
+      "fresh_linear_root_utc": "2027-04-14T00:36:13.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.0,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.0,
+      "estimated_rate_print_quantization_seconds": 0.769,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-04-14T00:34:13Z",
+          "distance_au": 0.00247356872829,
+          "range_rate_km_s": -7.8e-06
+        },
+        {
+          "instant_utc": "2027-04-14T00:35:13Z",
+          "distance_au": 0.00247356872595,
+          "range_rate_km_s": -3.9e-06
+        },
+        {
+          "instant_utc": "2027-04-14T00:37:13Z",
+          "distance_au": 0.00247356872596,
+          "range_rate_km_s": 3.9e-06
+        },
+        {
+          "instant_utc": "2027-04-14T00:38:13Z",
+          "distance_au": 0.00247356872831,
+          "range_rate_km_s": 7.8e-06
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-04-27T21:20:18Z",
+      "fresh_cubic_root_utc": "2027-04-27T21:20:18.292445Z",
+      "fresh_linear_root_utc": "2027-04-27T21:20:18.292683Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.292445,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.000238,
+      "estimated_rate_print_quantization_seconds": 0.292,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-04-27T21:18:18Z",
+          "distance_au": 0.00270143722221,
+          "range_rate_km_s": 2.05e-05
+        },
+        {
+          "instant_utc": "2027-04-27T21:19:18Z",
+          "distance_au": 0.00270143722838,
+          "range_rate_km_s": 1.03e-05
+        },
+        {
+          "instant_utc": "2027-04-27T21:21:18Z",
+          "distance_au": 0.0027014372284,
+          "range_rate_km_s": -1.02e-05
+        },
+        {
+          "instant_utc": "2027-04-27T21:22:18Z",
+          "distance_au": 0.00270143722226,
+          "range_rate_km_s": -2.04e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-05-09T20:00:41Z",
+      "fresh_cubic_root_utc": "2027-05-09T20:00:40.757574Z",
+      "fresh_linear_root_utc": "2027-05-09T20:00:40.636364Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.242426,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.12121,
+      "estimated_rate_print_quantization_seconds": 0.364,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-05-09T19:58:41Z",
+          "distance_au": 0.00245094918227,
+          "range_rate_km_s": -1.64e-05
+        },
+        {
+          "instant_utc": "2027-05-09T19:59:41Z",
+          "distance_au": 0.00245094917734,
+          "range_rate_km_s": -8.2e-06
+        },
+        {
+          "instant_utc": "2027-05-09T20:01:41Z",
+          "distance_au": 0.00245094917739,
+          "range_rate_km_s": 8.3e-06
+        },
+        {
+          "instant_utc": "2027-05-09T20:02:41Z",
+          "distance_au": 0.00245094918238,
+          "range_rate_km_s": 1.66e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-05-25T15:08:32Z",
+      "fresh_cubic_root_utc": "2027-05-25T15:08:31.334565Z",
+      "fresh_linear_root_utc": "2027-05-25T15:08:31.333333Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.665435,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.001232,
+      "estimated_rate_print_quantization_seconds": 0.333,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-05-25T15:06:32Z",
+          "distance_au": 0.00270569649203,
+          "range_rate_km_s": 1.78e-05
+        },
+        {
+          "instant_utc": "2027-05-25T15:07:32Z",
+          "distance_au": 0.00270569649737,
+          "range_rate_km_s": 8.9e-06
+        },
+        {
+          "instant_utc": "2027-05-25T15:09:32Z",
+          "distance_au": 0.00270569649729,
+          "range_rate_km_s": -9.1e-06
+        },
+        {
+          "instant_utc": "2027-05-25T15:10:32Z",
+          "distance_au": 0.00270569649187,
+          "range_rate_km_s": -1.8e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-06-06T14:46:32Z",
+      "fresh_cubic_root_utc": "2027-06-06T14:46:31.758875Z",
+      "fresh_linear_root_utc": "2027-06-06T14:46:31.759036Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.241125,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.000161,
+      "estimated_rate_print_quantization_seconds": 0.241,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-06-06T14:44:32Z",
+          "distance_au": 0.00241793151677,
+          "range_rate_km_s": -2.49e-05
+        },
+        {
+          "instant_utc": "2027-06-06T14:45:32Z",
+          "distance_au": 0.00241793150928,
+          "range_rate_km_s": -1.24e-05
+        },
+        {
+          "instant_utc": "2027-06-06T14:47:32Z",
+          "distance_au": 0.0024179315093,
+          "range_rate_km_s": 1.25e-05
+        },
+        {
+          "instant_utc": "2027-06-06T14:48:32Z",
+          "distance_au": 0.00241793151683,
+          "range_rate_km_s": 2.5e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-06-22T04:57:06Z",
+      "fresh_cubic_root_utc": "2027-06-22T04:57:05.574970Z",
+      "fresh_linear_root_utc": "2027-06-22T04:57:05.574468Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.42503,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000502,
+      "estimated_rate_print_quantization_seconds": 0.425,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-06-22T04:55:06Z",
+          "distance_au": 0.00271177070589,
+          "range_rate_km_s": 1.4e-05
+        },
+        {
+          "instant_utc": "2027-06-22T04:56:06Z",
+          "distance_au": 0.0027117707101,
+          "range_rate_km_s": 7e-06
+        },
+        {
+          "instant_utc": "2027-06-22T04:58:06Z",
+          "distance_au": 0.00271177071008,
+          "range_rate_km_s": -7.1e-06
+        },
+        {
+          "instant_utc": "2027-06-22T04:59:06Z",
+          "distance_au": 0.00271177070584,
+          "range_rate_km_s": -1.41e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-07-04T20:48:52Z",
+      "fresh_cubic_root_utc": "2027-07-04T20:48:52.132891Z",
+      "fresh_linear_root_utc": "2027-07-04T20:48:52.199336Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.132891,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.066445,
+      "estimated_rate_print_quantization_seconds": 0.199,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-07-04T20:46:52Z",
+          "distance_au": 0.00239501489276,
+          "range_rate_km_s": -3.02e-05
+        },
+        {
+          "instant_utc": "2027-07-04T20:47:52Z",
+          "distance_au": 0.00239501488368,
+          "range_rate_km_s": -1.51e-05
+        },
+        {
+          "instant_utc": "2027-07-04T20:49:52Z",
+          "distance_au": 0.00239501488362,
+          "range_rate_km_s": 1.5e-05
+        },
+        {
+          "instant_utc": "2027-07-04T20:50:52Z",
+          "distance_au": 0.00239501489264,
+          "range_rate_km_s": 3e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-07-19T11:36:51Z",
+      "fresh_cubic_root_utc": "2027-07-19T11:36:51.181541Z",
+      "fresh_linear_root_utc": "2027-07-19T11:36:51.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.181541,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.181541,
+      "estimated_rate_print_quantization_seconds": 0.545,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-07-19T11:34:51Z",
+          "distance_au": 0.00271533966629,
+          "range_rate_km_s": 1.09e-05
+        },
+        {
+          "instant_utc": "2027-07-19T11:35:51Z",
+          "distance_au": 0.00271533966958,
+          "range_rate_km_s": 5.5e-06
+        },
+        {
+          "instant_utc": "2027-07-19T11:37:51Z",
+          "distance_au": 0.00271533966956,
+          "range_rate_km_s": -5.5e-06
+        },
+        {
+          "instant_utc": "2027-07-19T11:38:51Z",
+          "distance_au": 0.00271533966625,
+          "range_rate_km_s": -1.1e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-08-02T06:18:24Z",
+      "fresh_cubic_root_utc": "2027-08-02T06:18:24.571126Z",
+      "fresh_linear_root_utc": "2027-08-02T06:18:24.571429Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.571126,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.000302,
+      "estimated_rate_print_quantization_seconds": 0.19,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-08-02T06:16:24Z",
+          "distance_au": 0.00238880008402,
+          "range_rate_km_s": -3.16e-05
+        },
+        {
+          "instant_utc": "2027-08-02T06:17:24Z",
+          "distance_au": 0.00238880007449,
+          "range_rate_km_s": -1.59e-05
+        },
+        {
+          "instant_utc": "2027-08-02T06:19:24Z",
+          "distance_au": 0.00238880007437,
+          "range_rate_km_s": 1.56e-05
+        },
+        {
+          "instant_utc": "2027-08-02T06:20:24Z",
+          "distance_au": 0.00238880008376,
+          "range_rate_km_s": 3.13e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-08-15T14:08:59Z",
+      "fresh_cubic_root_utc": "2027-08-15T14:08:59.513552Z",
+      "fresh_linear_root_utc": "2027-08-15T14:08:59.512821Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.513552,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000732,
+      "estimated_rate_print_quantization_seconds": 0.514,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-08-15T14:06:59Z",
+          "distance_au": 0.00271459935722,
+          "range_rate_km_s": 1.18e-05
+        },
+        {
+          "instant_utc": "2027-08-15T14:07:59Z",
+          "distance_au": 0.00271459936077,
+          "range_rate_km_s": 5.9e-06
+        },
+        {
+          "instant_utc": "2027-08-15T14:09:59Z",
+          "distance_au": 0.00271459936081,
+          "range_rate_km_s": -5.8e-06
+        },
+        {
+          "instant_utc": "2027-08-15T14:10:59Z",
+          "distance_au": 0.00271459935731,
+          "range_rate_km_s": -1.17e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-08-30T15:34:50Z",
+      "fresh_cubic_root_utc": "2027-08-30T15:34:49.930515Z",
+      "fresh_linear_root_utc": "2027-08-30T15:34:50.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.069485,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.069485,
+      "estimated_rate_print_quantization_seconds": 0.208,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-08-30T15:32:50Z",
+          "distance_au": 0.00240107894806,
+          "range_rate_km_s": -2.89e-05
+        },
+        {
+          "instant_utc": "2027-08-30T15:33:50Z",
+          "distance_au": 0.00240107893937,
+          "range_rate_km_s": -1.44e-05
+        },
+        {
+          "instant_utc": "2027-08-30T15:35:50Z",
+          "distance_au": 0.00240107893935,
+          "range_rate_km_s": 1.44e-05
+        },
+        {
+          "instant_utc": "2027-08-30T15:36:50Z",
+          "distance_au": 0.00240107894802,
+          "range_rate_km_s": 2.88e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-09-11T23:29:23Z",
+      "fresh_cubic_root_utc": "2027-09-11T23:29:23.000000Z",
+      "fresh_linear_root_utc": "2027-09-11T23:29:23.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.0,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.0,
+      "estimated_rate_print_quantization_seconds": 0.385,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-09-11T23:27:23Z",
+          "distance_au": 0.00271000481276,
+          "range_rate_km_s": 1.56e-05
+        },
+        {
+          "instant_utc": "2027-09-11T23:28:23Z",
+          "distance_au": 0.00271000481744,
+          "range_rate_km_s": 7.8e-06
+        },
+        {
+          "instant_utc": "2027-09-11T23:30:23Z",
+          "distance_au": 0.00271000481743,
+          "range_rate_km_s": -7.8e-06
+        },
+        {
+          "instant_utc": "2027-09-11T23:31:23Z",
+          "distance_au": 0.00271000481274,
+          "range_rate_km_s": -1.56e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-09-27T20:03:09Z",
+      "fresh_cubic_root_utc": "2027-09-27T20:03:09.535714Z",
+      "fresh_linear_root_utc": "2027-09-27T20:03:09.535714Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.535714,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.0,
+      "estimated_rate_print_quantization_seconds": 0.268,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-09-27T20:01:09Z",
+          "distance_au": 0.00242940337112,
+          "range_rate_km_s": -2.25e-05
+        },
+        {
+          "instant_utc": "2027-09-27T20:02:09Z",
+          "distance_au": 0.00242940336436,
+          "range_rate_km_s": -1.13e-05
+        },
+        {
+          "instant_utc": "2027-09-27T20:04:09Z",
+          "distance_au": 0.00242940336429,
+          "range_rate_km_s": 1.11e-05
+        },
+        {
+          "instant_utc": "2027-09-27T20:05:09Z",
+          "distance_au": 0.00242940337098,
+          "range_rate_km_s": 2.23e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-10-09T15:43:14Z",
+      "fresh_cubic_root_utc": "2027-10-09T15:43:14.000000Z",
+      "fresh_linear_root_utc": "2027-10-09T15:43:14.000000Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.0,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.0,
+      "estimated_rate_print_quantization_seconds": 0.309,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-10-09T15:41:14Z",
+          "distance_au": 0.00270436651839,
+          "range_rate_km_s": 1.93e-05
+        },
+        {
+          "instant_utc": "2027-10-09T15:42:14Z",
+          "distance_au": 0.0027043665242,
+          "range_rate_km_s": 9.7e-06
+        },
+        {
+          "instant_utc": "2027-10-09T15:44:14Z",
+          "distance_au": 0.00270436652421,
+          "range_rate_km_s": -9.7e-06
+        },
+        {
+          "instant_utc": "2027-10-09T15:45:14Z",
+          "distance_au": 0.00270436651839,
+          "range_rate_km_s": -1.93e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-10-25T05:26:08Z",
+      "fresh_cubic_root_utc": "2027-10-25T05:26:08.488467Z",
+      "fresh_linear_root_utc": "2027-10-25T05:26:08.487805Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.488467,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000662,
+      "estimated_rate_print_quantization_seconds": 0.488,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-10-25T05:24:08Z",
+          "distance_au": 0.0024640741886,
+          "range_rate_km_s": -1.24e-05
+        },
+        {
+          "instant_utc": "2027-10-25T05:25:08Z",
+          "distance_au": 0.00246407418486,
+          "range_rate_km_s": -6.2e-06
+        },
+        {
+          "instant_utc": "2027-10-25T05:27:08Z",
+          "distance_au": 0.00246407418481,
+          "range_rate_km_s": 6.1e-06
+        },
+        {
+          "instant_utc": "2027-10-25T05:28:08Z",
+          "distance_au": 0.0024640741885,
+          "range_rate_km_s": 1.23e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-11-06T11:37:22Z",
+      "fresh_cubic_root_utc": "2027-11-06T11:37:22.284585Z",
+      "fresh_linear_root_utc": "2027-11-06T11:37:22.284360Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.284585,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000225,
+      "estimated_rate_print_quantization_seconds": 0.285,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-11-06T11:35:22Z",
+          "distance_au": 0.0027020541076,
+          "range_rate_km_s": 2.12e-05
+        },
+        {
+          "instant_utc": "2027-11-06T11:36:22Z",
+          "distance_au": 0.00270205411397,
+          "range_rate_km_s": 1.06e-05
+        },
+        {
+          "instant_utc": "2027-11-06T11:38:22Z",
+          "distance_au": 0.00270205411399,
+          "range_rate_km_s": -1.05e-05
+        },
+        {
+          "instant_utc": "2027-11-06T11:39:22Z",
+          "distance_au": 0.00270205410765,
+          "range_rate_km_s": -2.11e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-11-19T00:18:42Z",
+      "fresh_cubic_root_utc": "2027-11-19T00:18:42.572337Z",
+      "fresh_linear_root_utc": "2027-11-19T00:18:42.571429Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.572337,
+      "fresh_linear_minus_fresh_cubic_seconds": -0.000908,
+      "estimated_rate_print_quantization_seconds": 0.572,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-11-19T00:16:42Z",
+          "distance_au": 0.00246879544254,
+          "range_rate_km_s": -1.06e-05
+        },
+        {
+          "instant_utc": "2027-11-19T00:17:42Z",
+          "distance_au": 0.00246879543935,
+          "range_rate_km_s": -5.3e-06
+        },
+        {
+          "instant_utc": "2027-11-19T00:19:42Z",
+          "distance_au": 0.00246879543932,
+          "range_rate_km_s": 5.2e-06
+        },
+        {
+          "instant_utc": "2027-11-19T00:20:42Z",
+          "distance_au": 0.00246879544248,
+          "range_rate_km_s": 1.05e-05
+        }
+      ]
+    },
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2027-12-04T08:44:28Z",
+      "fresh_cubic_root_utc": "2027-12-04T08:44:27.601994Z",
+      "fresh_linear_root_utc": "2027-12-04T08:44:27.701493Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": -0.398006,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.099498,
+      "estimated_rate_print_quantization_seconds": 0.299,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-12-04T08:42:28Z",
+          "distance_au": 0.00270523627671,
+          "range_rate_km_s": 2.01e-05
+        },
+        {
+          "instant_utc": "2027-12-04T08:43:28Z",
+          "distance_au": 0.00270523628275,
+          "range_rate_km_s": 1e-05
+        },
+        {
+          "instant_utc": "2027-12-04T08:45:28Z",
+          "distance_au": 0.00270523628274,
+          "range_rate_km_s": -1.01e-05
+        },
+        {
+          "instant_utc": "2027-12-04T08:46:28Z",
+          "distance_au": 0.00270523627669,
+          "range_rate_km_s": -2.01e-05
+        }
+      ]
+    },
+    {
+      "type": "perigee",
+      "hourly_fixture_utc": "2027-12-16T02:33:54Z",
+      "fresh_cubic_root_utc": "2027-12-16T02:33:54.276285Z",
+      "fresh_linear_root_utc": "2027-12-16T02:33:54.276498Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.276285,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.000212,
+      "estimated_rate_print_quantization_seconds": 0.276,
+      "fresh_samples": [
+        {
+          "instant_utc": "2027-12-16T02:31:54Z",
+          "distance_au": 0.00243323781277,
+          "range_rate_km_s": -2.17e-05
+        },
+        {
+          "instant_utc": "2027-12-16T02:32:54Z",
+          "distance_au": 0.00243323780625,
+          "range_rate_km_s": -1.09e-05
+        },
+        {
+          "instant_utc": "2027-12-16T02:34:54Z",
+          "distance_au": 0.00243323780622,
+          "range_rate_km_s": 1.08e-05
+        },
+        {
+          "instant_utc": "2027-12-16T02:35:54Z",
+          "distance_au": 0.0024332378127,
+          "range_rate_km_s": 2.16e-05
+        }
+      ]
+    }
+  ],
+  "boundary_events": [
+    {
+      "type": "apogee",
+      "hourly_fixture_utc": "2028-01-01T03:59:18Z",
+      "fresh_cubic_root_utc": "2028-01-01T03:59:18.363269Z",
+      "fresh_linear_root_utc": "2028-01-01T03:59:18.363636Z",
+      "fresh_cubic_minus_hourly_fixture_seconds": 0.363269,
+      "fresh_linear_minus_fresh_cubic_seconds": 0.000367,
+      "estimated_rate_print_quantization_seconds": 0.363,
+      "fresh_samples": [
+        {
+          "instant_utc": "2028-01-01T03:57:18Z",
+          "distance_au": 0.00271168276287,
+          "range_rate_km_s": 1.65e-05
+        },
+        {
+          "instant_utc": "2028-01-01T03:58:18Z",
+          "distance_au": 0.00271168276786,
+          "range_rate_km_s": 8.3e-06
+        },
+        {
+          "instant_utc": "2028-01-01T04:00:18Z",
+          "distance_au": 0.00271168276791,
+          "range_rate_km_s": -8.2e-06
+        },
+        {
+          "instant_utc": "2028-01-01T04:01:18Z",
+          "distance_au": 0.00271168276298,
+          "range_rate_km_s": -1.64e-05
+        }
+      ]
+    }
+  ]
+}

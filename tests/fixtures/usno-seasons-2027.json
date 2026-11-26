@@ -1,0 +1,14 @@
+{
+  "year": 2027,
+  "source": "US Naval Observatory — Earth's Seasons, 2027, UTC",
+  "url": "https://aa.usno.navy.mil/calculated/seasons?dst=false&submit=Get+Data&tz=0.00&tz_label=false&tz_sign=-1&year=2027",
+  "retrieved": "2026-11-26",
+  "acquisition": "Numeric facts transcribed from the retrieved search-indexed USNO year table; direct page request timed out. Not an API export.",
+  "precision": "minute",
+  "events": [
+    { "type": "march_equinox", "instant_utc": "2027-03-20T20:25:00Z" },
+    { "type": "june_solstice", "instant_utc": "2027-06-21T14:11:00Z" },
+    { "type": "september_equinox", "instant_utc": "2027-09-23T06:02:00Z" },
+    { "type": "december_solstice", "instant_utc": "2027-12-22T02:42:00Z" }
+  ]
+}
