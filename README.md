@@ -12,7 +12,7 @@ O calendário separa astronomia, interpretação tradicional e evidência agríc
 
 ### O que funciona
 
-- Orientações práticas para semear, transplantar e colher a partir do solo e do estágio da planta, acessíveis o ano inteiro. Um guia de preparados biodinâmicos explica em que etapa entram o 500, o 501 e os preparados de composto, com referências à edição consultada. A calculadora converte as faixas Demeter por área tratada ou volume de composto e explica como medir pequenas doses e calibrar a água de aplicação.
+- Guia prático inspirado nas palestras agrícolas de Rudolf Steiner, com orientações para semear, transplantar e colher a partir do solo e do estágio da planta, acessíveis o ano inteiro. Um guia de preparados biodinâmicos explica em que etapa entram o 500, o 501 e os preparados de composto, com referências à edição consultada. A calculadora converte as faixas Demeter por área tratada ou volume de composto e explica como medir pequenas doses e calibrar a água de aplicação.
 - Calendário mensal, detalhes por dia e navegação por teclado; datas fora da cobertura têm uma indicação clara.
 - Dezembro de 2026 tem cobertura parcial: fases principais e solstício, com horários publicados por Fred Espenak no AstroPixels. Os demais dados lunares e as janelas tradicionais estão disponíveis para 2027.
 - 49 fases principais publicadas pelo USNO, preservadas com sua precisão original de minuto.
@@ -72,7 +72,7 @@ Os segundos internos ajudam a comparar e ordenar eventos. A interface mostra hor
 
 O service worker guarda o aplicativo, os dados e os guias incluídos no build. Só a ativação do worker deste aplicativo permite mostrar “Acesso offline preparado”. Uma nova versão instalada aguarda a ação **Atualizar aplicativo**; o cache de outros projetos no mesmo domínio é preservado.
 
-Cache e preferências podem ser removidos pelo navegador ou pelo usuário. A primeira visita precisa de conexão. Links de fontes externas continuam exigindo internet. Instalação na tela inicial depende do navegador e não equivale a uma versão publicada em lojas de aplicativos.
+Cache e preferências podem ser removidos pelo navegador ou pelo usuário. A primeira visita precisa de conexão. As referências bibliográficas são apresentadas no aplicativo e ficam disponíveis offline. Instalação na tela inicial depende do navegador e não equivale a uma versão publicada em lojas de aplicativos.
 
 Os testes de cache executam o worker real gerado em um ambiente controlado de rede/cache. Os testes não substituem a revisão em dispositivos móveis reais.
 

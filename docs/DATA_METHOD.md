@@ -6,6 +6,12 @@ O Raiz & Ritmo apresenta astronomia de 2027, explicações em português e duas 
 
 Os resultados numéricos, as divergências encontradas e as instruções de reprodução estão em [Validação de 2027](VALIDATION_2027.md).
 
+## Origem das orientações para a horta
+
+O *Agriculture Course* de 1924 é a base da leitura biodinâmica do guia. A edição de George Adams (Rudolf Steiner Press, 2012, páginas do PDF consultado) fundamenta a discussão de chuva, Lua cheia e semeadura (p. 26), da propriedade como organismo e seu entorno (pp. 29 e 129–131), da escala de observação (p. 80) e da aplicação do 500 antes de semear (p. 82). Essas passagens não fornecem um calendário anual com tarefas para cada espécie.
+
+O módulo astronômico informa datas locais de eventos. As duas janelas tradicionais vêm do Stella Natura. A indicação de três dias antes da Lua cheia é de Charles Kovacs e aparece como leitura de uma fonte posterior. As taxas métricas dos preparados vêm do Apêndice 8 da Demeter de 2026. As atividades para vasos e canteiros são adaptações de observação inspiradas em Kovacs. O guia atribui ao Stella Natura a distinção entre colheita fresca e para guardar e o contexto de transplante de Maria Thun, sem calcular a janela editorial.
+
 ## Dezembro de 2026
 
 Dezembro tem cobertura parcial. As cinco fases principais de dezembro UTC e o solstício usam os minutos publicados por Fred Espenak no AstroPixels, conferidos contra o Astronomy Engine (diferença máxima de 45 segundos). O equinócio de setembro dá o contexto de estação antes do solstício. Os instantes publicados ficam em [december-2026.ts](../src/data/december-2026.ts). As fontes são as tabelas de [fases](https://www.astropixels.com/ephemeris/phasescat/phases2001.html) e [estações](https://www.astropixels.com/ephemeris/soleq2001.html). Os demais dados lunares e as janelas tradicionais seguem restritos a 2027.
