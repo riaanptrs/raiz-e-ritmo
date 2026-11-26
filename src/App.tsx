@@ -176,6 +176,59 @@ function PreparationQuantities() {
   </section>;
 }
 
+function IntercroppingGuide() {
+  return <section aria-labelledby="intercropping-title">
+    <h2 id="intercropping-title">Consórcios: como cultivar plantas juntas</h2>
+    <p>Na sétima palestra, Steiner chama a atenção para as relações entre as áreas cultivadas, a vegetação do entorno, as aves e os insetos. Na horta, observe essas relações antes de decidir onde plantar. Na agrofloresta, a Embrapa descreve como distribuir as espécies no espaço e ajustar a sombra conforme crescem.</p>
+    <AgricultureCourseCitation location="Palestra 7, pp. 129–131 do PDF consultado." />
+    <p className="source-note">Armando e colaboradores, <cite>Agrofloresta para agricultura familiar</cite>, Embrapa, Circular Técnica 16, 2002, seções sobre podas de formação e sucessão ecológica.</p>
+    <div className="garden-actions">
+      <article>
+        <h3>Alface americana com coentro ou salsa</h3>
+        <p>Em um canteiro, experimente uma erva de cada vez ao lado da alface e deixe espaço para colher as duas. Em vasos pequenos, você pode começar com um recipiente para cada espécie e aproximá-los para observar como a luz incide em cada um.</p>
+        <p>Um ensaio brasileiro testou coentro e salsa separadamente com alface americana. O estudo não detectou diferença significativa na produtividade da alface no conjunto dos tratamentos. O resultado se refere à alface nas condições do ensaio.</p>
+        <p className="source-note">Forlani e Riva Neto, 2022, <cite>Produção orgânica de alface americana em consórcio com almeirão, coentro, rúcula e salsa</cite>. DOI 10.36560/151220221639.</p>
+      </article>
+      <article>
+        <h3>Alface e rúcula</h3>
+        <p>Experimente semear a rúcula na mesma semana em que transplantar a alface. Num ensaio em Jaboticabal, os melhores momentos dependeram da variedade de alface e da época. Semear a rúcula 14 dias depois reduziu sua massa seca nos consórcios tardios.</p>
+        <p className="source-note">Costa e colaboradores, 2007, <cite>Viabilidade agronômica do consórcio de alface e rúcula, em duas épocas de cultivo</cite>. DOI 10.1590/S0102-05362007000100008.</p>
+      </article>
+      <article>
+        <h3>Tomate e alface</h3>
+        <p>Observe onde a sombra do tomateiro cai à medida que ele cresce e acompanhe o desenvolvimento da alface. No ensaio de Jaboticabal, o tomate manteve a produtividade comercial, mas a alface produziu menos no consórcio. Os melhores resultados de uso da área vieram quando a alface foi transplantada até 14 dias depois do tomate.</p>
+        <p className="source-note">Rezende, Canato e Cecílio Filho, 2005, <cite>Influência das épocas de cultivo e do estabelecimento do consórcio na produção de tomate e alface consorciados</cite>. DOI 10.1590/S1413-70542005000100009.</p>
+      </article>
+    </div>
+    <h3>Como testar no seu espaço</h3>
+    <ol>
+      <li><strong>Desenhe antes de plantar.</strong> Observe o sol de manhã e à tarde. Reserve espaço para as plantas crescerem e para você regar e colher. Num sistema com árvores, reveja o desenho conforme as copas crescem.</li>
+      <li><strong>Compare com um cultivo sozinho.</strong> Se houver espaço, plante algumas mudas da mesma alface sem a erva vizinha e compare com o trecho em consórcio. Use a mesma variedade, época e manejo, e anote diferenças de luz ou água.</li>
+      <li><strong>Registre as duas colheitas.</strong> Compare a quantidade colhida por espécie, o espaço ocupado e o trabalho necessário. Uma combinação pode aproveitar melhor a área mesmo quando uma das culturas rende menos por planta.</li>
+    </ol>
+    <p>Vasos vizinhos permitem observar sombra e organização do espaço. Os estudos citados avaliaram plantas em consórcio no solo. Para manjericão e cebolinha, experimente a disposição dos vasos e registre o que observa.</p>
+  </section>;
+}
+
+function CompostGuide() {
+  return <section aria-labelledby="compost-title">
+    <h2 id="compost-title">Compostagem biodinâmica com sobras da cozinha</h2>
+    <p>Steiner descreve o composto como uma forma de devolver os resíduos da horta ao solo. Ele propõe montar a pilha em camadas finas e cobrir cada camada. Para uma casa, adapte essa ideia aos resíduos vegetais que você consegue reunir.</p>
+    <AgricultureCourseCitation location="Palestra 4, pp. 69–70 do PDF consultado." />
+    <h3>Como montar e cuidar da composteira</h3>
+    <ol>
+      <li><strong>Separe dois tipos de material.</strong> Use cascas e aparas de frutas e hortaliças como material úmido. Guarde folhas secas, palha ou raminhos picados para cobrir. Para esta composteira doméstica, separe carnes, peixes, laticínios, óleo e sobras gordurosas.</li>
+      <li><strong>Comece pela base.</strong> Em uma caixa ventilada ou numa pilha no quintal, coloque uma camada fina de raminhos para deixar o ar passar. Cubra com folhas secas, espalhe os restos vegetais picados em uma camada fina e cubra as sobras com mais material seco a cada adição. Evite apertar as camadas.</li>
+      <li><strong>Cuide da umidade.</strong> O conteúdo deve ficar úmido, sem ficar encharcado. Se estiver seco ao apertar um punhado com luva, umedeça aos poucos. Se escorrer água ou aparecer cheiro forte de podridão, acrescente material seco, solte a mistura e proteja da chuva sem vedar a entrada de ar.</li>
+      <li><strong>Deixe o lote maturar.</strong> Quando a caixa estiver cheia, comece outro lote para as sobras novas. Espere o primeiro ficar escuro, solto e com cheiro de terra, com a maior parte das sobras já desfeita. A caixa pequena tende a aquecer menos e pode levar mais tempo. Use esses sinais para decidir quando incorporar o composto ao canteiro.</li>
+    </ol>
+    <h3>Quando entram os preparados 502–507?</h3>
+    <p><strong>Pilha montada de uma vez:</strong> na orientação de Julie Moore, aplique os preparados após montar a pilha. Os preparados 502 a 506 vão em pontos separados no interior, que depois são fechados com o próprio material. A valeriana, 507, é aplicada por último sobre a pilha, antes de cobrir.</p>
+    <p><strong>Caixa que recebe sobras aos poucos:</strong> Moore descreve, como alternativa biodinâmica, usar um iniciador de compostagem pronto à base do preparado de barril de Maria Thun (Mausdorf) ao acrescentar material. Siga a dose do produto. Para uma pilha montada de uma vez, a calculadora abaixo estima os preparados individuais pelo volume da pilha.</p>
+    <p className="source-note">Julie Moore, <cite>Composting the Biodynamic Way</cite>, <cite>Kitchen Garden</cite>, outubro de 2016, pp. 63–66, material disponibilizado pela Associação Biodinâmica britânica. Controle de umidade e aeração: Associação Biodinâmica britânica, <cite>Biodynamic Basics: the art and science of making and applying compost</cite>.</p>
+  </section>;
+}
+
 function PreparationGuide() {
   return <details className="preparation-guide">
     <summary>Quando entram os preparados biodinâmicos?</summary>
@@ -198,18 +251,19 @@ function PreparationGuide() {
       </div>
     </dl>
     <PreparationQuantities />
-    <h3>Como preparar para usar</h3>
+    <h3>Como preparar uma aplicação em pequena escala</h3>
+    <p><strong>Exemplo de um canteiro de 10 m²:</strong> a faixa de referência é 0,05 a 0,30 g de 500 para o solo, ou 2,5 a 5 mg de 501 para as plantas em crescimento. São aplicações distintas, cada uma na sua etapa. Para 100 L de composto, a referência é 0,01 a 0,02 mL de cada preparado de composto. Use a calculadora se a área ou o volume forem diferentes.</p>
     <ol>
       <li><strong>Escolha o produto para a tarefa.</strong> Use um preparado pronto de procedência conhecida e confira o rótulo para dose, diluição, modo de mistura e uso na cultura. O 500 vai ao solo, o 501 às plantas e o conjunto 502 a 507 à pilha de composto.</li>
       <li><strong>Calibre a água com o equipamento limpo.</strong> Para uma aplicação líquida, teste primeiro com água pura em uma área medida. Se usar 2 L em 100 m², com a mesma cobertura precisará de 0,2 L para 10 m² ou 200 L para 1 ha. Ajuste a técnica para distribuir uniformemente, sem escorrer.</li>
       <li><strong>Misture apenas o que vai usar.</strong> Siga o rótulo sobre o volume mínimo de mistura, a agitação e o prazo de uso. Em área pequena, prefira um lote pré-dosado ou compartilhado quando o equipamento não comportar o volume calculado.</li>
     </ol>
-    <h3>Como adaptar a produção</h3>
+    <h3>Como obter os preparados para uma horta pequena</h3>
     <p><strong>507, valeriana.</strong> A base vegetal é o suco das flores de <i>Valeriana officinalis</i>, obtido por prensagem. Steiner descreve diluir o extrato em água morna antes de aplicá-lo à pilha. A passagem não fixa uma diluição para pequenas pilhas. Se você precisa de uma dose reproduzível, use um extrato com rótulo e dosador.</p>
     <p className="source-note">Steiner, palestra de 13 de junho de 1924, p. 107 do PDF consultado.</p>
     <p>Para um canteiro, adquirir pequenas porções prontas evita fabricar um lote maior do que a demanda. Para uma fazenda que pretende produzir os próprios preparados, use a seção de produção do Apêndice 8 com orientação técnica local sobre origem dos materiais, higiene e descarte. Em climas sem inverno definido, confirme a adaptação sazonal com a associação biodinâmica da região.</p>
     <p>Evite improvisar com esterco cru ou subprodutos animais em uma horta de alimentos. Para o 501, use o produto pronto e evite manusear pó de sílica. Para o composto, mantenha as boas práticas locais de compostagem mesmo se optar pelos preparados.</p>
-    <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. O planejamento de aplicação segue a etapa da cultura. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
+    <p className="note">Estas indicações descrevem a prática tradicional. As faixas métricas vêm do padrão Demeter de 2026. No canteiro, planeje o 500 antes da semeadura, o 501 com a cultura em crescimento e os preparados de composto quando estiver preparando a pilha. As janelas de semeadura do Stella Natura tratam apenas da semeadura. Planeje cada etapa conforme o cultivo e registre o que observou.</p>
     <p className="source-note">Fonte: Rudolf Steiner, <cite>What Is Biodynamics?</cite>, SteinerBooks, 2005. As palestras de agricultura foram traduzidas por Catherine Creeger e Malcolm Gardner. As páginas referem-se ao PDF consultado.</p>
   </details>;
 }
@@ -258,13 +312,32 @@ function GardenGuide({ onMethod }: { onMethod: () => void }) {
         <p>Para guardar a produção ou colher sementes, o Stella Natura usa critérios próprios de acordo com a parte da planta a ser colhida. Esses critérios dependem das categorias raiz, folha, flor e fruto, que ainda estão indisponíveis neste calendário. Para o uso diário, observe o que já está pronto e colha a quantidade que pretende consumir fresca.</p>
       </article>
     </div>
-    <details className="preparation-guide">
-      <summary>Como observar ervas em vasos e hortaliças em canteiros?</summary>
-      <p>Escolha uma erva e uma hortaliça que você já cultiva. Em cada uma, registre quando surgem as primeiras folhas e quando começa a floração, se ocorrer. Anote as diferenças de sol e umidade entre os locais em vez de esperar que as duas plantas sigam o mesmo ritmo.</p>
-      <p className="source-note">Exercício do Raiz &amp; Ritmo inspirado em Charles Kovacs, <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF consultado.</p>
-    </details>
+    <section aria-labelledby="garden-crops">
+      <h2 id="garden-crops">Ervas e hortaliças comuns no Brasil</h2>
+      <p>Escolha a época de semeadura conforme a cultura e as condições da sua região. Os exemplos ajudam a observar vasos e canteiros pequenos ao longo do cultivo.</p>
+      <div className="garden-actions">
+        <article>
+          <h3>Manjericão, cebolinha e coentro</h3>
+          <p>Se cultivar para colher folhas e ramos frescos, observe primeiro o crescimento de folhas novas. Quando tiver o que precisa para a refeição, colha a quantidade que vai usar. Se cultivar coentro para semente, acompanhe a floração e anote a formação das sementes em uma planta reservada para esse fim.</p>
+          <p className="note">Aplicação para a horta da distinção entre colheita fresca e colheita para semente, descrita no <cite>Stella Natura</cite>. O guia não atribui dias a essas ervas.</p>
+        </article>
+        <article>
+          <h3>Alface e outras folhas</h3>
+          <p>Para semear alface, retire a vegetação que compete com a muda e deixe a superfície do canteiro solta. Observe as primeiras folhas e o momento em que as plantas começam a alongar o caule. Se a intenção é consumir as folhas frescas, colha conforme o uso na cozinha.</p>
+          <p className="note">Kovacs orienta o preparo do canteiro em <cite>Botany</cite>, cap. 17, pp. 42–43 do PDF. O <cite>Stella Natura</cite> inclui a alface entre as culturas de folha na sua orientação de semeadura.</p>
+        </article>
+        <article>
+          <h3>Cenoura, rabanete e tomate</h3>
+          <p>Registre a semeadura e observe o desenvolvimento de cada cultura. Quando colher uma cenoura ou um rabanete para consumo, anote como a raiz se desenvolveu. No tomate, acompanhe a floração e o amadurecimento dos frutos.</p>
+          <p className="note">O <cite>Stella Natura</cite> usa cenoura e rabanete como exemplos de culturas de raiz, e tomate como cultura de fruto. Essas categorias descrevem a tradição da publicação. O calendário do Raiz &amp; Ritmo ainda não fornece as datas correspondentes.</p>
+        </article>
+      </div>
+    </section>
     <p className="note">No detalhe de cada data coberta de 2027, as janelas do Stella Natura indicam quando essa tradição sugere evitar a semeadura. Para acompanhar transplantes e colheitas, anote o estágio da planta e as condições do local.</p>
     <p className="source-note">Transplante e colheita: Sherry Wildfeuer, <cite>Stella Natura</cite>, orientações da edição de 2024.</p>
+    <IntercroppingGuide />
+    <CompostGuide />
+    <h2>Preparados biodinâmicos</h2>
     <PreparationGuide />
     <button className="text-button garden-source-button" onClick={onMethod}>Ver fontes do guia da horta</button>
   </section>;
@@ -324,6 +397,7 @@ function Method() {
     <div className="method-principles"><article><span className="small-tag">ASTRONOMIA</span><h2>O que acontece no céu</h2><p>Eventos e posições calculáveis, com horários convertidos para o fuso escolhido.</p></article><article><span className="small-tag">TRADIÇÃO</span><h2>Como é interpretado</h2><p>Regras atribuídas à publicação que as descreve. Não existe uma regra única para todos os calendários.</p></article><article><span className="small-tag">EVIDÊNCIA</span><h2>O que isso demonstra</h2><p>Acertar a geometria não demonstra uma melhora de produtividade, sabor ou saúde das plantas.</p></article></div>
     <article className="reading-card">
       <h2>Fontes do guia da horta</h2>
+      <p>A seção de consórcios tem referências bibliográficas junto aos exemplos. Ela distingue a perspectiva de Steiner, o planejamento agroflorestal da Embrapa e os resultados dos ensaios brasileiros.</p>
       <p>As palestras de Rudolf Steiner fundamentam a leitura biodinâmica. As referências a cada edição e às páginas consultadas aparecem junto às orientações no guia.</p>
       <p>O guia de semeadura e as atividades de observação recorrem a <cite>Botany</cite>, de Charles Kovacs. Para a distinção entre colheita fresca e colheita para guardar, e para o contexto do transplante na tradição de Maria Thun, o guia usa o <cite>Stella Natura</cite>, manual da edição de 2024, de Sherry Wildfeuer.</p>
       <p>As faixas que a calculadora converte por área ou volume, bem como as referências para produção dos preparados, vêm do padrão internacional de 2026 da Demeter, Apêndice 8, p. 122, que indica as faixas por hectare e por volume de composto.</p>
