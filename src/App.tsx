@@ -152,7 +152,7 @@ function DayDetail({ plan, onMethod }: { plan: DayPlan; onMethod: () => void }) 
       </section>
       </>}
     </>}
-    <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Classificação biodinâmica indisponível</strong><p>Dias de raiz, folha, flor e fruto aguardam um método completo e validado.</p></div></div>
+    <div className="classification-note"><Icon kind="info" size={22} /><div><strong>Dias de raiz, folha, flor e fruto</strong><p>Essas quatro categorias ainda estão indisponíveis no calendário. O guia da horta já traz orientações para semear, transplantar e colher.</p><a href="#garden-title">Ir para o guia da horta</a></div></div>
   </aside>;
 }
 
@@ -239,7 +239,7 @@ function PreparationGuide() {
 
 function GardenGuide() {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
-    <h2 id="garden-title">O que fazer hoje na horta?</h2>
+    <h2 id="garden-title" tabIndex={-1}>O que fazer hoje na horta?</h2>
     <p>Escolha pela condição do solo e pelo estágio da planta. Estas orientações valem mesmo fora das datas do calendário.</p>
     <div className="garden-actions">
       <article>
