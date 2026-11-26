@@ -240,25 +240,38 @@ function PreparationGuide() {
 function GardenGuide() {
   return <section className="garden-guide reading-card" aria-labelledby="garden-title">
     <h2 id="garden-title" tabIndex={-1}>O que fazer hoje na horta?</h2>
-    <p>Escolha pela condição do solo e pelo estágio da planta. Estas orientações valem mesmo fora das datas do calendário.</p>
+    <p>Na agricultura biodinâmica de Rudolf Steiner, a propriedade é vista como um organismo. Para uma horta pequena, isso começa com uma pergunta prática: como o solo, a água, as plantas e a vida no entorno se relacionam neste lugar?</p>
+    <details className="preparation-guide">
+      <summary>Como aplicar essa visão numa horta pequena?</summary>
+      <ul>
+        <li><strong>Observe o lugar.</strong> Depois da chuva, veja onde a água infiltra e onde fica empoçada. Repare também em quais canteiros recebem sol ou sombra das árvores e dos arbustos.</li>
+        <li><strong>Aproveite os recursos da horta.</strong> Separe folhas secas e resíduos vegetais adequados para a compostagem. Observe o que você consegue devolver ao solo e o que precisa trazer de fora.</li>
+        <li><strong>Observe a vida ao redor.</strong> Repare nas aves e nos insetos que visitam as flores e as bordas do canteiro. Anote o que muda de uma estação para outra.</li>
+      </ul>
+      <p>Essas são adaptações para pequenos espaços da visão de Steiner sobre a propriedade e seu entorno.</p>
+      <AgricultureCourseCitation location="Palestras 2 e 7, pp. 29 e 129–131 do PDF consultado." />
+    </details>
+    <h3>Semear, transplantar ou colher</h3>
     <div className="garden-actions">
       <article>
         <h3>Semear</h3>
-        <p>Confira a época de semeadura indicada para sua região na embalagem. Semeie na profundidade indicada e mantenha o substrato úmido, sem encharcar.</p>
-        <SourceLink href={SOURCES.planting}>Guia de semeadura</SourceLink>
+        <p>Steiner propôs observar a chuva junto com a Lua cheia ao pensar na germinação. Se você segue a prática do preparado 500, ele orientou aplicá-lo ao solo antes de semear.</p>
+        <p>Para decidir se o canteiro está pronto, confira a época da cultura na sua região e a umidade do solo. Semeie na profundidade indicada para a cultura.</p>
+        <AgricultureCourseCitation location="Palestra 1 e discussão da palestra 4, pp. 26 e 82 do PDF consultado." />
+        <SourceLink href={SOURCES.planting}>Complemento de horticultura: semeadura</SourceLink>
       </article>
       <article>
         <h3>Transplantar</h3>
         <p>Se a muda cresceu em local protegido, acostume-a ao sol e ao vento aos poucos antes de levá-la ao canteiro. Dê preferência a um fim de tarde ou dia nublado e regue após o transplante.</p>
-        <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Guia de transplante</SourceLink>
+        <SourceLink href={SOURCES.planting + '#hardening-and-transplanting-seedlings'}>Complemento de horticultura: transplante</SourceLink>
       </article>
       <article>
         <h3>Colher</h3>
         <p>Observe o ponto de cada cultura. A alface pode ser colhida enquanto as folhas estão tenras. Para um tomate de variedade vermelha, a cor rosada ou vermelha uniforme indica que já pode ser colhido.</p>
-        <SourceLink href={SOURCES.harvest}>Guia de colheita por cultura</SourceLink>
+        <SourceLink href={SOURCES.harvest}>Complemento de horticultura: colheita</SourceLink>
       </article>
     </div>
-    <p className="note">As janelas tradicionais aparecem nos detalhes das datas cobertas. Elas se referem à semeadura e não definem dias de transplante ou colheita.</p>
+    <p className="note">As janelas do Stella Natura são uma orientação tradicional para semeadura. Para transplante e colheita, use os sinais da planta e as condições do local.</p>
     <PreparationGuide />
   </section>;
 }
