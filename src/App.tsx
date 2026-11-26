@@ -274,6 +274,11 @@ function Learning({ onMethod }: { onMethod: () => void }) {
       <h3>Por que observar a chuva junto com a Lua?</h3>
       <p>Na primeira palestra do curso de 1924, Steiner propôs que a chuva antes da Lua cheia poderia influenciar a germinação de certas plantas. Essa hipótese faz parte da explicação biodinâmica para observar os dois ritmos. Na horta, confira se o solo está úmido, sem estar encharcado, e se a época é adequada para a cultura antes de semear.</p>
       <AgricultureCourseCitation location="Palestra 1, p. 26 do PDF consultado." />
+      <details>
+        <summary>Como Kovacs ensinava a escolher uma data?</summary>
+        <p>Na aula sobre sementes, Kovacs apresenta três dias antes da Lua cheia como momento para semear. A passagem descreve essa orientação sem apresentar uma comparação medida que permita prever a germinação na sua horta. Se quiser observá-la, use o exercício de comparação de semeaduras abaixo e registre também o clima.</p>
+        <p className="source-note">Charles Kovacs, <cite>Botany</cite>, cap. 17, Floris Books, edição digital de 2020, p. 43 do PDF consultado.</p>
+      </details>
     </article>
     <article className="reading-card observation-guide">
       <h2>Da leitura à observação</h2>
@@ -282,6 +287,9 @@ function Learning({ onMethod }: { onMethod: () => void }) {
         <li><strong>Confira as condições.</strong> Antes de semear, veja se o solo está úmido sem estar encharcado e considere a chuva e a temperatura. Antes de transplantar, observe o estágio e o vigor da muda.</li>
         <li><strong>Anote o que aconteceu.</strong> Registre data, cultura, local, umidade, temperatura e tarefa.</li>
       </ol>
+      <h3>Da semente às primeiras folhas</h3>
+      <p>Quando uma muda de feijão emergir, procure os cotilédones, também chamados de folhas da semente. Observe depois as primeiras folhas verdadeiras, que aparecem no caule e têm outra forma. Faça um desenho ou tire uma foto em cada etapa e anote quantos dias se passaram desde a semeadura. Para comparar dois canteiros, conte a emergência pelo mesmo critério nos dois.</p>
+      <p className="source-note">Atividade adaptada de Charles Kovacs, <cite>Botany</cite>, cap. 17, “Seeds and Cotyledons”, Floris Books, edição digital de 2020, pp. 42–43 do PDF consultado.</p>
       <h3>Como comparar duas semeaduras</h3>
       <p>Ao relatar o curso de 1924, Steiner descreveu como um grupo de agricultores reuniria informações sobre o solo, o clima e o entorno de cada propriedade antes de testar as práticas propostas.</p>
       <p>Na horta, comece com dois trechos semelhantes. Se quiser observar duas datas de semeadura, use sementes do mesmo lote, na mesma profundidade, e mantenha o manejo tão parecido quanto possível. Anote chuva e temperatura e conte quantas mudas emergiram após o mesmo número de dias em cada trecho. Uma diferença ajuda a formular a próxima pergunta e pode ter várias causas.</p>
